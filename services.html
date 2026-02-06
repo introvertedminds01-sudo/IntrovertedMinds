@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Introvminds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <!-- Background Animations -->
+    <div class="bg-animations">
+        <div class="bg-grid"></div>
+        <div class="blob-wrapper blob-1"><div class="blob"></div></div>
+        <div class="blob-wrapper blob-2"><div class="blob"></div></div>
+        <div class="blob-wrapper blob-3"><div class="blob"></div></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvminds_landing.html" class="logo">
+                <img src="logo.png" alt="Introvminds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown active">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="services.html" class="mobile-only-link">
+                            All-in-One
+                        </a>
+                        <a href="services.html#growth">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            Growth Strategy
+                        </a>
+                        <a href="services.html#performance">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            Performance Marketing
+                        </a>
+                        <a href="services.html#seo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            SEO
+                        </a>
+                        <a href="services.html#social">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            Social Media
+                        </a>
+                        <a href="services.html#web">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Web Development
+                        </a>
+                        <a href="services.html#creative">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7 11l5-5"></path></svg>
+                            Creative Production
+                        </a>
+                        <a href="services.html#3d">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            3D Animation
+                        </a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <p>Ready to scale your business?</p>
+                <a href="tel:+919876543210" class="mobile-contact-link">📞 +91 98765 43210</a>
+                <div class="mobile-socials">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Simplified Services Hero -->
+    <section class="services-hero-simple">
+        <div class="hero-simple-content">
+            <div class="hero-tag">Our Expertise</div>
+            <h1>Comprehensive Digital Solutions</h1>
+            <p>From strategy to execution, we provide the full spectrum of digital services to help your brand scale and dominate the market.</p>
+            <div class="hero-cta">
+                <a href="contact.html" class="primary-btn">Book a Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services Sections -->
+    <section class="detailed-services">
+        <!-- 1. Growth Strategy -->
+        <div class="service-detail-section" id="growth">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">01</div>
+                    <h2>Growth Strategy & Marketing Consulting</h2>
+                    <p class="service-description">We build the foundation before execution. Our consulting services ensure your business is positioned for maximum growth.</p>
+                    <ul class="service-list">
+                        <li>Market & competitor research</li>
+                        <li>Business and marketing strategy</li>
+                        <li>Brand positioning & messaging</li>
+                        <li>Go-to-market planning</li>
+                        <li>Customer journey & funnel design</li>
+                        <li>Audience & persona development</li>
+                        <li>Growth roadmap planning</li>
+                        <li>Market entry & expansion consulting</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Get Started with Strategy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M212 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Performance Marketing -->
+        <div class="service-detail-section alt-bg" id="performance">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">02</div>
+                    <h2>Performance Marketing & Advertising</h2>
+                    <p class="service-description">Data-driven campaigns designed to generate revenue. We optimize every dollar spent to maximize your ROI.</p>
+                    <ul class="service-list">
+                        <li>Search Engine Marketing (Google Ads, YouTube Ads)</li>
+                        <li>Meta Ads (Facebook & Instagram)</li>
+                        <li>TikTok & LinkedIn advertising</li>
+                        <li>Conversion-focused ad funnels</li>
+                        <li>Retargeting & remarketing campaigns</li>
+                        <li>Campaign optimization & A/B testing</li>
+                        <li>Performance tracking & reporting</li>
+                        <li>ROI optimization & scaling</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Scale Your Ads <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SEO -->
+        <div class="service-detail-section" id="seo">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">03</div>
+                    <h2>Search Engine Optimization (SEO)</h2>
+                    <p class="service-description">Visibility that compounds over time. We help you dominate search results and drive organic growth.</p>
+                    <ul class="service-list">
+                        <li>Technical SEO audits</li>
+                        <li>On-page SEO optimization</li>
+                        <li>Keyword research & content mapping</li>
+                        <li>Local SEO & Google Business optimization</li>
+                        <li>E-commerce SEO</li>
+                        <li>SEO content strategy</li>
+                        <li>Link building & authority development</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Boost Your Rankings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Social Media -->
+        <div class="service-detail-section alt-bg" id="social">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">04</div>
+                    <h2>Social Media & Content Marketing</h2>
+                    <p class="service-description">Consistent presence that builds trust. We create content that resonates and engages your audience across platforms.</p>
+                    <ul class="service-list">
+                        <li>Social media strategy & planning</li>
+                        <li>Instagram, LinkedIn, TikTok & YouTube management</li>
+                        <li>Content calendars & publishing</li>
+                        <li>Creative content production</li>
+                        <li>Short-form video strategy</li>
+                        <li>Community management</li>
+                        <li>Influencer collaborations</li>
+                        <li>Content repurposing systems</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Grow Your Community <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Web Development -->
+        <div class="service-detail-section" id="web">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">05</div>
+                    <h2>Web Development & Digital Platforms</h2>
+                    <p class="service-description">Digital infrastructure built for growth. High-performance websites designed for conversion and speed.</p>
+                    <ul class="service-list">
+                        <li>WordPress website development</li>
+                        <li>Custom website development</li>
+                        <li>Landing page design & optimization</li>
+                        <li>E-commerce website development</li>
+                        <li>UX/UI architecture</li>
+                        <li>Website speed & performance optimization</li>
+                        <li>SEO-ready website builds</li>
+                        <li>Maintenance & support</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Build Your Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Creative Production -->
+        <div class="service-detail-section alt-bg" id="creative">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">06</div>
+                    <h2>Brand, Creative & Media Production</h2>
+                    <p class="service-description">How your brand looks, feels, and communicates. We bring your vision to life with high-end creative production.</p>
+                    <ul class="service-list">
+                        <li>Brand identity development</li>
+                        <li>Creative direction</li>
+                        <li>Copywriting & brand voice</li>
+                        <li>Campaign creatives</li>
+                        <li>Video production (ads, brand, explainer)</li>
+                        <li>Scriptwriting & storyboarding</li>
+                        <li>Founder/leadership video content</li>
+                        <li>AI-assisted media production</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Elevate Your Brand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 3D Animation -->
+        <div class="service-detail-section" id="3d">
+            <div class="service-detail-container">
+                <div class="service-detail-info">
+                    <div class="service-number">07</div>
+                    <h2>3D Animation & Modeling</h2>
+                    <p class="service-description">High-impact visual storytelling for modern brands. Cutting-edge 3D visuals that set you apart.</p>
+                    <ul class="service-list">
+                        <li>3D product modeling</li>
+                        <li>Product visualization</li>
+                        <li>3D animation for ads & campaigns</li>
+                        <li>Motion graphics & CGI videos</li>
+                        <li>Architectural & environment renders</li>
+                        <li>3D explainer videos</li>
+                        <li>Interactive 3D assets</li>
+                        <li>Game-ready 3D assets</li>
+                    </ul>
+                    <div class="service-cta">
+                        <a href="contact.html" class="service-cta-link">Start Your 3D Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="service-detail-visual">
+                    <div class="visual-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Digital Future?</h2>
+            <p>Join 500+ ambitious brands who have scaled their business with our data-driven strategies and creative excellence.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="primary-btn">Get Started Now</a>
+                <a href="introvminds_landing.html#testimonials" class="secondary-btn">View Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="Introvminds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#seo">SEO & Content</a>
+                <a href="services.html#social">Social Media</a>
+                <a href="services.html#performance">PPC Advertising</a>
+                <a href="services.html#web">Web Development</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>hello@introvminds.com</p>
+                <p>+91 98765 43210</p>
+                <p>Mumbai, Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Introvminds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a
+        href="https://wa.me/919876543210?text=Hi%20Introvminds%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
+        class="whatsapp-float"
+        aria-label="Chat with Introvminds on WhatsApp"
+        target="_blank"
+        rel="noopener"
+    >💬</a>
+
+    <!-- Search Modal -->
+    <div class="modal-overlay" id="callbackModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Get Your Custom Solution</h2>
+            <p>Enter your details below and we'll call you back with a tailored strategy.</p>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Your Phone Number">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Industry / Comment</label>
+                    <textarea id="comment" required placeholder="Tell us about your industry or challenge..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Get a Call Back</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const blobs = document.querySelectorAll('.blob');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+
+            // Background Parallax
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 20;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                blob.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+        // Click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('click');
+        });
+
+        // Hover effect
+        const hoverElements = document.querySelectorAll('a, button, .visual-card, .service-detail-section');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        } else {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdown = document.querySelector('.dropdown');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking links
+            const navLinks = document.querySelectorAll('.nav-links > li:not(.dropdown) > a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Mobile Dropdown Toggle removed - always expanded by default
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    mobileToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Search Modal Logic (Now used for CTA)
+        const callbackModal = document.getElementById('callbackModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        function openModal() {
+            callbackModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeM() {
+            callbackModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (closeModal) {
+            closeModal.addEventListener('click', closeM);
+        }
+
+        callbackModal.addEventListener('click', (e) => {
+            if (e.target === callbackModal) closeM();
+        });
+
+        // Update CTA buttons to open modal
+        document.querySelectorAll('.primary-btn, .cta-btn').forEach(btn => {
+            if (!btn.href || btn.href.includes('contact.html')) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-detail-section').forEach(section => {
+            section.classList.add('reveal-init');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
