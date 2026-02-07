@@ -2482,14 +2482,58 @@
                 margin-top: 2rem;
             }
 
-            .stats, .services, .testimonials, .cta, .footer {
+            .hero-content, .services-hero-simple, .service-detail-section {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .services-hero-simple {
+                padding-top: 10rem;
+                padding-bottom: 6rem;
+            }
+
+            .service-detail-container {
+                grid-template-columns: 1fr !important;
+                gap: 3rem;
+            }
+
+            .detailed-services .service-detail-section:nth-child(even) .service-detail-visual,
+            .detailed-services .service-detail-section:nth-child(even) .service-detail-info {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .service-detail-visual {
+                padding-top: 0;
+                order: 2;
+            }
+
+            .service-detail-info {
+                order: 1;
+            }
+
+            .service-detail-section {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .visual-card {
+                aspect-ratio: 1.5;
+            }
+
+            .stats, .services, .testimonials, .cta, .footer, .process {
                 padding: 4rem 2rem;
                 width: 100%;
                 overflow: hidden;
                 box-sizing: border-box;
             }
 
-            .stats-grid, .services-grid, .testimonial-grid, .footer-content {
+            .stats-grid, .services-grid, .testimonial-grid, .footer-content, .process-steps {
                 width: 100%;
                 max-width: 100%;
                 margin: 0;
@@ -2498,14 +2542,41 @@
                 gap: 2rem;
             }
 
-            .section-header {
-                margin-bottom: 2.5rem;
+            .process-steps {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+            }
+
+            .step {
+                max-width: 100%;
                 width: 100%;
             }
 
-            .service-card {
+            .section-header, .section-title, .section-subtitle {
+                text-align: center;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-subtitle {
+                margin-bottom: 1.5rem;
+            }
+
+            .service-card, .testimonial-card {
                 padding: 2rem 1.5rem;
                 width: 100%;
+                border-radius: 24px;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
             }
 
             .footer-section {
@@ -2552,6 +2623,13 @@
 
             .section-title {
                 font-size: 2.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 2rem;
             }
 
             .stat-number {
