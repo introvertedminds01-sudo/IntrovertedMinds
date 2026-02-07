@@ -12,9 +12,12 @@
 <body class="dark-mode">
     <!-- Welcome Preloader -->
     <div id="preloader" class="preloader">
+        <div class="preloader-bg"></div>
+        <div class="preloader-grid"></div>
         <div class="preloader-content">
             <div class="preloader-logo">
                 <img src="logo.png" alt="Introvminds Logo">
+                <div class="logo-glow"></div>
             </div>
             <div class="preloader-text">
                 <span class="word">INNOVATE.</span>
@@ -23,6 +26,7 @@
             </div>
             <div class="preloader-bar-container">
                 <div class="preloader-bar"></div>
+                <div class="preloader-bar-glow"></div>
             </div>
         </div>
     </div>
@@ -474,12 +478,12 @@
             
             // If it's the first time visiting in this session or ever
             if (!hasVisited) {
-                // Keep preloader for at least 2.5 seconds to show animations
+                // Keep preloader for at least 3 seconds to show animations
                 setTimeout(() => {
                     preloader.classList.add('fade-out');
                     document.body.style.overflow = '';
                     localStorage.setItem('hasVisited', 'true');
-                }, 2500);
+                }, 3000);
             } else {
                 // Quick fade for returning visitors
                 preloader.style.transition = 'opacity 0.5s ease';
