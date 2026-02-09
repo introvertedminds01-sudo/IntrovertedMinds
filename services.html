@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Introvminds</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
+<body>
     <!-- Background Animations -->
     <div class="bg-animations">
         <div class="bg-grid"></div>
@@ -96,17 +95,35 @@
         </div>
     </nav>
 
-    <!-- Simplified Services Hero -->
-    <section class="services-hero-simple">
-        <div class="hero-simple-content">
-            <div class="hero-tag">Our Expertise</div>
-            <h1>Comprehensive Digital Solutions</h1>
-            <p>From strategy to execution, we provide the full spectrum of digital services to help your brand scale and dominate the market.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="primary-btn">Book a Strategy Call</a>
+    <!-- Modern Centered Services Hero -->
+    <section class="services-hero-centered">
+        <div class="hero-centered-container">
+            <div class="hero-centered-content">
+                <h1>Scaling Your <span class="text-gradient">Vision</span> Through Innovation</h1>
+                <p>We don't just provide services; we build the digital infrastructure for your future success. Strategic consulting meets technical mastery.</p>
+                <div class="hero-centered-ctas">
+                    <a href="contact.html" class="modern-btn primary">Work With Us</a>
+                    <a href="#growth" class="modern-btn secondary">
+                        Explore Services
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Services Quick Nav -->
+    <div class="services-nav-bar">
+        <div class="nav-bar-container">
+            <a href="#growth" class="nav-item">Growth Strategy</a>
+            <a href="#performance" class="nav-item">Digital Marketing</a>
+            <a href="#seo" class="nav-item">SEO</a>
+            <a href="#social" class="nav-item">Social Media</a>
+            <a href="#web" class="nav-item">Web Development</a>
+            <a href="#creative" class="nav-item">Creative Production</a>
+            <a href="#3d" class="nav-item">3D Animation</a>
+        </div>
+    </div>
 
     <!-- Detailed Services Sections -->
     <section class="detailed-services">
@@ -410,12 +427,22 @@
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
         const blobs = document.querySelectorAll('.blob');
-
+        let cursorTimeout;
+        
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
+
+            // Add moving class for circle expansion
+            cursor.classList.add('moving');
+            
+            // Remove moving class after a short delay of no movement
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(() => {
+                cursor.classList.remove('moving');
+            }, 100);
 
             // Background Parallax
             const mouseX = e.clientX / window.innerWidth;

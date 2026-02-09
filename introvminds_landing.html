@@ -4,41 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introvminds - Transform Your Digital Presence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
-    <!-- Welcome Preloader -->
-    <div id="preloader" class="preloader">
-        <div class="preloader-bg"></div>
-        <div class="preloader-grid"></div>
-        <div class="preloader-content">
-            <div class="preloader-logo">
-                <img src="logo.png" alt="Introvminds Logo">
-                <div class="logo-glow"></div>
-            </div>
-            <div class="preloader-text">
-                <span class="word">INNOVATE.</span>
-                <span class="word">TRANSFORM.</span>
-                <span class="word">SCALE.</span>
-            </div>
-            <div class="preloader-bar-container">
-                <div class="preloader-bar"></div>
-                <div class="preloader-bar-glow"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Background Animations -->
-    <div class="bg-animations">
-        <div class="bg-grid"></div>
-        <div class="blob-wrapper blob-1"><div class="blob"></div></div>
-        <div class="blob-wrapper blob-2"><div class="blob"></div></div>
-        <div class="blob-wrapper blob-3"><div class="blob"></div></div>
-    </div>
-
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="cursor-dot"></div>
@@ -119,85 +89,152 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="https://www.pexels.com/download/video/6803584/" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
+        <div class="hero-creative-bg">
+            <div class="creative-blob"></div>
+            <div class="creative-grid"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-left">
-                <div class="hero-tag">Industries We've Transformed</div>
-                <h1 id="hero-heading"><span id="typewriter-text"></span><span class="cursor">|</span></h1>
-                <p>We help ambitious brands scale with data-driven strategies, creative excellence, and measurable results that drive real business growth.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="primary-btn">
-                        Start Your Journey
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </a>
-                    <a href="services.html" class="secondary-btn">Explore Services</a>
-                </div>
-
-                <div class="hero-search-container">
-                    <div class="hero-search-bar" id="heroSearchBar">
-                        <span class="search-icon">🔍</span>
-                        <span class="search-placeholder">Tell us your industry and we will tell you solution...</span>
-                    </div>
-                </div>
-
-                <div class="trusted-by">
-                    <p class="trusted-text">Trusted by industry leaders</p>
-                    <div class="logos-grid">
-                        <span class="logo-item">TECHNO</span>
-                        <span class="logo-item">GLOBAL</span>
-                        <span class="logo-item">VANTAGE</span>
-                        <span class="logo-item">ELITE</span>
+            <div class="hero-text-side">
+                <div class="hero-text-wrapper">
+                    <h1 id="hero-heading">Quiet Minds,<br><span id="typewriter-text"></span><span class="cursor"></span></h1>
+                    <p>Master the digital landscape with data-driven strategies, creative excellence, and measurable results that drive real business growth.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="primary-btn green-btn">
+                            Get Started
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="services.html" class="secondary-btn watch-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            Explore Services
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="hero-right">
-                <div class="industries-showcase">
+
+            <div class="hero-visual-side">
+                <div class="hero-visual-container">
+                    <div class="industries-showcase">
                     <div class="industry-card active" data-industry="0">
                         <div class="industry-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                         </div>
                         <h3>Healthcare</h3>
-                        <p>Digital solutions for modern medical practices</p>
-                        <div class="industry-stats">
-                            <span>+180% Growth</span>
-                        </div>
+                        <p>Digital solutions for modern medical practices and health tech innovators.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Patient Acquisition Systems</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>HIPAA Compliant Marketing</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Healthcare SEO Strategy</li>
+                        </ul>
                     </div>
                     <div class="industry-card" data-industry="1">
                         <div class="industry-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                         </div>
                         <h3>E-Commerce</h3>
-                        <p>Driving sales through strategic marketing</p>
-                        <div class="industry-stats">
-                            <span>+250% ROI</span>
-                        </div>
+                        <p>Driving explosive sales growth through precision-targeted digital commerce strategies.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Conversion Rate Optimization</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Multi-channel Sales Funnels</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Retention & LTV Scaling</li>
+                        </ul>
                     </div>
                     <div class="industry-card" data-industry="2">
                         <div class="industry-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
                         </div>
                         <h3>SaaS</h3>
-                        <p>Scaling tech companies to new heights</p>
-                        <div class="industry-stats">
-                            <span>+320% Leads</span>
+                        <p>Accelerating user acquisition and reducing churn for high-growth software companies.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>PLG Strategy Development</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>CAC Optimization Models</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Product-Led Growth SEO</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="3">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                         </div>
+                        <h3>Retail</h3>
+                        <p>Bridging the gap between physical stores and digital dominance with O2O strategies.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Local Inventory Ads</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Hyper-local SEO Campaigns</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Store Visit Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="4">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3>FMCG</h3>
+                        <p>Scaling consumer brands with powerful storytelling and massive digital reach.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Mass Awareness Campaigns</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>D2C Launchpad Systems</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Influencer Ecosystems</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="5">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        </div>
+                        <h3>Food & Beverage</h3>
+                        <p>Creating crave-worthy digital identities that drive orders and restaurant visits.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Social-First Content Strategy</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Delivery App Optimization</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Loyalty Program Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="6">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>SMEs</h3>
+                        <p>Empowering small and medium enterprises to compete with global industry giants.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Scalable Growth Frameworks</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>High-Impact Lead Gen</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Budget-Optimized Paid Media</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="7">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        </div>
+                        <h3>Service Industries</h3>
+                        <p>Streamlining client acquisition and bookings for service-based professional firms.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Automated Booking Funnels</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Reputation Management</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Expert Content Positioning</li>
+                        </ul>
+                    </div>
+                    <div class="industry-card" data-industry="8">
+                        <div class="industry-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        </div>
+                        <h3>Brand Owners</h3>
+                        <p>Scaling unique brands with powerful storytelling and high-impact visual identities.</p>
+                        <ul class="industry-features">
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Brand Identity Design</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Strategic Brand Positioning</li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Creative Ad Production</li>
+                        </ul>
+                    </div>
                     </div>
                 </div>
+
                 <div class="industry-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
+                    <div class="indicator active" data-industry="0"></div>
+                    <div class="indicator" data-industry="1"></div>
+                    <div class="indicator" data-industry="2"></div>
+                    <div class="indicator" data-industry="3"></div>
+                    <div class="indicator" data-industry="4"></div>
+                    <div class="indicator" data-industry="5"></div>
+                    <div class="indicator" data-industry="6"></div>
+                    <div class="indicator" data-industry="7"></div>
+                    <div class="indicator" data-industry="8"></div>
                 </div>
             </div>
         </div>
@@ -207,7 +244,7 @@
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">500+</div>
+                <div class="stat-number">100+</div>
                 <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-card">
@@ -219,7 +256,7 @@
                 <div class="stat-label">Average ROI Increase</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">50+</div>
+                <div class="stat-number">69</div>
                 <div class="stat-label">Team Experts</div>
             </div>
         </div>
@@ -228,28 +265,18 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-header">
+            <div class="section-tag">SERVICES</div>
             <h2 class="section-title">Our Expertise</h2>
             <p class="section-subtitle">Comprehensive digital solutions tailored to accelerate your business growth</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                 </div>
-                <h3>SEO & Content</h3>
-                <p>Dominate search rankings with strategic SEO and compelling content that converts visitors into loyal customers.</p>
-                <a href="seo-content.html" class="learn-more">
-                    Learn More 
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon-wrapper">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-                </div>
-                <h3>Social Media</h3>
-                <p>Build engaged communities and amplify your brand voice across all major social platforms with data-driven campaigns.</p>
-                <a href="social-media.html" class="learn-more">
+                <h3>Growth Strategy</h3>
+                <p>We build the digital infrastructure for your future success. Strategic consulting meets technical mastery to ensure your business is positioned for maximum growth.</p>
+                <a href="services.html#growth" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -258,42 +285,53 @@
                 <div class="service-icon-wrapper">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 </div>
-                <h3>PPC Advertising</h3>
-                <p>Maximize ROI with precision-targeted paid campaigns that deliver qualified leads and measurable results.</p>
-                <a href="ppc-ads.html" class="learn-more">
+                <h3>Digital Marketing</h3>
+                <p>Data-driven performance marketing designed to generate revenue. We optimize every dollar spent to maximize your ROI across all major advertising platforms.</p>
+                <a href="services.html#performance" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <h3>Email Marketing</h3>
-                <p>Nurture relationships and drive conversions with personalized email campaigns that resonate with your audience.</p>
-                <a href="email-marketing.html" class="learn-more">
+                <h3>SEO</h3>
+                <p>Visibility that compounds over time. We help you dominate search results, drive organic growth, and capture high-intent traffic through technical and content excellence.</p>
+                <a href="services.html#seo" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </div>
-                <h3>Brand Strategy</h3>
-                <p>Create a powerful brand identity that stands out in the market and connects deeply with your target audience.</p>
-                <a href="services.html" class="learn-more">
+                <h3>Social Media</h3>
+                <p>Consistent presence that builds trust. We create content that resonates and engages your audience across Instagram, LinkedIn, TikTok, and YouTube.</p>
+                <a href="services.html#social" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
             </div>
             <div class="service-card">
                 <div class="service-icon-wrapper">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                 </div>
-                <h3>Analytics</h3>
-                <p>Make informed decisions with comprehensive analytics and transparent reporting that tracks every metric that matters.</p>
-                <a href="services.html" class="learn-more">
+                <h3>Web Development</h3>
+                <p>High-performance websites built for growth. Custom digital platforms designed for conversion, speed, and seamless user experience.</p>
+                <a href="services.html#web" class="learn-more">
+                    Learn More 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon-wrapper">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg>
+                </div>
+                <h3>Creative Production</h3>
+                <p>We bring your vision to life with high-end creative direction, video production, and brand identity development that truly communicates your value.</p>
+                <a href="services.html#creative" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -303,17 +341,20 @@
 
     <!-- Process Section -->
     <section class="process" id="process">
-        <h2 class="section-title">Our Process</h2>
-        <p class="section-subtitle">A proven methodology that delivers consistent results</p>
+        <div class="section-header">
+            <div class="section-tag">PROCESS</div>
+            <h2 class="section-title">Our Process</h2>
+            <p class="section-subtitle">A proven methodology that delivers consistent results</p>
+        </div>
         <div class="process-steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Discovery</h3>
+                <h3>Study</h3>
                 <p>We dive deep into your business, understanding your goals, audience, and competitive landscape.</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Strategy</h3>
+                <h3>Strategize</h3>
                 <p>Develop a customized roadmap with clear objectives, KPIs, and tactics aligned with your vision.</p>
             </div>
             <div class="step">
@@ -332,6 +373,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="section-header">
+            <div class="section-tag">TESTIMONIALS</div>
             <h2 class="section-title">Client Success Stories</h2>
             <p class="section-subtitle">Hear from ambitious brands we've helped scale to new heights</p>
         </div>
@@ -381,12 +423,12 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Ready to Transform Your Digital Future?</h2>
-            <p>Join hundreds of ambitious brands that have scaled their business with our data-driven strategies and creative excellence.</p>
-            <a href="contact.html" class="primary-btn">
-                Book Your Free Consultation
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+            <h2>Ready to Scale Your Business?</h2>
+            <p>Join hundreds of successful brands and transform your digital presence today.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="primary-btn" style="margin-top: 10px;">Get Started Now</a>
+                <a href="services.html" class="secondary-btn" style="margin-top: 10px;">View Our Services</a>
+            </div>
         </div>
     </section>
 
@@ -438,127 +480,39 @@
         </div>
     </footer>
 
-    <a
-        href="https://wa.me/919876543210?text=Hi%20Introvminds%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
-        class="whatsapp-float"
-        aria-label="Chat with Introvminds on WhatsApp"
-        target="_blank"
-        rel="noopener"
-    >💬</a>
-
-    <!-- Search Modal -->
-    <div class="modal-overlay" id="callbackModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal">&times;</button>
-            <h2>Get Your Custom Solution</h2>
-            <p>Enter your details below and we'll call you back with a tailored strategy.</p>
-            <form class="callback-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" required placeholder="Your Phone Number">
-                </div>
-                <div class="form-group">
-                    <label for="comment">Industry / Comment</label>
-                    <textarea id="comment" required placeholder="Tell us about your industry or challenge..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Get a Call Back</button>
-            </form>
-        </div>
-    </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Welcome Preloader Logic
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            const hasVisited = localStorage.getItem('hasVisited');
-            
-            // If it's the first time visiting in this session or ever
-            if (!hasVisited) {
-                // Keep preloader for at least 3 seconds to show animations
-                setTimeout(() => {
-                    preloader.classList.add('fade-out');
-                    document.body.style.overflow = '';
-                    localStorage.setItem('hasVisited', 'true');
-                }, 3000);
-            } else {
-                // Quick fade for returning visitors
-                preloader.style.transition = 'opacity 0.5s ease';
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Lock scroll during preloader if it's the first visit
-        if (!localStorage.getItem('hasVisited')) {
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Custom Cursor - No Delay
+        // Custom Cursor
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
-        const blobs = document.querySelectorAll('.blob');
-
+        let cursorTimeout;
+        
         document.addEventListener('mousemove', (e) => {
-            // Direct positioning - no lag
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
             cursorDot.style.left = e.clientX + 'px';
             cursorDot.style.top = e.clientY + 'px';
 
-            // Background Parallax
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-
-            blobs.forEach((blob, index) => {
-                const speed = (index + 1) * 20;
-                const x = (mouseX - 0.5) * speed;
-                const y = (mouseY - 0.5) * speed;
-                blob.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        });
-
-        // Hover effect on interactive elements
-        const hoverElements = document.querySelectorAll('a, button, .industry-card, .stat-card, .service-card, .testimonial-card, .indicator');
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-                cursorDot.classList.add('hover');
-            });
+            // Add moving class for circle expansion
+            cursor.classList.add('moving');
             
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-                cursorDot.classList.remove('hover');
-            });
-        });
-
-        // Click effect
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
+            // Remove moving class after a short delay of no movement
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(() => {
+                cursor.classList.remove('moving');
+            }, 100);
         });
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
-
+        const themeIcon = document.getElementById('themeIcon');
         const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
         const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-        // Check for saved theme preference or default to dark mode
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        if (currentTheme === 'light') {
+        // Initialize Theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
             body.classList.remove('dark-mode');
             themeIcon.innerHTML = moonIcon;
         } else {
@@ -568,8 +522,8 @@
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
+            const isDark = body.classList.contains('dark-mode');
+            if (isDark) {
                 themeIcon.innerHTML = sunIcon;
                 localStorage.setItem('theme', 'dark');
             } else {
@@ -578,22 +532,78 @@
             }
         });
 
-        // Industry Cards Auto-Rotation
-        let currentIndustry = 0;
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Typewriter Effect
+        const phrases = [
+            "Global Scale",
+            "Digital Excellence",
+            "Creative Strategy",
+            "Data Insights"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isWaiting = false;
+        const typewriterElement = document.getElementById('typewriter-text');
+
+        function startTypewriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                charIndex--;
+            } else {
+                charIndex++;
+            }
+
+            typewriterElement.textContent = currentPhrase.substring(0, charIndex);
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isWaiting = true;
+                typeSpeed = 2500; // Pause at the end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before next word
+            }
+
+            setTimeout(startTypewriter, typeSpeed);
+        }
+
+        // Start typewriter on load
+        window.addEventListener('load', startTypewriter);
+
+        // Industry Slider Logic
         const industryCards = document.querySelectorAll('.industry-card');
         const indicators = document.querySelectorAll('.indicator');
+        let currentIndustry = 0;
         const totalIndustries = industryCards.length;
 
         function updateIndustryCards() {
             industryCards.forEach((card, index) => {
-                card.classList.remove('active', 'prev', 'next');
+                card.classList.remove('active', 'pos-1', 'pos-2', 'pos-3', 'pos-4');
                 
+                // Assign positions relative to currentIndustry
+                // We want currentIndustry to be in the prominent pos-3
                 if (index === currentIndustry) {
-                    card.classList.add('active');
+                    card.classList.add('pos-3');
                 } else if (index === (currentIndustry - 1 + totalIndustries) % totalIndustries) {
-                    card.classList.add('prev');
+                    card.classList.add('pos-2');
+                } else if (index === (currentIndustry - 2 + totalIndustries) % totalIndustries) {
+                    card.classList.add('pos-1');
                 } else if (index === (currentIndustry + 1) % totalIndustries) {
-                    card.classList.add('next');
+                    card.classList.add('pos-4');
                 }
             });
 
@@ -607,199 +617,55 @@
             updateIndustryCards();
         }
 
-        // Auto-rotate every 3 seconds
-        let autoRotate = setInterval(nextIndustry, 3000);
+        function prevIndustry() {
+            currentIndustry = (currentIndustry - 1 + totalIndustries) % totalIndustries;
+            updateIndustryCards();
+        }
 
-        // Click indicators to navigate
+        // Auto cycle
+        let industryInterval = setInterval(nextIndustry, 5000);
+
+        function resetInterval() {
+            clearInterval(industryInterval);
+            industryInterval = setInterval(nextIndustry, 5000);
+        }
+
+        // Indicator clicks
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 currentIndustry = index;
                 updateIndustryCards();
-                clearInterval(autoRotate);
-                autoRotate = setInterval(nextIndustry, 3000);
+                resetInterval();
             });
         });
+
+        // Swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const showcase = document.querySelector('.industries-showcase');
+
+        showcase.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        showcase.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                nextIndustry();
+                resetInterval();
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                prevIndustry();
+                resetInterval();
+            }
+        }
 
         // Initialize
         updateIndustryCards();
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Add scroll animation to elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards
-        document.querySelectorAll('.service-card, .stat-card, .testimonial-card, .step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-
-        // Mobile Menu Logic
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const dropdown = document.querySelector('.dropdown');
-        
-        if (mobileToggle && navMenu) {
-            mobileToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                mobileToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-            });
-
-            // Close menu when clicking links
-            const navLinks = document.querySelectorAll('.nav-links > li:not(.dropdown) > a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-
-            // Mobile Dropdown Toggle removed - always expanded by default
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
-                    mobileToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-
-        // Search Modal Logic
-        const heroSearchBar = document.getElementById('heroSearchBar');
-        const callbackModal = document.getElementById('callbackModal');
-        const closeModal = document.getElementById('closeModal');
-        
-        if (heroSearchBar && callbackModal && closeModal) {
-            heroSearchBar.addEventListener('click', () => {
-                callbackModal.classList.add('active');
-            });
-
-            closeModal.addEventListener('click', () => {
-                callbackModal.classList.remove('active');
-            });
-
-            // Close modal when clicking outside
-            callbackModal.addEventListener('click', (e) => {
-                if (e.target === callbackModal) {
-                    callbackModal.classList.remove('active');
-                }
-            });
-
-            // Handle form submission
-            const form = callbackModal.querySelector('form');
-            if (form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    // In a real app, you would send data here
-                    alert('Thank you! We will call you back shortly.');
-                    callbackModal.classList.remove('active');
-                    form.reset();
-                });
-            }
-        }
-
-        // Typewriter Effect
-        (function() {
-            const typewriterText = document.getElementById('typewriter-text');
-            const cursor = document.querySelector('.cursor');
-            
-            if (!typewriterText) {
-                console.error("Typewriter element not found");
-                return;
-            }
-
-            const phrase1 = "Hello There!!";
-            const phrase2Part1 = "Lets do something ";
-            const phrase2Part2 = "Unique";
-            
-            let charIndex = 0;
-            let isDeleting = false;
-            let isPhrase1 = true;
-            
-            function type() {
-                try {
-                    if (isPhrase1) {
-                        // Typing Phrase 1
-                        if (!isDeleting) {
-                            typewriterText.textContent = phrase1.substring(0, charIndex);
-                            charIndex++;
-                            
-                            if (charIndex > phrase1.length) {
-                                isDeleting = true;
-                                setTimeout(type, 1500); // Reduced wait time from 2000ms to 1500ms
-                            } else {
-                                setTimeout(type, 60); // Increased typing speed from 100ms to 60ms
-                            }
-                        } 
-                        // Deleting Phrase 1
-                        else {
-                            typewriterText.textContent = phrase1.substring(0, charIndex);
-                            charIndex--;
-                            
-                            if (charIndex < 0) {
-                                isPhrase1 = false;
-                                isDeleting = false;
-                                charIndex = 0;
-                                setTimeout(type, 300); // Reduced pause before next phrase
-                            } else {
-                                setTimeout(type, 30); // Increased deleting speed from 50ms to 30ms
-                            }
-                        }
-                    } else {
-                        // Typing Phrase 2
-                        const fullTextLength = phrase2Part1.length + phrase2Part2.length;
-                        
-                        if (charIndex <= fullTextLength) {
-                            if (charIndex <= phrase2Part1.length) {
-                                typewriterText.innerHTML = phrase2Part1.substring(0, charIndex);
-                            } else {
-                                const spanContent = phrase2Part2.substring(0, charIndex - phrase2Part1.length);
-                                typewriterText.innerHTML = phrase2Part1 + '<span>' + spanContent + '</span>';
-                            }
-                            charIndex++;
-                            setTimeout(type, 60); // Increased typing speed from 100ms to 60ms
-                        } else {
-                            // Finished typing phrase 2
-                            // Optional: blink cursor forever or remove it
-                            if (cursor) cursor.style.animation = 'blink 1s infinite';
-                        }
-                    }
-                } catch (e) {
-                    console.error("Typewriter error:", e);
-                }
-            }
-            
-            // Start the effect
-            setTimeout(type, 500);
-        })();
     </script>
 </body>
 </html>

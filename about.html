@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Introvminds</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <!-- Background Animations -->
+    <div class="bg-animations">
+        <div class="bg-grid"></div>
+        <div class="blob-wrapper blob-1"><div class="blob"></div></div>
+        <div class="blob-wrapper blob-2"><div class="blob"></div></div>
+        <div class="blob-wrapper blob-3"><div class="blob"></div></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvminds_landing.html" class="logo">
+                <img src="logo.png" alt="Introvminds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvminds_landing.html">Home</a></li>
+                <li class="active"><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="services.html" class="mobile-only-link">All-in-One</a>
+                        <a href="services.html#growth">Growth Strategy</a>
+                        <a href="services.html#performance">Digital Marketing</a>
+                        <a href="services.html#seo">SEO</a>
+                        <a href="services.html#social">Social Media</a>
+                        <a href="services.html#web">Web Development</a>
+                        <a href="services.html#creative">Creative Production</a>
+                        <a href="services.html#3d">3D Animation</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+
+    <section class="about-hero-minimal">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-content-minimal">
+                <span class="hero-tag-minimal">Our Story</span>
+                <h1 class="hero-title-minimal">Discover <span class="gradient-text">Introvminds</span></h1>
+                <p class="hero-desc-minimal">We are a collective of deep thinkers and technical architects, crafting digital solutions that prioritize substance over noise.</p>
+                <div class="hero-cta-minimal">
+                    <a href="#vision" class="primary-btn">Explore Vision</a>
+                    <a href="contact.html" class="secondary-btn">Start a Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-approach">
+        <div class="approach-container">
+            <div class="approach-intro reveal">
+                <div class="section-tag">OUR APPROACH</div>
+                <h2 class="section-title">The Introvert's <br><span class="text-gradient">Advantage</span></h2>
+                <p class="section-subtitle">We believe depth beats volume, and substance always outshines noise. Our approach is built on three core pillars.</p>
+                <div class="approach-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🎯</div>
+                        <div class="highlight-content">
+                            <h4>Design-First</h4>
+                            <p>Visual clarity paired with performance.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🧠</div>
+                        <div class="highlight-content">
+                            <h4>Focused Depth</h4>
+                            <p>Small team, high attention to detail.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="approach-cards reveal">
+                <div class="approach-card-modern">
+                    <div class="card-icon">01</div>
+                    <h3>Intentional Design</h3>
+                    <p>Every pixel serves a purpose. We craft clean interfaces that prioritize user experience and conversion.</p>
+                </div>
+                <div class="approach-card-modern">
+                    <div class="card-icon">02</div>
+                    <h3>Strategic Depth</h3>
+                    <p>We dive deeper than surface-level solutions, backed by research and audience insight.</p>
+                </div>
+                <div class="approach-card-modern">
+                    <div class="card-icon">03</div>
+                    <h3>Quiet Impact</h3>
+                    <p>While others shout, we listen. Our work speaks through thoughtful execution and results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section class="core-services">
+        <div class="services-container">
+            <div class="section-header services-header reveal">
+                <div class="section-tag">CORE SERVICES</div>
+                <h2 class="section-title">What We <span class="text-gradient">Excel At</span></h2>
+                <p class="section-subtitle">At our core, we specialize in landing page design and creative web solutions, blending aesthetics with usability to create interfaces that engage, communicate, and convert.</p>
+            </div>
+            <div class="services-grid-modern reveal">
+                <div class="service-card-modern">
+                    <div class="service-card-content">
+                        <span class="service-num">01</span>
+                        <h3>Landing Page Design</h3>
+                        <p>High-converting, visually stunning landing pages that drive results.</p>
+                        <ul class="service-features">
+                            <li>UI/UX Strategy</li>
+                            <li>Conversion Optimization</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card-modern">
+                    <div class="service-card-content">
+                        <span class="service-num">02</span>
+                        <h3>Web Development</h3>
+                        <p>Clean, responsive code that brings designs to life with precision.</p>
+                        <ul class="service-features">
+                            <li>Modern Frameworks</li>
+                            <li>Performance First</li>
+                            <li>Custom Animations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card-modern">
+                    <div class="service-card-content">
+                        <span class="service-num">03</span>
+                        <h3>Brand Strategy</h3>
+                        <p>Thoughtful positioning that makes your brand stand out quietly.</p>
+                        <ul class="service-features">
+                            <li>Visual Identity</li>
+                            <li>Market Positioning</li>
+                            <li>Content Strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+    <section class="team-leadership">
+        <div class="team-container">
+            <div class="section-header reveal">
+                <div class="section-tag">THE MINDS BEHIND IT ALL</div>
+                <h2 class="section-title">Meet The <span class="text-gradient">Quiet Force</span></h2>
+                <p class="section-subtitle">Three introverted minds, one powerful collective. Each bringing unique strengths to create something extraordinary.</p>
+            </div>
+            <div class="team-grid-modern reveal">
+                <div class="team-card-modern">
+                    <div class="team-card-inner">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar">N</div>
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-role">Strategic Visionary</span>
+                            <h3>Nara</h3>
+                            <p>The architect of growth who sees patterns in chaos and opportunities in silence.</p>
+                            <div class="team-expertise">
+                                <span>Strategy</span>
+                                <span>Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card-modern">
+                    <div class="team-card-inner">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar">D</div>
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-role">Creative Director</span>
+                            <h3>Devendra</h3>
+                            <p>The visual storyteller who transforms abstract concepts into stunning digital experiences.</p>
+                            <div class="team-expertise">
+                                <span>UI/UX</span>
+                                <span>Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card-modern">
+                    <div class="team-card-inner">
+                        <div class="team-avatar-wrapper">
+                            <div class="team-avatar">S</div>
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="team-info">
+                            <span class="team-role">Technical Architect</span>
+                            <h3>Shubham</h3>
+                            <p>The technical mastermind who builds robust digital foundations and flawless systems.</p>
+                            <div class="team-expertise">
+                                <span>Web Dev</span>
+                                <span>Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-process">
+        <div class="process-container">
+            <div class="section-header reveal">
+                <div class="section-tag">OUR PROCESS</div>
+                <h2 class="section-title">How We Create <br><span class="text-gradient">Quiet Impact</span></h2>
+                <p class="section-subtitle">A thoughtful, methodical approach that ensures every project delivers maximum value.</p>
+            </div>
+            <div class="process-steps-modern reveal">
+                <div class="process-step-item">
+                    <div class="step-visual">
+                        <div class="step-dot"></div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content-modern">
+                        <span class="step-label">Phase 01</span>
+                        <h3>Deep Listening</h3>
+                        <p>We start by understanding your vision, goals, and audience. We ask the right questions and listen intently to what truly matters.</p>
+                    </div>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-visual">
+                        <div class="step-dot"></div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content-modern">
+                        <span class="step-label">Phase 02</span>
+                        <h3>Strategic Planning</h3>
+                        <p>We develop a comprehensive strategy that aligns with your business objectives and resonates with your target audience.</p>
+                    </div>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-visual">
+                        <div class="step-dot"></div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content-modern">
+                        <span class="step-label">Phase 03</span>
+                        <h3>Thoughtful Execution</h3>
+                        <p>We bring the strategy to life with meticulous attention to detail, ensuring every element serves a purpose.</p>
+                    </div>
+                </div>
+                <div class="process-step-item">
+                    <div class="step-visual">
+                        <div class="step-dot"></div>
+                    </div>
+                    <div class="step-content-modern">
+                        <span class="step-label">Phase 04</span>
+                        <h3>Continuous Refinement</h3>
+                        <p>We believe in iteration. We monitor performance and make data-driven adjustments to optimize results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta-modern reveal">
+        <div class="cta-card-modern">
+            <div class="cta-bg-glow"></div>
+            <div class="cta-content-modern">
+                <div class="cta-badge">Ready to Start?</div>
+                <h2>Let's build something <span class="text-gradient">remarkable together</span></h2>
+                <p>We combine strategic thinking with creative excellence to deliver solutions that are brilliantly effective.</p>
+                <div class="cta-btns">
+                    <a href="contact.html" class="modern-btn primary">Start Your Project</a>
+                    <a href="services.html" class="modern-btn secondary">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="Introvminds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#seo">SEO & Content</a>
+                <a href="services.html#social">Social Media</a>
+                <a href="services.html#performance">PPC Advertising</a>
+                <a href="services.html#web">Web Development</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>hello@introvminds.com</p>
+                <p>+91 98765 43210</p>
+                <p>Mumbai, Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Introvminds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a
+        href="https://wa.me/919876543210?text=Hi%20Introvminds%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
+        class="whatsapp-float"
+        aria-label="Chat with Introvminds on WhatsApp"
+        target="_blank"
+        rel="noopener"
+    >💬</a>
+
+    <!-- Search Modal -->
+    <div class="modal-overlay" id="callbackModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2>Get Your Custom Solution</h2>
+            <p>Enter your details below and we'll call you back with a tailored strategy.</p>
+            <form class="callback-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Your Phone Number">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Industry / Comment</label>
+                    <textarea id="comment" required placeholder="Tell us about your industry or challenge..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Get a Call Back</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const blobs = document.querySelectorAll('.blob');
+        let cursorTimeout;
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+
+            // Add moving class for circle expansion
+            cursor.classList.add('moving');
+            
+            // Remove moving class after a short delay of no movement
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(() => {
+                cursor.classList.remove('moving');
+            }, 100);
+
+            // Background Parallax
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 20;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                blob.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+        // Click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('click');
+        });
+
+        // Hover effect
+        const hoverElements = document.querySelectorAll('a, button, .hero-card, .approach-card, .service-item, .stat-card, .team-member, .process-step, .panel-card, .metric-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        } else {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdown = document.querySelector('.dropdown');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking links
+            const navLinks = document.querySelectorAll('.nav-links > li:not(.dropdown) > a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    mobileToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Search Modal Logic (Now used for CTA)
+        const callbackModal = document.getElementById('callbackModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        function openModal() {
+            callbackModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeM() {
+            callbackModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (closeModal) {
+            closeModal.addEventListener('click', closeM);
+        }
+
+        callbackModal.addEventListener('click', (e) => {
+            if (e.target === callbackModal) closeM();
+        });
+
+        // Update CTA buttons to open modal
+        document.querySelectorAll('.modern-btn.primary, .cta-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const href = btn.getAttribute('href');
+                if (!href || href === 'contact.html' || href === '#') {
+                    e.preventDefault();
+                    openModal();
+                }
+            });
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
