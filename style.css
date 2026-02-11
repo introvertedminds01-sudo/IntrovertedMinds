@@ -951,23 +951,7 @@ nav, .navbar {
             box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.3);
         }
 
-        .watch-btn {
-            background: rgba(255, 255, 255, 0.1) !important;
-            color: #fff !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            padding: 1.2rem 2.5rem !important;
-            font-weight: 600 !important;
-            border-radius: 50px !important;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.3s ease;
-        }
 
-        .watch-btn:hover {
-            background: rgba(255, 255, 255, 0.2) !important;
-            transform: translateY(-5px);
-        }
 
         /* Industry Showcase Container */
         .hero-visual-side {
@@ -1137,21 +1121,30 @@ nav, .navbar {
             z-index: 20;
             pointer-events: all;
             padding: 0.8rem 1.2rem; /* Slightly tighter padding */
-            background: var(--glass-bg);
+            background: rgba(var(--primary-rgb), 0.05);
             backdrop-filter: blur(10px);
             border-radius: 100px;
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(var(--primary-rgb), 0.1);
+        }
+
+        body.dark-mode .industry-indicators {
+            background: var(--glass-bg);
+            border-color: var(--glass-border);
         }
 
         .indicator {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: var(--glass-border);
+            background: rgba(var(--primary-rgb), 0.2);
             cursor: pointer;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid transparent;
             position: relative;
+        }
+
+        body.dark-mode .indicator {
+            background: var(--glass-border);
         }
 
         .indicator::after {
@@ -1505,6 +1498,49 @@ nav, .navbar {
             transform: translateY(0);
         }
 
+        .hero .secondary-btn:hover {
+            background: var(--text-main);
+            border-color: var(--text-main);
+            color: var(--bg-light);
+            transform: translateY(0);
+        }
+
+        /* Specific styles for Explore Services button */
+        .hero .secondary-btn.watch-btn {
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--text-main);
+            border: 1px solid rgba(var(--primary-rgb), 0.2);
+            padding: 1.2rem 2.5rem;
+            font-weight: 600;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            text-transform: none;
+            letter-spacing: normal;
+            font-size: 1.1rem;
+        }
+
+        body.dark-mode .hero .secondary-btn.watch-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero .secondary-btn.watch-btn:hover {
+            background: rgba(var(--primary-rgb), 0.2);
+            transform: translateY(-5px);
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        body.dark-mode .hero .secondary-btn.watch-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
         .trusted-by {
             margin-top: 5rem;
             border-top: 1px solid var(--glass-border);
@@ -1610,7 +1646,7 @@ nav, .navbar {
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
@@ -1800,7 +1836,7 @@ nav, .navbar {
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
             gap: 2.5rem;
             max-width: 1400px;
             margin: 4rem auto 0;
@@ -2495,7 +2531,8 @@ nav, .navbar {
         }
 
         @media (max-width: 992px) {
-            .service-detail-container {
+            .service-detail-container,
+            .detailed-services .service-detail-section:nth-child(even) .service-detail-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
                 text-align: center;
@@ -2515,13 +2552,24 @@ nav, .navbar {
 
             .service-detail-visual {
                 order: -1;
-                grid-row: 1;
+                grid-row: auto;
                 padding-top: 0;
+            }
+
+            .detailed-services .service-detail-section:nth-child(even) .service-detail-visual {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .detailed-services .service-detail-section:nth-child(even) .service-detail-info {
+                grid-column: auto;
+                grid-row: auto;
             }
 
             .visual-card {
                 max-width: 400px;
                 aspect-ratio: 1.5;
+                margin: 0 auto;
             }
 
             .service-detail-section {
@@ -2530,17 +2578,53 @@ nav, .navbar {
         }
 
         @media (max-width: 768px) {
-            .services-hero-simple {
+            .services-hero-centered {
                 padding: 8rem 5% 4rem;
+                min-height: auto;
             }
 
-            .hero-simple-content h1 {
-                font-size: 2.5rem;
+            .hero-centered-content h1 {
+                font-size: 3rem;
             }
 
-            .hero-simple-content p {
+            .hero-centered-content p {
                 font-size: 1.1rem;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .hero-centered-ctas {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .modern-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-nav-bar {
+                top: 60px;
+                padding: 1rem 0;
+            }
+
+            .nav-bar-container {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding: 0 1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .nav-bar-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .nav-item {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
             }
 
             .service-detail-info h2 {
@@ -2810,6 +2894,14 @@ nav, .navbar {
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
+            .services, .testimonials, .process {
+                padding: 6rem 5%;
+            }
+
+            .service-card, .testimonial-card {
+                padding: 2.5rem 2rem;
+            }
+
             .dropdown > a {
                 color: var(--primary) !important;
                 border-bottom: none !important;
@@ -2818,7 +2910,7 @@ nav, .navbar {
             }
 
             .dropdown .dropdown-content {
-                display: flex !important;
+                display: none !important;
                 flex-direction: column;
                 position: static;
                 background: transparent;
@@ -3216,6 +3308,20 @@ nav, .navbar {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.highlight-item:hover .highlight-icon {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+}
+
+.highlight-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .highlight-content h4 {
@@ -3585,6 +3691,8 @@ nav, .navbar {
 
     .cta-btns {
         flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
     .cta-card-modern {
@@ -3614,6 +3722,12 @@ nav, .navbar {
 .whatsapp-float:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 18px 40px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 2.5px;
 }
 
 /* Minimal Contact Page Styles */
