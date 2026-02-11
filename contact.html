@@ -80,21 +80,32 @@
                 <p>Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
 
-            <form class="minimal-form">
+            <form class="minimal-form" id="leadForm">
                 <div class="input-grid">
                     <div class="field-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="field-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                </div>
+
+                <div class="input-grid">
+                    <div class="field-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Introverted Minds" required>
+                    </div>
+                    <div class="field-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98674 40690" required>
                     </div>
                 </div>
 
                 <div class="field-group">
                     <label for="subject">Subject</label>
-                    <select id="subject">
+                    <select id="subject" name="subject">
                         <option value="general">General Inquiry</option>
                         <option value="growth">Growth Strategy</option>
                         <option value="web">Web Development</option>
@@ -105,11 +116,20 @@
 
                 <div class="field-group">
                     <label for="message">Your Message</label>
-                    <textarea id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us more about your requirement" required></textarea>
                 </div>
 
                 <button type="submit" class="minimal-submit">Send Message</button>
+                <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
             </form>
+
+            <div id="successMessage" class="success-wrap" style="display: none;">
+                <div class="success-content">
+                    <h2>Message Launched into Orbit!</h2>
+                    <p>Our quietest minds are now analyzing your request. We'll beam back to you within 24 hours. Hang tight, big things are coming!</p>
+                    <button onclick="window.location.reload()" class="minimal-submit" style="max-width: 200px; margin: 2rem auto 0;">Send Another?</button>
+                </div>
+            </div>
 
             <div class="minimal-info">
                 <div class="info-item">
@@ -288,6 +308,51 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Form Submission to Google Sheets
+        const leadForm = document.getElementById('leadForm');
+        const formStatus = document.getElementById('formStatus');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyKFi2B0mf4Hqqo7aDW23XAQ8t7gaIl444c-R5E4VNLmGfYDflufoAS3WjhwC28Svi1Aw/exec'; // Replace with your deployment URL
+
+        if (leadForm) {
+            leadForm.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                // Show loading state
+                formStatus.textContent = 'Sending message...';
+                formStatus.style.color = 'var(--text-main)';
+                const submitBtn = leadForm.querySelector('.minimal-submit');
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.5';
+
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: new FormData(leadForm)
+                })
+                .then(response => {
+                    // Hide form and show success message
+                    leadForm.style.opacity = '0';
+                    leadForm.style.transform = 'translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        leadForm.style.display = 'none';
+                        const successMsg = document.getElementById('successMessage');
+                        successMsg.style.display = 'block';
+                    }, 500);
+
+                    leadForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    formStatus.textContent = 'Something went wrong. Please try again.';
+                    formStatus.style.color = '#ff4b2b';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                });
+            });
+        }
     </script>
 </body>
 </html>
