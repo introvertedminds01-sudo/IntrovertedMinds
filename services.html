@@ -399,7 +399,7 @@
     >💬</a>
 
     <!-- Search Modal -->
-    <div class="modal-overlay" id="callbackModa">
+    <div class="modal-overlay" id="callbackModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">&times;</button>
             <h2>Get Your Custom Solution</h2>
@@ -564,14 +564,14 @@
         });
 
         // Update CTA buttons to open modal
-        document.querySelectorAll('.primary-btn, .cta-btn').forEach(btn => {
-            if (!btn.href || btn.href.includes('contact.html')) {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal();
-                });
-            }
-        });
+       // document.querySelectorAll('.primary-btn, .cta-btn').forEach(btn => {
+            //if (!btn.href || btn.href.includes('contact.html')) {
+               // btn.addEventListener('click', (e) => {
+                 //   e.preventDefault();
+                 //   openModal();
+               // });
+           // }
+       // });
 
         // Intersection Observer for Reveal Animations
         const observerOptions = {
@@ -594,6 +594,7 @@
     </script>
 </body>
 </html>
+
 
 
 
