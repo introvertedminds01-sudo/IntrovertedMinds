@@ -608,7 +608,7 @@ nav, .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0px 30px;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -629,10 +629,15 @@ nav, .navbar {
     .goal-card {
         padding: 4rem 2rem;
     }
+    .nav-brand .logo {
+            height: 60px !important;
+            display: flex;
+            align-items: center;
+        }
 }
 
         .nav-brand .logo {
-            height: 70px;
+            height: 90px;
             display: flex;
             align-items: center;
         }
@@ -2820,10 +2825,10 @@ nav, .navbar {
                 width: 95% !important;
                 transform: none !important;
                 border-radius: 10px !important;
-                padding: 1.25rem 2rem !important;
+                padding: 10px 20px !important;
                 background: var(--bg-light) !important;
                 border-bottom: 1px solid var(--glass-border) !important;
-                box-shadow: none !important;
+                box-shadow: var(--shadow-md) !important;
                 backdrop-filter: none !important;
             }
 
