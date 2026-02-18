@@ -61,6 +61,7 @@
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="tag8-partnership.html" class="partnership-btn">Partnership</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -393,9 +394,9 @@
                 </div>
                 <p class="testimonial-text">"IntrovertedMinds completely transformed our digital presence. We saw a 250% increase in organic traffic within 6 months and our conversion rates doubled."</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">SK</div>
+                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">CB</div>
                     <div class="author-info">
-                        <h4>Sarah Kumar</h4>
+                        <h4>Charlotte Brown</h4>
                         <p>CEO, TechVision Solutions</p>
                     </div>
                 </div>
@@ -406,23 +407,36 @@
                 </div>
                 <p class="testimonial-text">"Their strategic approach to social media helped us build a community of over 100K engaged followers. The ROI on our campaigns has been exceptional."</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">RP</div>
+                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">JW</div>
                     <div class="author-info">
-                        <h4>Raj Patel</h4>
+                        <h4>James Wilson</h4>
                         <p>Marketing Director, StyleCraft</p>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <!--div class="testimonial-card">
                 <div class="rating">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <p class="testimonial-text">"Working with IntrovertedMinds has been a game-changer. Their data-driven approach and creative excellence delivered results beyond our expectations."</p>
                 <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">AM</div>
+                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">SC</div>
                     <div class="author-info">
-                        <h4>Anita Mehta</h4>
+                        <h4>Sophia Clark</h4>
                         <p>Founder, EcoLiving Co.</p>
+                    </div>
+                </div>
+            </div-->
+            <div class="testimonial-card">
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <p class="testimonial-text">"As a cybersecurity firm, trust is our currency. IntrovertedMinds crafted a brand identity for Quiviee that perfectly balances technical authority with approachability."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">AV</div>
+                    <div class="author-info">
+                        <h4>Arjun Verma</h4>
+                        <p>Founder, Quiviee</p>
                     </div>
                 </div>
             </div>
@@ -507,12 +521,16 @@
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
         let cursorTimeout;
-        
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
             // Add moving class for circle expansion
             cursor.classList.add('moving');
@@ -523,6 +541,24 @@
                 cursor.classList.remove('moving');
             }, 100);
         });
+
+        function animateCursor() {
+            // Smooth lerp for cursor
+            const speed = 0.2;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            
+            // Dot follows instantly or with very high speed
+            dotX = mouseX;
+            dotY = mouseY;
+
+            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
