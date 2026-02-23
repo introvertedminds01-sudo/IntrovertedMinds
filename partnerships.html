@@ -1,26 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - IntrovertedMinds</title>
+    <title>Strategic Partnerships - IntrovertedMinds</title>
     <link rel="preconnect" href="https://fonts.cdnfonts.com">
     <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-    <!-- Background Animations -->
-    <div class="bg-animations">
-        <div class="bg-grid"></div>
-        <div class="blob-wrapper blob-1"><div class="blob"></div></div>
-        <div class="blob-wrapper blob-2"><div class="blob"></div></div>
-        <div class="blob-wrapper blob-3"><div class="blob"></div></div>
-    </div>
-
+<body>
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="cursor-dot"></div>
-
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-brand">
@@ -45,18 +37,9 @@
                         <a href="services.html#3d">3D Animation</a>
                     </div>
                 </li>
-                <li class="active"><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="partnerships.html" class="partnership-btn">Partnership</a></li>
             </ul>
-            <div class="mobile-menu-footer">
-                <p>Ready to scale your business?</p>
-                <a href="tel:+919867440690" class="mobile-contact-link">📞 +91 9867440690</a>
-                <div class="mobile-socials">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="Instagram">IG</a>
-                    <a href="#" aria-label="LinkedIn">LI</a>
-                </div>
-            </div>
         </div>
         <div class="nav-right">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -65,7 +48,7 @@
                 </span>
             </button>
             <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <button class="mobile-toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -73,83 +56,55 @@
         </div>
     </nav>
 
-    <!-- Minimal Contact Section -->
-    <section class="minimal-contact">
-        <div class="contact-wrap reveal">
-            <div class="contact-header">
-                <h1>Let's Connect</h1>
-                <p>Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
+    <header class="page-header">
+        <h1 class="page-title">Strategic Alliances</h1>
+        <p class="page-subtitle">We collaborate with world-class partners to deliver exceptional value and drive innovation across industries.</p>
+    </header>
+
+    <main class="partners-grid">
+        <!-- Tag 8 Card -->
+        <article class="partner-card">
+            <div class="partner-media">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/Tag8.mp4" type="video/mp4">
+                </video>
             </div>
-
-            <form class="minimal-form" id="leadForm">
-                <div class="input-grid">
-                    <div class="field-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="field-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                    </div>
-                </div>
-
-                <div class="input-grid">
-                    <div class="field-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" placeholder="Introverted Minds" required>
-                    </div>
-                    <div class="field-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+91 98674 40690" required>
-                    </div>
-                </div>
-
-                <div class="field-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject">
-                        <option value="general">General Inquiry</option>
-                        <option value="growth">Growth Strategy</option>
-                        <option value="web">Web Development</option>
-                        <option value="seo">SEO & Content</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="field-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us more about your requirement" required></textarea>
-                </div>
-
-                <button type="submit" class="minimal-submit" style="background-color: var(--primary); color: white; ">Send Message</button>
-                <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
-            </form>
-
-            <div id="successMessage" class="success-wrap" style="display: none;">
-                <div class="success-content">
-                    <h2>Message Launched into Orbit!</h2>
-                    <p>Our quietest minds are now analyzing your request. We'll beam back to you within 24 hours. Hang tight, big things are coming!</p>
-                    <button onclick="window.location.reload()" class="minimal-submit" style="max-width: 200px; margin: 2rem auto 0;">Send Another?</button>
-                </div>
+            <div class="partner-content">
+                <span class="partner-tag">Global Tracking</span>
+                <h3 class="partner-title">Tag 8</h3>
+                <p class="partner-desc">
+                    Partnering to revolutionize global tracking solutions through digital transformation and market expansion strategies.
+                </p>
+                <a href="tag8-partnership.html" class="partner-link">View Case Study →</a>
             </div>
+        </article>
 
-            <div class="minimal-info">
-                <div class="info-item">
-                    <span>Email</span>
-                    <a href="mailto:answers@introvertedminds.com">answers@introvertedminds.com</a>
-                </div>
-                <div class="info-item">
-                    <span>Follow</span>
-                    <div class="mini-socials">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
-                    </div>
-                </div>
+        <!-- Dosa Cartel Card -->
+        <article class="partner-card">
+            <div class="partner-media">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/dosa-hero.mp4" type="video/mp4">
+                </video>
             </div>
-        </div>
-    </section>
+            <div class="partner-content">
+                <span class="partner-tag">QSR Brand Scaling</span>
+                <h3 class="partner-title">Dosa Cartel</h3>
+                <p class="partner-desc">
+                    Reimagining the iconic Dosa for modern India. Scaling from a local favorite to a national contender through systems and structure.
+                </p>
+                <a href="dosa-cartel-partnership.html" class="partner-link">View Case Study →</a>
+            </div>
+        </article>
 
-    <!-- Footer -->
+        <!-- Become a Partner -->
+        <article class="partner-card cta-card">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <h3>Become a Partner</h3>
+            <p class="partner-desc">Join our network of strategic alliances and grow with us.</p>
+            <a href="contact.html" class="btn-primary-glow">Apply Now</a>
+        </article>
+    </main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -210,17 +165,21 @@
     </a>
 
     <script>
-        // Custom Cursor
+        // Custom Cursor Logic
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
-        const blobs = document.querySelectorAll('.blob');
-        let cursorTimeout;
         
+        let cursorTimeout;
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
             // Add moving class for circle expansion
             cursor.classList.add('moving');
@@ -230,20 +189,26 @@
             cursorTimeout = setTimeout(() => {
                 cursor.classList.remove('moving');
             }, 100);
-
-            // Background Parallax
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-
-            blobs.forEach((blob, index) => {
-                const speed = (index + 1) * 20;
-                const x = (mouseX - 0.5) * speed;
-                const y = (mouseY - 0.5) * speed;
-                blob.style.transform = `translate(${x}px, ${y}px)`;
-            });
         });
 
-        // Click effect
+        function animateCursor() {
+            // Smooth lerp for cursor
+            const speed = 0.2;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            
+            // Dot follows instantly or with very high speed
+            dotX = mouseX;
+            dotY = mouseY;
+
+            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
         document.addEventListener('mousedown', () => {
             cursor.classList.add('click');
         });
@@ -252,32 +217,28 @@
             cursor.classList.remove('click');
         });
 
-        // Hover effect
-        const updateHoverElements = () => {
-            const hoverElements = document.querySelectorAll('a, button, input, select, textarea, .contact-wrap, .field-group');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hover');
-                    cursorDot.classList.add('hover');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hover');
-                    cursorDot.classList.remove('hover');
-                });
+        // Hover effect for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .partner-card');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
             });
-        };
-        updateHoverElements();
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
 
-        // Theme Toggle
+        // Theme Toggle Logic
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
-
+        const themeIcon = document.getElementById('themeIcon');
         const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
         const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        if (currentTheme === 'light') {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
             body.classList.remove('dark-mode');
             themeIcon.innerHTML = moonIcon;
         } else {
@@ -287,7 +248,8 @@
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
+            const isDark = body.classList.contains('dark-mode');
+            if (isDark) {
                 themeIcon.innerHTML = sunIcon;
                 localStorage.setItem('theme', 'dark');
             } else {
@@ -295,78 +257,17 @@
                 localStorage.setItem('theme', 'light');
             }
         });
-
-        // Mobile Menu Toggle
+        
+        // Mobile Menu
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.querySelector('.nav-menu');
         
-        if (mobileToggle && navMenu) {
+        if (mobileToggle) {
             mobileToggle.addEventListener('click', () => {
                 mobileToggle.classList.toggle('active');
                 navMenu.classList.toggle('active');
             });
         }
-
-        // Reveal Animations
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Form Submission to Google Sheets
-        const leadForm = document.getElementById('leadForm');
-        const formStatus = document.getElementById('formStatus');
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyKFi2B0mf4Hqqo7aDW23XAQ8t7gaIl444c-R5E4VNLmGfYDflufoAS3WjhwC28Svi1Aw/exec'; // Replace with your deployment URL
-
-        if (leadForm) {
-            leadForm.addEventListener('submit', e => {
-                e.preventDefault();
-                
-                // Show loading state
-                formStatus.textContent = 'Sending message...';
-                formStatus.style.color = 'var(--text-main)';
-                const submitBtn = leadForm.querySelector('.minimal-submit');
-                submitBtn.disabled = true;
-                submitBtn.style.opacity = '0.5';
-
-                fetch(scriptURL, { 
-                    method: 'POST', 
-                    body: new FormData(leadForm)
-                })
-                .then(response => {
-                    // Hide form and show success message
-                    leadForm.style.opacity = '0';
-                    leadForm.style.transform = 'translateY(-20px)';
-                    
-                    setTimeout(() => {
-                        leadForm.style.display = 'none';
-                        const successMsg = document.getElementById('successMessage');
-                        successMsg.style.display = 'block';
-                    }, 500);
-
-                    leadForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    formStatus.textContent = 'Something went wrong. Please try again.';
-                    formStatus.style.color = '#ff4b2b';
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-                });
-            });
-        }
     </script>
 </body>
 </html>
-

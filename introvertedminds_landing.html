@@ -12,6 +12,9 @@
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="cursor-dot"></div>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -61,7 +64,7 @@
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="tag8-partnership.html" class="partnership-btn">Partnership</a></li>
+                <li><a href="partnerships.html" class="partnership-btn">Partnership</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -90,11 +93,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-creative-bg">
-            <div class="creative-blob"></div>
-            <div class="creative-blob-2"></div>
-            <div class="creative-grid"></div>
-        </div>
+        <div class="hero-grid-overlay" id="heroGrid"></div>
         <div class="hero-content">
             <div class="hero-text-side">
                 <div class="hero-text-wrapper">
@@ -113,7 +112,7 @@
                     
                     <div class="credibility-statement">
                         <p class="credibility-title">Trusted by Emerging Technology Brands Expanding into Southeast Asia</p>
-                        <a href="tag8-partnership.html" class="credibility-badge">
+                        <a href="partnerships.html" class="credibility-badge">
                             <span class="status-dot"></span>
                             <span>Current Strategic Mandate: <strong>Tag 8 – Singapore Market Entry</strong></span>
                         </a>
@@ -235,49 +234,139 @@
                     </div>
                 </div>
 
-                <div class="industry-indicators">
-                    <div class="indicator active" data-industry="0"></div>
-                    <div class="indicator" data-industry="1"></div>
-                    <div class="indicator" data-industry="2"></div>
-                    <div class="indicator" data-industry="3"></div>
-                    <div class="indicator" data-industry="4"></div>
-                    <div class="indicator" data-industry="5"></div>
-                    <div class="indicator" data-industry="6"></div>
-                    <div class="indicator" data-industry="7"></div>
-                    <div class="indicator" data-industry="8"></div>
+                <div class="industry-indicators" role="tablist" aria-label="Industry Selection">
+                    <button class="indicator active" data-industry="0" aria-label="Healthcare Industry" role="tab" aria-selected="true"></button>
+                    <button class="indicator" data-industry="1" aria-label="E-Commerce Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="2" aria-label="SaaS Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="3" aria-label="Retail Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="4" aria-label="FMCG Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="5" aria-label="Food & Beverage Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="6" aria-label="SMEs Industry" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="7" aria-label="Service Industries" role="tab" aria-selected="false"></button>
+                    <button class="indicator" data-industry="8" aria-label="Brand Owners Industry" role="tab" aria-selected="false"></button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <div class="arrow-scroll">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Projects Completed</div>
+        <div class="stats-container">
+            <div class="stats-header">
+                <h2 class="stats-title">We focus on your portfolio</h2>
+                <p class="stats-subtitle blur-text">you focus on your business goals.</p>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Client Satisfaction</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300%</div>
+                    <div class="stat-label">Return on Investment</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Assets Under Management</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Global Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">3x</div>
-                <div class="stat-label">Average ROI Increase</div>
+        </div>
+    </section>
+
+    <!-- Process Section Redesigned -->
+    <section class="process-timeline" id="process">
+        <!-- Background Elements -->
+        <div class="process-bg-wrapper">
+            <div class="process-glow glow-1"></div>
+            <div class="process-glow glow-2"></div>
+            <div class="process-grid-overlay"></div>
+        </div>
+
+        <div class="section-header text-center">
+            <div class="section-tag">OUR METHODOLOGY</div>
+            <h2 class="section-title">From Concept to Conversion</h2>
+            <p class="section-subtitle">A proven 4-step framework that turns passive visitors into loyal brand advocates.</p>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <!-- Step 1 -->
+            <div class="timeline-item left">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Audit</h3>
+                    <p>We start by listening. We dive deep into your brand DNA, analyze market gaps, and audit your current digital footprint to identify high-impact opportunities.</p>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">69</div>
-                <div class="stat-label">Team Experts</div>
+
+            <!-- Step 2 -->
+            <div class="timeline-item right">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="step-number">02</div>
+                    <h3>Strategic Roadmap</h3>
+                    <p>Data meets creativity. We build a tailored execution plan with clear KPIs, defining the 'how' and 'why' of your growth strategy before writing a single line of code.</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="timeline-item left">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="step-number">03</div>
+                    <h3>Creative Execution</h3>
+                    <p>Where the magic happens. Our design and dev teams bring the strategy to life with pixel-perfect interfaces, compelling copy, and robust technical implementation.</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="timeline-item right">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                </div>
+                <div class="timeline-content">
+                    <div class="step-number">04</div>
+                    <h3>Launch & Scale</h3>
+                    <p>Go live with confidence. We monitor real-time performance, run A/B tests, and iterate rapidly to maximize ROI and ensure sustainable long-term growth.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="section-header">
-            <div class="section-tag">SERVICES</div>
-            <h2 class="section-title">Our Expertise</h2>
-            <p class="section-subtitle">Comprehensive digital solutions tailored to accelerate your business growth</p>
+        <div class="services-header-wrapper">
+            <div class="services-header-content">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Unleashing Comprehensive Digital Marketing Services Tailored to Elevate Your Online Presence and Boost Your Success.</p>
+            </div>
+            <a href="contact.html" class="get-started-btn">Get Started</a>
         </div>
         <div class="services-grid">
             <div class="service-card">
@@ -286,7 +375,7 @@
                 </div>
                 <h3>Growth Strategy</h3>
                 <p>We build the digital infrastructure for your future success. Strategic consulting meets technical mastery to ensure your business is positioned for maximum growth.</p>
-                <a href="services.html#growth" class="learn-more">
+                <a href="services.html#growth" class="learn-more" style="color: var(--primary) !important;">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -349,95 +438,173 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="section-header">
-            <div class="section-tag">PROCESS</div>
-            <h2 class="section-title">Our Process</h2>
-            <p class="section-subtitle">A proven methodology that delivers consistent results</p>
-        </div>
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Study</h3>
-                <p>We dive deep into your business, understanding your goals, audience, and competitive landscape.</p>
+    <!-- Strategic Partnership Section -->
+    <section class="partnership-section" id="partnership">
+        <div class="partnership-container">
+            <div class="partnership-content">
+                <div class="section-tag">STRATEGIC ALLIANCES</div>
+                <h2 class="section-title">More Than an Agency.<br>A Growth Partner.</h2>
+                <p class="section-subtitle">
+                    We align with ambitious brands to co-create market-dominating strategies. 
+                    Our strategic partnership with <strong>Tag 8</strong> demonstrates how deep collaboration leads to exponential growth in new markets.
+                </p>
+                
+                <div class="partnership-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">Market</span>
+                        <span class="stat-label">Entry Strategy</span>
+                    </div>
+                    <div class="stat-line"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">Retail</span>
+                        <span class="stat-label">Ecosystem Access</span>
+                    </div>
+                </div>
+
+                <div class="partnership-cta">
+                    <a href="tag8-partnership.html" class="btn-primary-glow">View Tag 8 Case Study</a>
+                    <a href="partnerships.html" class="btn-secondary-text">View All Partnerships →</a>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Strategize</h3>
-                <p>Develop a customized roadmap with clear objectives, KPIs, and tactics aligned with your vision.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Execute</h3>
-                <p>Launch campaigns with precision, leveraging cutting-edge tools and creative excellence.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Optimize</h3>
-                <p>Continuously refine and improve based on data insights to maximize your results.</p>
+            
+            <div class="partnership-media">
+                <div class="media-card">
+                    <video autoplay muted loop playsinline class="partnership-video">
+                        <source src="assets/videos/Tag8.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-overlay">
+                        <div class="partner-badge">
+                            <span class="badge-label">Featured Partner</span>
+                        </div>
+                        <div class="partner-info">
+                            <h3>Tag 8</h3>
+                            <p>Global Tracking Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="decorative-circle circle-1"></div>
+                <div class="decorative-circle circle-2"></div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="section-header">
-            <div class="section-tag">TESTIMONIALS</div>
-            <h2 class="section-title">Client Success Stories</h2>
-            <p class="section-subtitle">Hear from ambitious brands we've helped scale to new heights</p>
+    <section class="testimonials-redesign" id="testimonials">
+        <div class="testimonials-container">
+            <!-- Left Column: Content -->
+            <div class="testimonials-left">
+                <h2 class="testimonials-title">Our Customers<br>Love What We Do</h2>
+                <p class="testimonials-desc">
+                    Our customers love our results! Read their reviews to discover why they're raving about our quality, service, and overall experience. Join the satisfied ranks today!
+                </p>
+                <div class="testimonials-cta">
+                    <a href="contact.html" class="btn-primary-glow">Get Started</a>
+                    <a href="services.html" class="btn-secondary-dark">Our Services</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Slider Card -->
+            <div class="testimonials-right">
+                <div class="slider-nav-top">
+                    <button class="nav-arrow prev" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button class="nav-arrow next" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+                
+                <div class="testimonial-slide-card">
+                    <div class="quote-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                        </svg>
+                    </div>
+                    <p class="slide-text">
+                        IntrovertedMinds completely transformed our digital presence. We saw a 250% increase in organic traffic within 6 months and our conversion rates doubled. A must-have for any team!
+                    </p>
+                    <div class="slide-footer">
+                        <div class="slide-author">
+                            <div class="author-avatar-img">CB</div>
+                            <div class="author-details">
+                                <h4>Charlotte Brown</h4>
+                                <p>CEO, TechVision Solutions</p>
+                            </div>
+                        </div>
+                        <div class="slide-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-value">5.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
         </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="rating">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
-                <p class="testimonial-text">"IntrovertedMinds completely transformed our digital presence. We saw a 250% increase in organic traffic within 6 months and our conversion rates doubled."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">CB</div>
-                    <div class="author-info">
-                        <h4>Charlotte Brown</h4>
-                        <p>CEO, TechVision Solutions</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="rating">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
-                <p class="testimonial-text">"Their strategic approach to social media helped us build a community of over 100K engaged followers. The ROI on our campaigns has been exceptional."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">JW</div>
-                    <div class="author-info">
-                        <h4>James Wilson</h4>
-                        <p>Marketing Director, StyleCraft</p>
-                    </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="section-header">
+            <span class="section-tag">Common Questions</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about working with us.</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What services do you specialize in?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We specialize in data-driven digital marketing, including SEO, PPC advertising, Social Media Management, and Web Development. Our holistic approach ensures all channels work together for maximum growth.</p>
                 </div>
             </div>
-            <!--div class="testimonial-card">
-                <div class="rating">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How long does it take to see results?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Timelines vary by service. PPC can show results immediately, while SEO typically takes 3-6 months for significant impact. We provide clear timelines and regular reporting so you always know where you stand.</p>
                 </div>
-                <p class="testimonial-text">"Working with IntrovertedMinds has been a game-changer. Their data-driven approach and creative excellence delivered results beyond our expectations."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">SC</div>
-                    <div class="author-info">
-                        <h4>Sophia Clark</h4>
-                        <p>Founder, EcoLiving Co.</p>
-                    </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you work with small businesses?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We work with ambitious brands of all sizes. Whether you're a startup looking to launch or an established enterprise scaling up, we have tailored strategies to meet your goals.</p>
                 </div>
-            </div-->
-            <div class="testimonial-card">
-                <div class="rating">
-                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What makes IntrovertedMinds different?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We combine deep data analytics with creative excellence. We don't just guess; we use data to drive every decision, ensuring your marketing budget yields the highest possible ROI.</p>
                 </div>
-                <p class="testimonial-text">"As a cybersecurity firm, trust is our currency. IntrovertedMinds crafted a brand identity for Quiviee that perfectly balances technical authority with approachability."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar" style="background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary);">AV</div>
-                    <div class="author-info">
-                        <h4>Arjun Verma</h4>
-                        <p>Founder, Quiviee</p>
-                    </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do we get started?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Simply click the "Get Started" button below or contact us directly. We'll schedule a discovery call to understand your needs and propose a custom strategy for your business.</p>
                 </div>
             </div>
         </div>
@@ -517,9 +684,134 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgressBar = document.getElementById('scrollProgressBar');
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            if (scrollProgressBar) {
+                scrollProgressBar.style.width = scrollPercent + '%';
+            }
+        });
+
         // Custom Cursor
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
+        const heroGrid = document.getElementById('heroGrid');
+
+        // Hero Grid Animation
+        if (heroGrid) {
+            const createGrid = () => {
+                heroGrid.innerHTML = '';
+                const width = heroGrid.offsetWidth;
+                const height = heroGrid.offsetHeight;
+                const cellSize = 50; // px
+                const cols = Math.ceil(width / cellSize);
+                const rows = Math.ceil(height / cellSize);
+                
+                heroGrid.style.display = 'grid';
+                heroGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+                heroGrid.style.gridTemplateRows = `repeat(${rows}, ${cellSize}px)`; // Fixed height rows
+
+                const totalCells = cols * rows;
+                const fragment = document.createDocumentFragment();
+
+                for (let i = 0; i < totalCells; i++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'grid-cell';
+                    fragment.appendChild(cell);
+                }
+                heroGrid.appendChild(fragment);
+
+                return { cols, rows };
+            };
+
+            let gridDims = createGrid();
+
+            window.addEventListener('resize', () => {
+                 gridDims = createGrid();
+            });
+
+            const animateRandomCell = () => {
+                const cells = document.querySelectorAll('.grid-cell');
+                if (cells.length === 0) return;
+                
+                const count = Math.floor(Math.random() * 3) + 1; // 1 to 3 cells
+                const colors = [
+                    '255, 107, 53',   // Orange (Primary)
+                    '255, 255, 255',  // White
+                    '0, 0, 0'         // Black
+                ];
+
+                for(let i=0; i<count; i++) {
+                    const randomIndex = Math.floor(Math.random() * cells.length);
+                    const cell = cells[randomIndex];
+                    
+                    if (cell && !cell.classList.contains('active')) {
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        cell.style.background = `rgba(${color}, 0.15)`;
+                        cell.style.boxShadow = `0 0 20px rgba(${color}, 0.25)`;
+                        
+                        cell.classList.add('active');
+                        
+                        setTimeout(() => {
+                            cell.classList.remove('active');
+                            cell.style.background = '';
+                            cell.style.boxShadow = '';
+                        }, Math.random() * 1000 + 1000); 
+                    }
+                }
+            };
+            
+            // Mouse Trail Effect
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.addEventListener('mousemove', (e) => {
+                    const cells = document.querySelectorAll('.grid-cell');
+                    if (cells.length === 0) return;
+
+                    const rect = heroGrid.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Only process if mouse is within grid bounds
+                    if (x >= 0 && x < rect.width && y >= 0 && y < rect.height) {
+                        const cellSize = 50;
+                        const col = Math.floor(x / cellSize);
+                        const row = Math.floor(y / cellSize);
+                        const index = row * gridDims.cols + col;
+                        
+                        const cell = cells[index];
+                        
+                        if (cell && !cell.classList.contains('active')) {
+                            const color = '255, 107, 53'; // Primary Orange for user interaction
+                            cell.style.background = `rgba(${color}, 0.3)`;
+                            cell.style.boxShadow = `0 0 25px rgba(${color}, 0.5)`;
+                            cell.style.transition = 'background 0.05s ease, box-shadow 0.05s ease'; // Instant on
+                            
+                            cell.classList.add('active');
+                            
+                            setTimeout(() => {
+                                cell.style.transition = 'background 0.8s ease, box-shadow 0.8s ease'; // Smooth fade out
+                                cell.classList.remove('active');
+                                cell.style.background = '';
+                                cell.style.boxShadow = '';
+                            }, 300); 
+                        }
+                    }
+                });
+            }
+            
+            // Wait for DOM
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => setInterval(animateRandomCell, 200));
+            } else {
+                setInterval(animateRandomCell, 200);
+            }
+        }
+
         let cursorTimeout;
         let mouseX = 0;
         let mouseY = 0;
@@ -655,6 +947,8 @@
                 // We want currentIndustry to be in the prominent pos-3
                 if (index === currentIndustry) {
                     card.classList.add('pos-3');
+                    // Ensure active class is present for specific styles
+                    card.classList.add('active');
                 } else if (index === (currentIndustry - 1 + totalIndustries) % totalIndustries) {
                     card.classList.add('pos-2');
                 } else if (index === (currentIndustry - 2 + totalIndustries) % totalIndustries) {
@@ -665,7 +959,9 @@
             });
 
             indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentIndustry);
+                const isActive = index === currentIndustry;
+                indicator.classList.toggle('active', isActive);
+                indicator.setAttribute('aria-selected', isActive);
             });
         }
 
@@ -678,6 +974,9 @@
             currentIndustry = (currentIndustry - 1 + totalIndustries) % totalIndustries;
             updateIndustryCards();
         }
+
+        // Initialize cards immediately
+        updateIndustryCards();
 
         // Auto cycle
         let industryInterval = setInterval(nextIndustry, 5000);
@@ -720,9 +1019,145 @@
                 resetInterval();
             }
         }
+    // Testimonials Slider Logic
+    const testimonials = [
+        {
+            text: "IntrovertedMinds completely transformed our digital presence. We saw a 250% increase in organic traffic within 6 months and our conversion rates doubled. A must-have for any team!",
+            author: "Charlotte Brown",
+            role: "CEO, TechVision Solutions",
+            avatar: "CB",
+            rating: "5.0"
+        },
+        {
+            text: "Their strategic approach to social media helped us build a community of over 100K engaged followers. The ROI on our campaigns has been exceptional.",
+            author: "James Wilson",
+            role: "Marketing Director, StyleCraft",
+            avatar: "JW",
+            rating: "5.0"
+        },
+        {
+            text: "As a cybersecurity firm, trust is our currency. IntrovertedMinds crafted a brand identity for Quiviee that perfectly balances technical authority with approachability.",
+            author: "Arjun Verma",
+            role: "Founder, Quiviee",
+            avatar: "AV",
+            rating: "4.9"
+        },
+        {
+            text: "The web development team delivered a site that is not only beautiful but incredibly fast. Our bounce rate dropped by 40% immediately after launch.",
+            author: "Sarah Jenkins",
+            role: "CTO, FinEdge",
+            avatar: "SJ",
+            rating: "5.0"
+        }
+    ];
 
-        // Initialize
-        updateIndustryCards();
+    let currentTestimonial = 0;
+    const slideText = document.querySelector('.slide-text');
+    const authorName = document.querySelector('.author-details h4');
+    const authorRole = document.querySelector('.author-details p');
+    const authorAvatar = document.querySelector('.author-avatar-img');
+    const ratingValue = document.querySelector('.rating-value');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.nav-arrow.prev');
+    const nextBtn = document.querySelector('.nav-arrow.next');
+
+    function updateTestimonial(index) {
+        // Fade out
+        const slideCard = document.querySelector('.testimonial-slide-card');
+        slideCard.style.opacity = '0';
+        
+        setTimeout(() => {
+            const data = testimonials[index];
+            slideText.textContent = data.text;
+            authorName.textContent = data.author;
+            authorRole.textContent = data.role;
+            authorAvatar.textContent = data.avatar;
+            ratingValue.textContent = data.rating;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            // Fade in
+            slideCard.style.opacity = '1';
+        }, 300);
+    }
+
+    // Add transition style to card for smooth fade
+    document.querySelector('.testimonial-slide-card').style.transition = 'opacity 0.3s ease';
+
+    function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        updateTestimonial(currentTestimonial);
+    }
+
+    function prevTestimonial() {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        updateTestimonial(currentTestimonial);
+    }
+
+    if (prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', nextTestimonial);
+        prevBtn.addEventListener('click', prevTestimonial);
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentTestimonial = index;
+            updateTestimonial(currentTestimonial);
+        });
+    });
+
+    // Auto cycle testimonials
+    setInterval(nextTestimonial, 6000);
+
+    // Timeline Scroll Animation
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    timelineItems.forEach(item => {
+        timelineObserver.observe(item);
+    });
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            
+            // Toggle active class
+            item.classList.toggle('active');
+            
+            // Toggle max-height
+            if (item.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 24 + "px"; // + padding
+            } else {
+                answer.style.maxHeight = null;
+            }
+            
+            // Close other items (optional, but good for UX)
+            faqQuestions.forEach(otherQuestion => {
+                const otherItem = otherQuestion.parentElement;
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+        });
+    });
+
     </script>
 </body>
 </html>
