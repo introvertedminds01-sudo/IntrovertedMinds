@@ -1451,78 +1451,101 @@ nav, .navbar {
 
         @media (max-width: 768px) {
             .hero-text-wrapper h1 { font-size: 2.5rem; letter-spacing: 0.2rem; }
-            .hero-visual-side { height: 500px; margin-top: 0; } /* Increased height to fit content */
+            
+            /* Reset heights to auto to prevent overlapping/cutoff */
+            .hero-visual-side { height: auto; min-height: auto; margin-top: 2rem; padding-bottom: 2rem; }
+            .hero-visual-container { height: auto; display: block; } 
+            .industries-showcase { height: auto; display: block; top: auto !important; }
+            
             .industry-card { 
-                width: 85vw; 
-                max-width: 300px;
-                padding: 1.75rem 1.25rem 1.25rem; 
-                border-radius: 20px; 
+                width: 100%; 
+                max-width: 380px; 
+                padding: 2rem 1.5rem; 
+                border-radius: 24px;
+                /* Make relative to take up space */
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                margin: 0 auto;
+                display: none; /* Hide inactive */
             }
-            .industry-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-            .industry-card p { font-size: 0.8rem; line-height: 1.4; }
-            .industry-icon { width: 40px; height: 40px; margin-bottom: 0.6rem; }
+            
+            .industry-card h3 { 
+                font-size: 1.5rem; 
+                margin-bottom: 0.8rem; 
+            }
+            
+            .industry-card p { 
+                font-size: 1rem; 
+                line-height: 1.5; 
+            }
+            
+            .industry-icon { 
+                width: 64px; 
+                height: 64px; 
+                margin-bottom: 1rem; 
+                border-radius: 16px;
+            }
+
+            .industry-icon svg {
+                width: 32px; 
+                height: 32px;
+            }
             
             .industry-features {
-                margin-top: 0.8rem;
-                gap: 0.3rem;
+                margin-top: 1.5rem;
+                gap: 0.6rem;
+                transform: none !important; /* Remove animation transform offset */
+                opacity: 1 !important;
             }
 
             .industry-features li {
-                font-size: 0.7rem;
+                font-size: 0.9rem; 
             }
             
-            /* Extreme simplification for small mobile screens */
-            .industry-card.pos-1 { display: none; }
-            .industry-card.pos-2, .industry-card.pos-4 { 
-                opacity: 0.05;
-                filter: blur(10px);
-                pointer-events: none;
-                transform: scale(0.7);
-            }
-            
-            .industry-card.pos-2 {
-                transform: translateX(40px) translateY(-10px) scale(0.7); 
-            }
-            
-            .industry-card.pos-4 {
-                transform: translateX(-40px) translateY(10px) scale(0.7); 
-            }
-
-            .industry-card.pos-3 {
-                transform: translateX(0) translateY(0) scale(1);
+            /* Show only active card */
+            .industry-card.pos-3, .industry-card.active {
+                display: block;
+                opacity: 1 !important;
+                visibility: visible !important;
                 box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.1);
-                opacity: 1;
-                visibility: visible;
-                z-index: 10;
             }
             
+            /* Hide others */
+            .industry-card.pos-1, .industry-card.pos-2, .industry-card.pos-4, .industry-card.pos-5 {
+                display: none;
+            }
+            
+            /* Hide pagination as requested */
             .industry-indicators {
-                margin-top: 0;
-                padding: 0.5rem 1rem;
-                gap: 1rem;
-                margin-top: -100px !important;
+                display: none !important;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-text-wrapper h1 { font-size: 1.8rem; letter-spacing: 0.15rem; }
-            .hero-visual-side { height: 480px; } /* Increased height to fit content */
-            .industry-card { 
-                width: 90vw; 
-                padding: 1.5rem 1rem 1rem; 
-            }
-            .industry-features { 
-                display: flex;
-                margin-top: 0.5rem;
-                gap: 0.25rem;
-            }
-            .industry-features li {
-                font-size: 0.65rem;
-            }
-            #typewriter-text { font-size: 1em; letter-spacing: 0.2rem; }
+            .hero-text-wrapper h1 { font-size: 2rem; letter-spacing: 0.15rem; }
+            /* .hero-visual-side { height: auto; } Inherits from 768px */
             
-            .industry-card h3 { font-size: 1rem; }
-            .industry-card p { font-size: 0.75rem; }
+            .industry-card { 
+                width: 100%; 
+                padding: 2rem 1.5rem; /* Maintain comfortable padding */
+            }
+            
+            /* Remove tiny font overrides, use slightly adjusted values */
+            .industry-card h3 { font-size: 1.4rem; }
+            .industry-card p { font-size: 0.95rem; }
+            
+            .industry-features { 
+                margin-top: 1.2rem;
+                gap: 0.5rem;
+            }
+            
+            .industry-features li {
+                font-size: 0.85rem;
+            }
+            
+            #typewriter-text { font-size: 1em; letter-spacing: 0.2rem; }
         }
 
         .hero-left h1 {
@@ -2750,6 +2773,38 @@ body.dark-mode .step-number {
     
     .slider-nav-top {
         display: none; /* Hide top arrows on mobile, rely on swipe or dots */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-slide-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .slide-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .slide-author {
+        width: 100%;
+    }
+
+    .author-avatar-img {
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+    }
+
+    .author-details {
+        flex: 1;
+        min-width: 0; /* Allow text wrapping */
+    }
+    
+    .slide-rating {
+        margin-left: 3.8rem; /* Align with text, offset by avatar width + gap */
+        margin-top: -0.5rem;
     }
 }
 
