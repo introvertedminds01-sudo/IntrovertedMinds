@@ -8,18 +8,49 @@
     <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific overrides for Dosa Cartel if needed */
-        .dc-hero-bg {
-            background: radial-gradient(circle at center, #ff990020, transparent 70%);
-        }
-        .t8-hero-logo-text {
+        /* Specific overrides for Dosa Cartel */
+        .dc-hero-logo-text {
             font-family: 'LEMON MILK', sans-serif;
             font-size: clamp(3rem, 8vw, 6rem);
-            color: var(--text-main);
+            color: #fff;
             margin: 0;
             line-height: 1;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(255, 153, 0, 0.3);
+            text-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+        }
+        
+        .placeholder-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 1.5rem;
+            min-height: 300px;
+            transition: var(--transition);
+        }
+        
+        .placeholder-box:hover {
+            background: rgba(var(--primary-rgb), 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .placeholder-box svg {
+            color: var(--primary);
+            opacity: 0.6;
+        }
+
+        .placeholder-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 600;
         }
     </style>
 </head>
@@ -42,41 +73,18 @@
                 <li class="dropdown">
                     <a href="services.html">Services <span class="nav-arrow">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="services.html" class="mobile-only-link">
-                            All-in-One
-                        </a>
-                        <a href="services.html#growth">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                            Growth Strategy
-                        </a>
-                        <a href="services.html#performance">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Performance Marketing
-                        </a>
-                        <a href="services.html#seo">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                            SEO
-                        </a>
-                        <a href="services.html#social">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                            Social Media
-                        </a>
-                        <a href="services.html#web">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                            Web Development
-                        </a>
-                        <a href="services.html#creative">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7 11l5-5"></path></svg>
-                            Creative Production
-                        </a>
-                        <a href="services.html#3d">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                            3D Animation
-                        </a>
+                        <a href="services.html" class="mobile-only-link">All-in-One</a>
+                        <a href="services.html#growth">Growth Strategy</a>
+                        <a href="services.html#performance">Performance Marketing</a>
+                        <a href="services.html#seo">SEO</a>
+                        <a href="services.html#social">Social Media</a>
+                        <a href="services.html#web">Web Development</a>
+                        <a href="services.html#creative">Creative Production</a>
+                        <a href="services.html#3d">3D Animation</a>
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="active"><a href="partnerships.html" class="partnership-btn">Partnership</a></li>
+                <li class="active"><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -90,171 +98,310 @@
         </div>
         <div class="nav-right">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span id="themeIcon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                </span>
+                <span id="themeIcon"></span>
             </button>
             <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="t8-wrapper">
-        <section class="t8-hero" style="background: #000;">
-            <video autoplay muted loop playsinline class="t8-hero-video">
+        <section class="t8-hero">
+            <video class="t8-hero-video" autoplay muted loop playsinline>
                 <source src="assets/videos/dosa-hero.mp4" type="video/mp4">
             </video>
             <div class="t8-hero-bg"></div>
-            <div class="t8-container" style="position: relative; z-index: 2;">
+            <div class="t8-container">
                 <div class="t8-hero-content">
                     <div class="t8-hero-meta">
                         <span class="t8-pill">Strategic Partner</span>
-                        <span class="t8-pill">Fast-Casual South Indian</span>
+                        <span class="t8-pill">Brand & Growth Strategy</span>
                     </div>
-                    <!-- Using Text as Logo since no image provided -->
-                    <h1 class="t8-big-title" style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1rem; color: #fff;">DOSA CARTEL</h1>
-                    <p class="t8-lead">Reimagining the Iconic Dosa for Modern India</p>
+                    <h1 class="dc-hero-logo-text">DOSA CARTEL</h1>
+                    <p class="t8-lead">From Concept to Cult Brand Blueprint</p>
+                    <p style="max-width: 700px; margin: 2rem auto 0; font-size: 1.1rem; opacity: 0.8; line-height: 1.6;">
+                        Introverted Minds partnered with Dosa Cartel to build a full-scale brand, marketing, and gamified growth ecosystem from the ground up.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Brand Section -->
+        <!-- Market Research Section -->
         <section class="t8-section">
             <div class="t8-container">
                 <div class="t8-brand-grid">
                     <div>
-                        <span class="t8-label">01 / THE BRAND</span>
-                        <h2 class="t8-heading">Tradition with <br>Attitude</h2>
+                        <span class="t8-label">01 / RESEARCH</span>
+                        <h2 class="t8-heading">Market Research & <br>Opportunity Mapping</h2>
+                        <p class="t8-lead" style="margin-top: 2rem; font-size: 1.1rem;">We identified a whitespace opportunity: A fusion-driven, culturally expressive South Indian QSR built for Gen-Z and urban millennials.</p>
                     </div>
-                    <div>
-                        <p class="t8-lead">Dosa Cartel is a bold, fast-casual South Indian QSR brand that blends authentic South Indian cooking techniques with contemporary fusion flavours and a rebellious, youth-led identity. We took the dosa out of the traditional kitchen and placed it on high streets, food courts, and digital platforms.</p>
-                        
-                        <div style="margin-top: 3rem;">
-                            <h3 style="font-family: 'LEMON MILK', sans-serif; color: var(--primary); margin-bottom: 1.5rem; font-size: 1.2rem;">Brand Philosophy</h3>
-                            <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-                                <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--primary);">⚡</span> Speed without compromise</li>
-                                <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--primary);">🌶️</span> Flavour with integrity</li>
-                                <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--primary);">😎</span> Tradition with attitude</li>
-                                <li style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: var(--primary);">🎨</span> Innovation rooted in culture</li>
-                            </ul>
+                    <div class="t8-grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                        <div class="placeholder-box">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                            <span class="placeholder-label">Market Data Visualization</span>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">QSR Growth Trends • Consumer Behavior Graphs • Positioning Matrix</p>
+                        </div>
+                        <div class="t8-step-list" style="margin-top: 0;">
+                            <div class="t8-step">
+                                <span class="t8-step-num">20%</span>
+                                <div class="t8-step-content">
+                                    <h3>CAGR QSR Growth</h3>
+                                    <p>Analyzing India's rapid urban food format trajectory.</p>
+                                </div>
+                            </div>
+                            <div class="t8-step">
+                                <span class="t8-step-num">70%</span>
+                                <div class="t8-step-content">
+                                    <h3>Digital Ordering</h3>
+                                    <p>Mapping behavior across major delivery aggregators.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mandate Section -->
+        <!-- Brand Architecture Section -->
         <section class="t8-section t8-mandate-section">
             <div class="t8-container">
-                <span class="t8-label">02 / THE USP</span>
-                <h2 class="t8-heading">Fusion-First & <br>Scalable</h2>
-                <p class="t8-lead">India’s first culturally expressive, fusion-driven South Indian QSR designed for the digital generation.</p>
+                <span class="t8-label">02 / IDENTITY</span>
+                <h2 class="t8-heading">Creative Brand<br>Architecture</h2>
+                <p class="t8-lead">Developing a rebel-creator archetype identity with strong visual storytelling for the Instagram era.</p>
                 
                 <div class="t8-grid">
                     <div class="t8-card">
                         <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7h6V5a3 3 0 0 0-3-3z"></path><path d="M19 9h2a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-2"></path><path d="M5 9H3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h2"></path><path d="M12 22V12"></path></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
                         </div>
                         <div>
-                            <h3>Fusion-First Menu</h3>
-                            <p>Bold, creative flavours with strong visual branding designed for social sharing.</p>
+                            <h3>Mascot Universe</h3>
+                            <p>Dosa Kingpin, DC Bot, and the Street Chef Duo.</p>
                         </div>
                     </div>
 
                     <div class="t8-card">
                         <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
                         </div>
                         <div>
-                            <h3>Scalable Operations</h3>
-                            <p>Centralized kitchens and SOP-led operations ensuring consistency across outlets.</p>
+                            <h3>Typography</h3>
+                            <p>Disruptive custom fonts and bold brand messaging.</p>
                         </div>
                     </div>
 
                     <div class="t8-card">
                         <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                         </div>
                         <div>
-                            <h3>Low-CAPEX Model</h3>
-                            <p>Ideal for rapid franchise expansion with high turnover and quick ROI.</p>
+                            <h3>Visual Storytelling</h3>
+                            <p>Moodboards and color palettes that define the culture.</p>
                         </div>
                     </div>
 
                     <div class="t8-card">
                         <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.38 0 0 1 8 8v.5z"/></svg>
                         </div>
                         <div>
-                            <h3>Tech-Enabled</h3>
-                            <p>Hygiene-first, delivery-friendly service model integrated with modern digital platforms.</p>
+                            <h3>Tone of Voice</h3>
+                            <p>Bold taglines and a disruptive, culturally-led narrative.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Approach Section -->
+        <!-- Culinary R&D Section -->
         <section class="t8-section">
             <div class="t8-container">
-                <span class="t8-label">03 / BUSINESS MODEL</span>
-                <h2 class="t8-heading">Franchise-First <br>Growth</h2>
-                
-                <div style="margin-bottom: 4rem; max-width: 800px;">
-                    <h3 style="font-family: 'LEMON MILK', sans-serif; color: var(--primary); margin-bottom: 1rem; font-size: 1.2rem;">Market Opportunity</h3>
-                    <p class="t8-lead" style="font-size: 1.1rem; opacity: 0.9;">India’s QSR industry is growing rapidly. Dosa Cartel fills a clear market gap between unorganized street vendors and traditional dine-in restaurants — offering the authenticity of street food with the reliability of a branded QSR.</p>
-                </div>
+                <span class="t8-label">03 / INNOVATION</span>
+                <h2 class="t8-heading">Culinary Innovation<br>& R&D System</h2>
+                <p class="t8-lead">Structuring a full research & development pipeline for scalable operational excellence.</p>
                 
                 <div class="t8-step-list">
                     <div class="t8-step">
                         <span class="t8-step-num">01</span>
                         <div class="t8-step-content">
-                            <h3>Phase 1: Gujarat</h3>
-                            <p>Establishing dominance in Ahmedabad, Surat, and Vadodara with flagship outlets.</p>
+                            <h3>Trend Benchmarking</h3>
+                            <p>Culinary ideation rooted in global food trends and local preferences.</p>
                         </div>
                     </div>
                     
                     <div class="t8-step">
                         <span class="t8-step-num">02</span>
+                        <span class="t8-step-num" style="left: -100px; font-size: 1.5rem; top: 1.5rem;">Standardization</span>
                         <div class="t8-step-content">
-                            <h3>Phase 2: National</h3>
-                            <p>Expansion to Tier-1 metros across India, targeting high-traffic urban centers.</p>
+                            <h3>Recipe Engineering</h3>
+                            <p>Test kitchen trials, costing, and nutritional profiling for maximum profitability.</p>
                         </div>
                     </div>
 
                     <div class="t8-step">
                         <span class="t8-step-num">03</span>
                         <div class="t8-step-content">
-                            <h3>Phase 3: Tier-2/3 Cities</h3>
-                            <p>Scaling to Tier-2 and Tier-3 cities via franchising to maximize national reach.</p>
+                            <h3>Market Validation</h3>
+                            <p>Focus group testing and A/B flavor profiling to ensure product-market fit.</p>
                         </div>
                     </div>
 
                     <div class="t8-step">
                         <span class="t8-step-num">04</span>
                         <div class="t8-step-content">
-                            <h3>Phase 4: International</h3>
-                            <p>Entering international markets with a proven model to establish a global South Indian QSR brand.</p>
+                            <h3>Scalable SOPs</h3>
+                            <p>Frameworks for QSR, kiosk, and cloud kitchen format consistency.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Outcome Section -->
-        <section class="t8-outcome-box">
-            <div class="t8-outcome-text">
-                Redefining <br>the Dosa
+        <!-- Growth Strategy Section -->
+        <section class="t8-section t8-mandate-section">
+            <div class="t8-container">
+                <span class="t8-label">04 / GROWTH</span>
+                <h2 class="t8-heading">Marketing &<br>Growth Strategy</h2>
+                <p class="t8-lead">A full-funnel marketing engine built to dominate the digital and physical landscape.</p>
+                
+                <div class="t8-grid">
+                    <div class="t8-card">
+                        <div class="t8-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.48 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </div>
+                        <div>
+                            <h3>Teaser Drops</h3>
+                            <p>Influencer-led campaigns and viral drops to build early momentum.</p>
+                        </div>
+                    </div>
+
+                    <div class="t8-card">
+                        <div class="t8-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <div>
+                            <h3>Paid Performance</h3>
+                            <p>Targeted Meta, Google, and YouTube acquisition strategies.</p>
+                        </div>
+                    </div>
+
+                    <div class="t8-card">
+                        <div class="t8-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                            <h3>Referral Loop</h3>
+                            <p>The "Recruit the Cartel" system for organic community growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="t8-card">
+                        <div class="t8-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        </div>
+                        <div>
+                            <h3>Secret Menu FOMO</h3>
+                            <p>Experiential marketing and exclusive menu strategy.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="t8-outcome-sub">One bold bite at a time.</p>
+        </section>
+
+        <!-- Gamification Section -->
+        <section class="t8-section">
+            <div class="t8-container">
+                <span class="t8-label">05 / RETENTION</span>
+                <h2 class="t8-heading">Gamification &<br>Loyalty Ecosystem</h2>
+                <div class="t8-brand-grid" style="margin-top: 3rem;">
+                    <div class="placeholder-box">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        <span class="placeholder-label">App UI & Loyalty Dashboard</span>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Cartel Currency • Leaderboards • Mission Challenges</p>
+                    </div>
+                    <div>
+                        <p class="t8-lead">We engineered a high-engagement loyalty universe designed as a secret society brand movement.</p>
+                        <ul style="list-style: none; padding: 0; display: grid; gap: 1.5rem; margin-top: 2rem;">
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <div>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Cartel Currency</strong>
+                                    <span style="opacity: 0.7;">Tokenized rewards system for every interaction.</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <div>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Mission Challenges</strong>
+                                    <span style="opacity: 0.7;">QR-based location challenges and rank hierarchy.</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <div>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Target KPIs</strong>
+                                    <span style="opacity: 0.7;">10K agents in 30 days, 40% return rate.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deliverables Section -->
+        <section class="t8-section t8-mandate-section">
+            <div class="t8-container">
+                <span class="t8-label">SUMMARY</span>
+                <h2 class="t8-heading">What We Delivered</h2>
+                <div class="t8-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Market Positioning Blueprint</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Brand Identity System</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Menu Innovation Strategy</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Operational SOP Framework</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Digital Marketing Architecture</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 500;">Gamified Retention Ecosystem</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outcome Section -->
+        <section class="t8-section">
+            <div class="t8-container">
+                <span class="t8-label">THE VISION</span>
+                <div class="t8-outcome-box">
+                    <h2 class="t8-outcome-text">DOMINATE<br>MARKETS</h2>
+                    <p class="t8-outcome-sub">We transform concepts into culture-driven ecosystems built to dominate markets, not just participate in them.</p>
+                </div>
+                <div class="cta-btns">
+                    <a href="contact.html" class="primary-btn">Start Your Journey</a>
+                </div>
+            </div>
         </section>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -314,160 +461,90 @@
         </svg>
     </a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
-        // Custom Cursor Logic
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Custom Cursor
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
-        
         let cursorTimeout;
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        let dotX = 0;
-        let dotY = 0;
-
+        
         document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            cursor.classList.add('moving');
-            
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(() => {
-                cursor.classList.remove('moving');
-            }, 100);
-        });
-
-        function animateCursor() {
-            const speed = 0.2;
-            cursorX += (mouseX - cursorX) * speed;
-            cursorY += (mouseY - cursorY) * speed;
-            
-            dotX = mouseX;
-            dotY = mouseY;
-
-            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
-
-            requestAnimationFrame(animateCursor);
-        }
-
-        animateCursor();
-
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
+            if (cursor && cursorDot) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+                
+                cursor.classList.add('moving');
+                clearTimeout(cursorTimeout);
+                cursorTimeout = setTimeout(() => {
+                    cursor.classList.remove('moving');
+                }, 100);
+            }
         });
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        const body = document.body;
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-        const moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-        const sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        if (savedTheme === 'light') {
-            body.classList.remove('dark-mode');
-            themeIcon.innerHTML = moonIcon;
-        } else {
-            body.classList.add('dark-mode');
-            themeIcon.innerHTML = sunIcon;
-        }
-
+        let isDark = true;
+        themeIcon.innerHTML = sunIcon;
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            isDark = !isDark;
+            document.body.classList.toggle('dark-mode');
             themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
         });
 
-        // Mobile Menu
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Animations
-        gsap.registerPlugin(ScrollTrigger);
-
         // Hero Animation
         gsap.from(".t8-hero-content > *", {
-            y: 50,
+            y: 100,
             opacity: 0,
-            duration: 1,
+            duration: 1.2,
             stagger: 0.2,
-            ease: "power3.out"
+            ease: "power4.out"
         });
 
-        // Section Headers
-        gsap.utils.toArray(".t8-label, .t8-heading, .t8-lead").forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 80%",
-                },
-                y: 30,
+        // Sections Reveal
+        gsap.utils.toArray('.t8-section').forEach(section => {
+            gsap.from(section, {
                 opacity: 0,
-                duration: 0.8,
-                ease: "power2.out"
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
             });
         });
 
-        // Cards Animation
-        gsap.set(".t8-card", { opacity: 0, y: 50 });
-        
-        ScrollTrigger.batch(".t8-card", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, {
-                opacity: 1,
-                y: 0,
-                stagger: 0.15,
-                duration: 0.8,
-                ease: "power2.out",
-                overwrite: true
-            })
+        // Steps Stagger
+        gsap.from(".t8-step", {
+            x: -50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: ".t8-step-list",
+                start: "top 80%"
+            }
         });
 
-        // Steps Animation
-        gsap.set(".t8-step", { opacity: 0, x: -50 });
-        
-        ScrollTrigger.batch(".t8-step", {
-            start: "top 85%",
-            onEnter: batch => gsap.to(batch, {
-                opacity: 1,
-                x: 0,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power2.out",
-                overwrite: true
-            })
-        });
-
-        // Outcome Animation
-        gsap.set(".t8-outcome-box", { opacity: 0, scale: 0.95 });
-
-        ScrollTrigger.create({
-            trigger: ".t8-outcome-box",
-            start: "top 85%",
-            onEnter: () => gsap.to(".t8-outcome-box", {
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: "power2.out",
-                overwrite: true
-            })
+        // Outcome Box Scale
+        gsap.from(".t8-outcome-box", {
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: ".t8-outcome-box",
+                start: "top 85%"
+            }
         });
     </script>
 </body>

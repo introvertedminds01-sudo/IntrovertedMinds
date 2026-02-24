@@ -2640,7 +2640,7 @@ body.dark-mode .step-number {
     color: #666;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 0.5rem;
+    padding: 0;
 }
 
 .nav-arrow:hover {
@@ -5759,10 +5759,10 @@ body.dark-mode .post-image::after {
 .cursor {
     display: inline-block;
     width: 2px;
-    height: 8px;
+    height: 40px;
     background: #a9b7c6;
     animation: blink 1s step-end infinite;
-    margin-left: 2px;
+    margin-left: 10px;
     vertical-align: middle;
 }
 
@@ -7088,6 +7088,52 @@ body.dark-mode .t8-step:hover {
     font-size: 0.9rem;
     color: #a0a0a0;
     margin: 0;
+}
+
+/* Collaboration Placeholder */
+.collaboration-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.collaboration-placeholder svg {
+    width: 80px;
+    height: 80px;
+    opacity: 0.8;
+    z-index: 2;
+    filter: drop-shadow(0 0 15px rgba(var(--primary-rgb), 0.3));
+}
+
+.placeholder-text {
+    font-family: 'LEMON MILK', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.collaboration-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(var(--primary-rgb), 0.1) 0%, transparent 50%);
+    animation: rotate-slow 20s linear infinite;
+}
+
+@keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* Decorative Elements */
