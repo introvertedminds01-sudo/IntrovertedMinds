@@ -30,10 +30,7 @@
                 <li class="dropdown">
                     <a href="services.html">Services <span class="nav-arrow">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="services.html" class="mobile-only-link">
-                            All-in-One
-                        </a>
-                        <a href="services.html#growth">
+                        <a href="service-growth.html">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
@@ -438,7 +435,7 @@
         </div>
     </section>
 
-    <!-- Strategic Partnership Section -->
+    <!-- Strategic Partnership Section 
     <section class="partnership-section" id="partnership">
         <div class="partnership-container">
             <div class="partnership-content">
@@ -488,25 +485,25 @@
                         </div>
                     </div>
                 </div>
-                <!-- Decorative elements -->
+                <!-- Decorative elements 
                 <div class="decorative-circle circle-1"></div>
                 <div class="decorative-circle circle-2"></div>
             </div>
         </div>
-    </section>
+    </section-->
 
     <!-- Testimonials Section -->
     <section class="testimonials-redesign" id="testimonials">
         <div class="testimonials-container">
             <!-- Left Column: Content -->
             <div class="testimonials-left">
-                <h2 class="testimonials-title">Our Customers<br>Love What We Do</h2>
+                <h2 class="testimonials-title" style="font-family: 'LEMON MILK', sans-serif;">Our Customers<br>Love What We Do</h2>
                 <p class="testimonials-desc">
                     Our customers love our results! Read their reviews to discover why they're raving about our quality, service, and overall experience. Join the satisfied ranks today!
                 </p>
                 <div class="testimonials-cta">
-                    <a href="contact.html" class="btn-primary-glow">Get Started</a>
-                    <a href="services.html" class="btn-secondary-dark">Our Services</a>
+                    <a href="contact.html" class="btn-primary-glow" style="font-family: 'LEMON MILK', sans-serif; font-size: 0.9rem; letter-spacing: 1px;">Get Started</a>
+                    <a href="services.html" class="btn-secondary-dark" style="font-family: 'LEMON MILK', sans-serif; font-size: 0.9rem; letter-spacing: 1px;">Our Services</a>
                 </div>
             </div>
 
@@ -534,7 +531,7 @@
                         <div class="slide-author">
                             <div class="author-avatar-img">CB</div>
                             <div class="author-details">
-                                <h4>Charlotte Brown</h4>
+                                <h4 style="font-family: 'LEMON MILK', sans-serif; font-size: 0.9rem; letter-spacing: 1px;">Charlotte Brown</h4>
                                 <p>CEO, TechVision Solutions</p>
                             </div>
                         </div>
@@ -1079,6 +1076,11 @@
             authorRole.textContent = data.role;
             authorAvatar.textContent = data.avatar;
             ratingValue.textContent = data.rating;
+            
+            // Set font family explicitly for the name in JS update
+            authorName.style.fontFamily = "'LEMON MILK', sans-serif";
+            authorName.style.fontSize = "0.9rem";
+            authorName.style.letterSpacing = "1px";
             
             // Update dots
             dots.forEach((dot, i) => {

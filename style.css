@@ -882,12 +882,12 @@ nav, .navbar {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 11rem 5% 8rem; /* Increased bottom padding */
+            padding: 11rem 5% 5rem; /* Reduced bottom padding */
             position: relative;
             overflow: hidden;
             background: var(--bg-light);
             transition: background 0.3s ease;
-            z-index: 1;
+            z-index: 10; /* Ensure hero is above standard background layers */
         }
 
         .hero::before {
@@ -906,6 +906,13 @@ nav, .navbar {
             animation: hero-ambient-move 20s linear infinite;
             opacity: 0.8;
             pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 9rem 5% 4rem;
+                min-height: auto;
+            }
         }
 
         @keyframes hero-ambient-move {
@@ -928,6 +935,8 @@ nav, .navbar {
             pointer-events: none;
             -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            /* Ensure it doesn't extend beyond hero */
+            max-height: 100vh;
         }
 
         .grid-cell {
@@ -962,7 +971,7 @@ nav, .navbar {
             align-items: center;
             justify-content: space-between;
             position: relative;
-            z-index: 10;
+            z-index: 20; /* Increased to ensure it's above the grid */
             gap: 4rem;
         }
 
@@ -1453,9 +1462,9 @@ nav, .navbar {
             .hero-text-wrapper h1 { font-size: 2.5rem; letter-spacing: 0.2rem; }
             
             /* Reset heights to auto to prevent overlapping/cutoff */
-            .hero-visual-side { height: auto; min-height: auto; margin-top: 2rem; padding-bottom: 2rem; }
-            .hero-visual-container { height: auto; display: block; } 
-            .industries-showcase { height: auto; display: block; top: auto !important; }
+            .hero-visual-side { height: auto; min-height: auto; margin-top: 2rem; padding-bottom: 2rem; position: relative; z-index: 5; }
+            .hero-visual-container { height: auto; display: block; position: relative; z-index: 5; } 
+            .industries-showcase { height: auto; display: block; top: auto !important; position: relative; z-index: 5; }
             
             .industry-card { 
                 width: 100%; 
@@ -1802,11 +1811,13 @@ nav, .navbar {
 
         /* Stats Section */
         .stats {
-            padding: 8rem 5%;
+            padding: 3rem 5%; /* Reduced from 5rem */
             background: var(--bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative; /* Added for stacking context */
+            z-index: 15; /* Sit above Hero overlay if it bleeds */
         }
 
         .stats-container {
@@ -1973,8 +1984,10 @@ nav, .navbar {
 
         /* Services Section Redesign */
 .services {
-    padding: 8rem 5%;
+    padding: 4rem 5%; /* Reduced from 6rem */
     background: #f5f5f0; /* Light beige background */
+    position: relative; /* Added for stacking context */
+    z-index: 15; /* Added for stacking context */
 }
 
 .services-header-wrapper {
@@ -2141,11 +2154,12 @@ nav, .navbar {
 }
 
 /* FAQ Section */
-.faq-section {
-    padding: 8rem 2rem;
-    position: relative;
-    background: var(--bg-subtle);
-}
+    .faq-section {
+        padding: 4rem 2rem; /* Reduced from 6rem */
+        position: relative;
+        background: var(--bg-subtle);
+        z-index: 15; /* Added for stacking context */
+    }
 
 .faq-container {
     max-width: 800px;
@@ -2274,10 +2288,11 @@ body.dark-mode .learn-more {
 
 /* Process Section Redesigned (Vertical Timeline) */
 .process-timeline {
-    padding: 8rem 5%;
+    padding: 4rem 5%; /* Reduced from 6rem */
     background: var(--bg-subtle);
     overflow: hidden;
     position: relative;
+    z-index: 15; /* Added for stacking context */
 }
 
 /* Process Background Animation */
@@ -2548,9 +2563,11 @@ body.dark-mode .step-number {
         /* Testimonials Redesign (Dark Theme) */
 .testimonials-redesign {
     background-color: #0a0a0a;
-    padding: 8rem 5%;
+    padding: 4rem 5%; /* Reduced from 6rem */
     color: #ffffff;
     overflow: hidden;
+    position: relative; /* Added for stacking context */
+    z-index: 15; /* Added for stacking context */
 }
 
 .testimonials-container {
@@ -2810,11 +2827,12 @@ body.dark-mode .step-number {
 
         /* CTA Section */
         .cta-section {
-            padding: 10rem 5%;
+            padding: 5rem 5%; /* Reduced from 7rem */
             background: var(--secondary);
             text-align: center;
             position: relative;
             overflow: hidden;
+            z-index: 15; /* Added for stacking context */
         }
 
         .cta-section::before {
@@ -2865,7 +2883,7 @@ body.dark-mode .step-number {
 
         /* Footer */
         footer {
-            padding: 8rem 5% 4rem;
+            padding: 5rem 5% 4rem; /* Reduced top padding from 8rem */
             background: var(--bg-light);
             border-top: 1px solid var(--glass-border);
         }

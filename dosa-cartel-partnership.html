@@ -20,9 +20,9 @@
         }
         
         .placeholder-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 32px;
             padding: 3rem;
             display: flex;
             flex-direction: column;
@@ -30,27 +30,199 @@
             justify-content: center;
             text-align: center;
             gap: 1.5rem;
-            min-height: 300px;
-            transition: var(--transition);
+            min-height: 350px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
         }
         
+        .placeholder-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(var(--primary-rgb), 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
         .placeholder-box:hover {
-            background: rgba(var(--primary-rgb), 0.05);
-            border-color: var(--primary);
-            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(var(--primary-rgb), 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .placeholder-box:hover::after {
+            opacity: 1;
         }
 
         .placeholder-box svg {
             color: var(--primary);
-            opacity: 0.6;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 10px rgba(var(--primary-rgb), 0.4));
+            z-index: 1;
         }
 
         .placeholder-label {
-            font-size: 0.9rem;
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: #fff;
+            font-weight: 400;
+            z-index: 1;
+        }
+
+        .placeholder-desc {
+            font-size: 0.9rem;
             color: var(--text-muted);
+            max-width: 250px;
+            line-height: 1.5;
+            z-index: 1;
+        }
+
+        /* New Layout Utilities to Break Repetition */
+        .dc-section-alt {
+            background: rgba(var(--primary-rgb), 0.02);
+            position: relative;
+        }
+
+        .dc-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .dc-feature-card {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dc-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .dc-zigzag-step {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+        }
+
+        .dc-zigzag-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .dc-step-visual {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            aspect-ratio: 16/9;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgba(var(--primary-rgb), 0.2);
+        }
+
+        .dc-step-info {
+            flex: 1;
+        }
+
+        /* Identity Moodboard Layout */
+        .dc-identity-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .dc-identity-item {
+            position: relative;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .dc-identity-item:hover {
+            background: rgba(var(--primary-rgb), 0.05);
+            border-color: var(--primary);
+        }
+
+        .dc-id-label {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.7rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .dc-id-title {
+            font-size: 1.2rem;
             font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .dc-id-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Typography Focused Growth List */
+        .dc-growth-list {
+            margin-top: 3rem;
+            display: grid;
+            gap: 3rem;
+        }
+
+        .dc-growth-row {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dc-growth-num {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            line-height: 1;
+            opacity: 0.3;
+        }
+
+        .dc-growth-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        @media (max-width: 992px) {
+            .dc-split-layout, .dc-zigzag-step, .dc-identity-grid {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .dc-zigzag-step:nth-child(even) {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -132,85 +304,67 @@
         <!-- Market Research Section -->
         <section class="t8-section">
             <div class="t8-container">
-                <div class="t8-brand-grid">
-                    <div>
+                <div class="dc-split-layout">
+                    <div class="dc-feature-card">
                         <span class="t8-label">01 / RESEARCH</span>
                         <h2 class="t8-heading">Market Research & <br>Opportunity Mapping</h2>
-                        <p class="t8-lead" style="margin-top: 2rem; font-size: 1.1rem;">We identified a whitespace opportunity: A fusion-driven, culturally expressive South Indian QSR built for Gen-Z and urban millennials.</p>
+                        <p class="t8-lead" style="margin-top: 1.5rem; font-size: 1.1rem;">We identified a whitespace opportunity: A fusion-driven, culturally expressive South Indian QSR built for Gen-Z and urban millennials.</p>
+                        <div class="t8-step-list" style="margin-top: 2rem; border-left: none;">
+                            <div class="t8-step" style="padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <div class="t8-step-content">
+                                    <h3 style="color: var(--primary); font-size: 2.5rem; font-family: 'LEMON MILK';">20%</h3>
+                                    <p>CAGR QSR Growth in urban formats</p>
+                                </div>
+                            </div>
+                            <div class="t8-step" style="padding: 1.5rem 0; border-bottom: none;">
+                                <div class="t8-step-content">
+                                    <h3 style="color: var(--primary); font-size: 2.5rem; font-family: 'LEMON MILK';">70%</h3>
+                                    <p>Digital Ordering Preference among target demographic</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="t8-grid" style="grid-template-columns: 1fr; gap: 2rem;">
-                        <div class="placeholder-box">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-                            <span class="placeholder-label">Market Data Visualization</span>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">QSR Growth Trends • Consumer Behavior Graphs • Positioning Matrix</p>
-                        </div>
-                        <div class="t8-step-list" style="margin-top: 0;">
-                            <div class="t8-step">
-                                <span class="t8-step-num">20%</span>
-                                <div class="t8-step-content">
-                                    <h3>CAGR QSR Growth</h3>
-                                    <p>Analyzing India's rapid urban food format trajectory.</p>
-                                </div>
-                            </div>
-                            <div class="t8-step">
-                                <span class="t8-step-num">70%</span>
-                                <div class="t8-step-content">
-                                    <h3>Digital Ordering</h3>
-                                    <p>Mapping behavior across major delivery aggregators.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="placeholder-box" style="height: 100%;">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2v20M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span class="placeholder-label">Opportunity Matrix</span>
+                        <p class="placeholder-desc">Positioning Dosa Cartel at the intersection of Culture, Convenience, and Community.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Brand Architecture Section -->
-        <section class="t8-section t8-mandate-section">
+        <section class="t8-section dc-section-alt">
             <div class="t8-container">
-                <span class="t8-label">02 / IDENTITY</span>
-                <h2 class="t8-heading">Creative Brand<br>Architecture</h2>
-                <p class="t8-lead">Developing a rebel-creator archetype identity with strong visual storytelling for the Instagram era.</p>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                    <span class="t8-label" style="padding-left: 0; display: inline-block;">02 / IDENTITY</span>
+                    <h2 class="t8-heading">Creative Brand Architecture</h2>
+                    <p class="t8-lead">Developing a rebel-creator archetype identity with strong visual storytelling for the Instagram era.</p>
+                </div>
                 
-                <div class="t8-grid">
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                        </div>
-                        <div>
-                            <h3>Mascot Universe</h3>
-                            <p>Dosa Kingpin, DC Bot, and the Street Chef Duo.</p>
-                        </div>
+                <div class="dc-identity-grid">
+                    <div class="dc-identity-item">
+                        <span class="dc-id-label">STORYTELLING</span>
+                        <h3 class="dc-id-title">Mascot Universe</h3>
+                        <p class="dc-id-desc">Dosa Kingpin, DC Bot, and the Street Chef Duo bringing the brand to life.</p>
                     </div>
 
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-                        </div>
-                        <div>
-                            <h3>Typography</h3>
-                            <p>Disruptive custom fonts and bold brand messaging.</p>
-                        </div>
+                    <div class="dc-identity-item">
+                        <span class="dc-id-label">VISUALS</span>
+                        <h3 class="dc-id-title">Typography</h3>
+                        <p class="dc-id-desc">Disruptive custom fonts and bold brand messaging that stands out.</p>
                     </div>
 
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div>
-                            <h3>Visual Storytelling</h3>
-                            <p>Moodboards and color palettes that define the culture.</p>
-                        </div>
+                    <div class="dc-identity-item">
+                        <span class="dc-id-label">CULTURE</span>
+                        <h3 class="dc-id-title">Visual Language</h3>
+                        <p class="dc-id-desc">Moodboards and color palettes that define the rebel-creator culture.</p>
                     </div>
 
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.38 0 0 1 8 8v.5z"/></svg>
-                        </div>
-                        <div>
-                            <h3>Tone of Voice</h3>
-                            <p>Bold taglines and a disruptive, culturally-led narrative.</p>
-                        </div>
+                    <div class="dc-identity-item">
+                        <span class="dc-id-label">NARRATIVE</span>
+                        <h3 class="dc-id-title">Tone of Voice</h3>
+                        <p class="dc-id-desc">Bold taglines and a disruptive, culturally-led brand narrative.</p>
                     </div>
                 </div>
             </div>
@@ -219,41 +373,66 @@
         <!-- Culinary R&D Section -->
         <section class="t8-section">
             <div class="t8-container">
-                <span class="t8-label">03 / INNOVATION</span>
-                <h2 class="t8-heading">Culinary Innovation<br>& R&D System</h2>
-                <p class="t8-lead">Structuring a full research & development pipeline for scalable operational excellence.</p>
+                <div style="margin-bottom: 6rem;">
+                    <span class="t8-label">03 / INNOVATION</span>
+                    <h2 class="t8-heading">Culinary Innovation<br>& R&D System</h2>
+                    <p class="t8-lead">Structuring a full research & development pipeline for scalable operational excellence.</p>
+                </div>
                 
-                <div class="t8-step-list">
-                    <div class="t8-step">
-                        <span class="t8-step-num">01</span>
-                        <div class="t8-step-content">
+                <div class="dc-zigzag-container">
+                    <div class="dc-zigzag-step">
+                        <div class="dc-step-info">
+                            <span class="t8-step-num" style="position: static; opacity: 1; font-size: 2rem; margin-bottom: 1rem; display: block;">01</span>
                             <h3>Trend Benchmarking</h3>
-                            <p>Culinary ideation rooted in global food trends and local preferences.</p>
+                            <p class="t8-lead" style="font-size: 1rem;">Culinary ideation rooted in global food trends and local preferences. We analyze what's next, not just what's now.</p>
+                        </div>
+                        <div class="dc-step-visual">
+                            <div class="placeholder-box" style="border: none; background: none;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M2 14h20M2 8h20"/></svg>
+                                <span class="placeholder-label">Trend Analysis</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="t8-step">
-                        <span class="t8-step-num">02</span>
-                        <span class="t8-step-num" style="left: -100px; font-size: 1.5rem; top: 1.5rem;">Standardization</span>
-                        <div class="t8-step-content">
+                    <div class="dc-zigzag-step">
+                        <div class="dc-step-info">
+                            <span class="t8-step-num" style="position: static; opacity: 1; font-size: 2rem; margin-bottom: 1rem; display: block;">02</span>
                             <h3>Recipe Engineering</h3>
-                            <p>Test kitchen trials, costing, and nutritional profiling for maximum profitability.</p>
+                            <p class="t8-lead" style="font-size: 1rem;">Test kitchen trials, costing, and nutritional profiling for maximum profitability. Every gram is accounted for.</p>
+                        </div>
+                        <div class="dc-step-visual">
+                            <div class="placeholder-box" style="border: none; background: none;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M2 12h20"/></svg>
+                                <span class="placeholder-label">Recipe Costing</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="t8-step">
-                        <span class="t8-step-num">03</span>
-                        <div class="t8-step-content">
+                    <div class="dc-zigzag-step">
+                        <div class="dc-step-info">
+                            <span class="t8-step-num" style="position: static; opacity: 1; font-size: 2rem; margin-bottom: 1rem; display: block;">03</span>
                             <h3>Market Validation</h3>
-                            <p>Focus group testing and A/B flavor profiling to ensure product-market fit.</p>
+                            <p class="t8-lead" style="font-size: 1rem;">Focus group testing and A/B flavor profiling to ensure product-market fit. Data-backed deliciousness.</p>
+                        </div>
+                        <div class="dc-step-visual">
+                            <div class="placeholder-box" style="border: none; background: none;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                <span class="placeholder-label">Consumer Testing</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="t8-step">
-                        <span class="t8-step-num">04</span>
-                        <div class="t8-step-content">
+                    <div class="dc-zigzag-step">
+                        <div class="dc-step-info">
+                            <span class="t8-step-num" style="position: static; opacity: 1; font-size: 2rem; margin-bottom: 1rem; display: block;">04</span>
                             <h3>Scalable SOPs</h3>
-                            <p>Frameworks for QSR, kiosk, and cloud kitchen format consistency.</p>
+                            <p class="t8-lead" style="font-size: 1rem;">Frameworks for QSR, kiosk, and cloud kitchen format consistency. Excellence, duplicated.</p>
+                        </div>
+                        <div class="dc-step-visual">
+                            <div class="placeholder-box" style="border: none; background: none;">
+                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+                                <span class="placeholder-label">SOP Framework</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -261,51 +440,49 @@
         </section>
 
         <!-- Growth Strategy Section -->
-        <section class="t8-section t8-mandate-section">
+        <section class="t8-section dc-section-alt">
             <div class="t8-container">
-                <span class="t8-label">04 / GROWTH</span>
-                <h2 class="t8-heading">Marketing &<br>Growth Strategy</h2>
-                <p class="t8-lead">A full-funnel marketing engine built to dominate the digital and physical landscape.</p>
-                
-                <div class="t8-grid">
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.48 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-                        </div>
-                        <div>
-                            <h3>Teaser Drops</h3>
-                            <p>Influencer-led campaigns and viral drops to build early momentum.</p>
+                <div class="dc-split-layout">
+                    <div>
+                        <span class="t8-label">04 / GROWTH</span>
+                        <h2 class="t8-heading">Marketing &<br>Growth Strategy</h2>
+                        <p class="t8-lead">A full-funnel marketing engine built to dominate the digital and physical landscape.</p>
+                        
+                        <div class="dc-growth-list">
+                            <div class="dc-growth-row">
+                                <span class="dc-growth-num">01</span>
+                                <div class="dc-growth-info">
+                                    <h3>Teaser Drops</h3>
+                                    <p>Influencer-led campaigns and viral drops to build early momentum and hype.</p>
+                                </div>
+                            </div>
+                            <div class="dc-growth-row">
+                                <span class="dc-growth-num">02</span>
+                                <div class="dc-growth-info">
+                                    <h3>Paid Performance</h3>
+                                    <p>Targeted Meta, Google, and YouTube acquisition strategies for high-intent traffic.</p>
+                                </div>
+                            </div>
+                            <div class="dc-growth-row">
+                                <span class="dc-growth-num">03</span>
+                                <div class="dc-growth-info">
+                                    <h3>Referral Loop</h3>
+                                    <p>The "Recruit the Cartel" system designed for rapid organic community growth.</p>
+                                </div>
+                            </div>
+                            <div class="dc-growth-row">
+                                <span class="dc-growth-num">04</span>
+                                <div class="dc-growth-info">
+                                    <h3>Secret Menu</h3>
+                                    <p>Experiential marketing and exclusive menu strategy to drive repeat visits.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        </div>
-                        <div>
-                            <h3>Paid Performance</h3>
-                            <p>Targeted Meta, Google, and YouTube acquisition strategies.</p>
-                        </div>
-                    </div>
-
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div>
-                            <h3>Referral Loop</h3>
-                            <p>The "Recruit the Cartel" system for organic community growth.</p>
-                        </div>
-                    </div>
-
-                    <div class="t8-card">
-                        <div class="t8-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                        </div>
-                        <div>
-                            <h3>Secret Menu FOMO</h3>
-                            <p>Experiential marketing and exclusive menu strategy.</p>
-                        </div>
+                    <div class="placeholder-box" style="height: 100%; border: 1px solid rgba(var(--primary-rgb), 0.2);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+                        <span class="placeholder-label">Growth Funnel</span>
+                        <p class="placeholder-desc">Visualizing the journey from Awareness to Cartel Loyalty.</p>
                     </div>
                 </div>
             </div>
@@ -314,35 +491,44 @@
         <!-- Gamification Section -->
         <section class="t8-section">
             <div class="t8-container">
-                <span class="t8-label">05 / RETENTION</span>
-                <h2 class="t8-heading">Gamification &<br>Loyalty Ecosystem</h2>
-                <div class="t8-brand-grid" style="margin-top: 3rem;">
-                    <div class="placeholder-box">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                        <span class="placeholder-label">App UI & Loyalty Dashboard</span>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Cartel Currency • Leaderboards • Mission Challenges</p>
+                <div class="dc-split-layout">
+                    <div class="placeholder-box" style="background: #000; border-radius: 40px; border: 8px solid #1a1a1a;">
+                        <div style="width: 100%; height: 100%; display: flex; flex-direction: column; gap: 1rem; padding: 1rem;">
+                            <div style="height: 40px; background: rgba(var(--primary-rgb), 0.2); border-radius: 10px;"></div>
+                            <div style="flex: 1; background: rgba(255,255,255,0.05); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div style="height: 60px; background: rgba(255,255,255,0.05); border-radius: 10px;"></div>
+                                <div style="height: 60px; background: rgba(255,255,255,0.05); border-radius: 10px;"></div>
+                            </div>
+                        </div>
+                        <span class="placeholder-label" style="margin-top: 1rem;">Loyalty App UI</span>
+                        <p class="placeholder-desc">Gamified mobile interface for Cartel Agents.</p>
                     </div>
                     <div>
+                        <span class="t8-label">05 / RETENTION</span>
+                        <h2 class="t8-heading">Gamification &<br>Loyalty Ecosystem</h2>
                         <p class="t8-lead">We engineered a high-engagement loyalty universe designed as a secret society brand movement.</p>
                         <ul style="list-style: none; padding: 0; display: grid; gap: 1.5rem; margin-top: 2rem;">
                             <li style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <span style="color: var(--primary); font-weight: 800; font-size: 1.5rem;">•</span>
                                 <div>
-                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Cartel Currency</strong>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem; font-size: 1.2rem;">Cartel Currency</strong>
                                     <span style="opacity: 0.7;">Tokenized rewards system for every interaction.</span>
                                 </div>
                             </li>
                             <li style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <span style="color: var(--primary); font-weight: 800; font-size: 1.5rem;">•</span>
                                 <div>
-                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Mission Challenges</strong>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem; font-size: 1.2rem;">Mission Challenges</strong>
                                     <span style="opacity: 0.7;">QR-based location challenges and rank hierarchy.</span>
                                 </div>
                             </li>
                             <li style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <span style="color: var(--primary); font-weight: 800;">•</span>
+                                <span style="color: var(--primary); font-weight: 800; font-size: 1.5rem;">•</span>
                                 <div>
-                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem;">Target KPIs</strong>
+                                    <strong style="display: block; color: #fff; margin-bottom: 0.3rem; font-size: 1.2rem;">Target KPIs</strong>
                                     <span style="opacity: 0.7;">10K agents in 30 days, 40% return rate.</span>
                                 </div>
                             </li>
@@ -353,34 +539,37 @@
         </section>
 
         <!-- Deliverables Section -->
-        <section class="t8-section t8-mandate-section">
+        <section class="t8-section dc-section-alt">
             <div class="t8-container">
-                <span class="t8-label">SUMMARY</span>
-                <h2 class="t8-heading">What We Delivered</h2>
-                <div class="t8-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <span class="t8-label" style="padding-left: 0; display: inline-block;">SUMMARY</span>
+                    <h2 class="t8-heading">What We Delivered</h2>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Market Positioning Blueprint</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Market Positioning Blueprint</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Brand Identity System</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Brand Identity System</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Menu Innovation Strategy</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Menu Innovation Strategy</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Operational SOP Framework</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Operational SOP Framework</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Digital Marketing Architecture</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Digital Marketing Architecture</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 16px;">
+                    <div class="dc-feature-card" style="padding: 1rem 2rem; border-radius: 100px; border-left: none; display: flex; align-items: center; gap: 1rem;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span style="font-weight: 500;">Gamified Retention Ecosystem</span>
+                        <span style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Gamified Retention Ecosystem</span>
                     </div>
                 </div>
             </div>
@@ -389,7 +578,7 @@
         <!-- Outcome Section -->
         <section class="t8-section">
             <div class="t8-container">
-                <span class="t8-label">THE VISION</span>
+                <span class="t8-label">06 / THE VISION</span>
                 <div class="t8-outcome-box">
                     <h2 class="t8-outcome-text">DOMINATE<br>MARKETS</h2>
                     <p class="t8-outcome-sub">We transform concepts into culture-driven ecosystems built to dominate markets, not just participate in them.</p>
@@ -466,7 +655,36 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom Cursor
+        // Theme Persistence Logic
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                body.classList.remove('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = moonIcon;
+            } else {
+                body.classList.add('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = sunIcon;
+            }
+        }
+
+        initTheme();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            });
+        }
+
+        /* Custom Cursor */
         const cursor = document.querySelector('.custom-cursor');
         const cursorDot = document.querySelector('.cursor-dot');
         let cursorTimeout;
@@ -484,20 +702,6 @@
                     cursor.classList.remove('moving');
                 }, 100);
             }
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-
-        let isDark = true;
-        themeIcon.innerHTML = sunIcon;
-        themeToggle.addEventListener('click', () => {
-            isDark = !isDark;
-            document.body.classList.toggle('dark-mode');
-            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
         });
 
         // Hero Animation
