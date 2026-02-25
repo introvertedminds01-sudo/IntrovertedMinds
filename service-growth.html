@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Strategy - IntrovertedMinds</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom Styles for Growth Strategy Page - Dribbble Inspired */
+        .service-hero {
+            padding: 160px 0 80px;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .service-hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-label {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary);
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            font-family: 'LEMON MILK', sans-serif;
+        }
+
+        .service-hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            color: var(--text-main);
+        }
+
+        .service-lead {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+
+        /* Bento Grid Style Features */
+        .bento-section {
+            padding: 80px 0;
+            background: var(--bg-subtle);
+        }
+
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 1.5rem;
+        }
+
+        .bento-item {
+            background: var(--bg-light);
+            border-radius: 32px;
+            padding: 2.5rem;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .bento-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            position: relative;
+            z-index: 2;
+        }
+
+        .bento-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bento-item .icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(var(--primary-rgb), 0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid Sizes */
+        .col-6 { grid-column: span 6; }
+        .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
+        .row-2 { grid-row: span 2; }
+
+        @media (max-width: 992px) {
+            .col-6, .col-4, .col-8 { grid-column: span 12; }
+            .row-2 { grid-row: span 1; }
+        }
+
+        /* Dark mode adjustments for bento */
+        body.dark-mode .bento-item {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Custom Visual Elements */
+        .abstract-shape {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary) 0%, transparent 80%);
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.1;
+            transition: opacity 0.4s ease;
+        }
+
+        .bento-item:hover .abstract-shape {
+            opacity: 0.3;
+        }
+
+        /* Methodology Section */
+        .methodology {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .method-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .method-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .method-card {
+            text-align: left;
+        }
+
+        .method-num {
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(var(--primary-rgb), 0.1);
+            font-family: 'LEMON MILK', sans-serif;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .method-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .method-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown active">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="service-growth.html" class="active">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                            Growth Strategy
+                        </a>
+                        <a href="services.html#performance">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            Performance Marketing
+                        </a>
+                        <a href="services.html#seo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            SEO
+                        </a>
+                        <a href="services.html#social">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            Social Media
+                        </a>
+                        <a href="services.html#web">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Web Development
+                        </a>
+                        <a href="services.html#creative">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7 11l5-5"></path></svg>
+                            Creative Production
+                        </a>
+                        <a href="services.html#3d">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            3D Animation
+                        </a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon"></span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="service-hero">
+        <div class="service-hero-container">
+            <span class="service-label">Strategic Consulting</span>
+            <h1>Growth Strategy<br>& Marketing Consulting</h1>
+            <p class="service-lead">We build the foundation before execution. Our consulting framework transforms ambitious visions into market-dominating realities through data-driven precision and a relentless focus on scalable revenue systems.</p>
+            <a href="contact.html" class="primary-btn">Book a Strategy Audit</a>
+        </div>
+    </header>
+
+    <!-- Bento Grid Services -->
+    <section class="bento-section">
+        <div class="bento-container">
+            <div class="bento-grid">
+                <!-- Item 1: Market Research (Large) -->
+                <div class="bento-item col-8 row-2">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                    <div>
+                        <h3>Market & Competitor Research</h3>
+                        <p>Deep dive into industry trends, competitor positioning, and whitespace opportunities. We provide the intelligence you need to stay three steps ahead of the market.</p>
+                    </div>
+                    <div class="abstract-shape"></div>
+                </div>
+
+                <!-- Item 2: Business Strategy -->
+                <div class="bento-item col-4">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Business Strategy</h3>
+                        <p>Aligning your marketing efforts with core business objectives for sustainable growth.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Brand Positioning -->
+                <div class="bento-item col-4">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Brand Positioning & Messaging</h3>
+                        <p>Defining your unique value proposition and crafting core messaging that cuts through the noise and connects with your audience.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: GTM Planning (Medium) -->
+                <div class="bento-item col-6">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                    </div>
+                    <div>
+                        <h3>Go-to-Market Planning</h3>
+                        <p>Strategic launch blueprints designed to capture market share quickly and efficiently. We handle everything from channel selection to launch timing.</p>
+                    </div>
+                    <div class="abstract-shape"></div>
+                </div>
+
+                <!-- Item 5: Funnel Design (Medium) -->
+                <div class="bento-item col-6">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Customer Journey & Funnel Design</h3>
+                        <p>Architecting high-conversion ecosystems that mirror the "Pirate Metrics" (AARRR) framework to maximize customer lifetime value.</p>
+                    </div>
+                    <div class="abstract-shape"></div>
+                </div>
+
+                <!-- Item 6: Audience Development -->
+                <div class="bento-item col-4">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Audience & Persona Development</h3>
+                        <p>Building detailed psychographic profiles and customer personas to ensure your message hits the right person at the right time.</p>
+                    </div>
+                </div>
+
+                <!-- Item 7: Roadmap Planning -->
+                <div class="bento-item col-4">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <div>
+                        <h3>Growth Roadmap Planning</h3>
+                        <p>Multi-quarter execution plans with clear KPIs and milestones to track your progress.</p>
+                    </div>
+                </div>
+
+                <!-- Item 8: Market Entry -->
+                <div class="bento-item col-4">
+                    <div class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <div>
+                        <h3>Market Entry Consulting</h3>
+                        <p>Specialized strategies for scaling your brand into new geographic or vertical territories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="methodology">
+        <div class="method-container">
+            <div class="method-header">
+                <span class="service-label">How We Work</span>
+                <h2 class="section-title">The Architecture of Growth</h2>
+            </div>
+            <div class="method-grid">
+                <div class="method-card reveal">
+                    <div class="method-num">01</div>
+                    <h4>Intelligence & Audit</h4>
+                    <p>We begin by dissecting your current market position, competitor vulnerabilities, and internal data to find the path of least resistance to scale.</p>
+                </div>
+                <div class="method-card reveal">
+                    <div class="method-num">02</div>
+                    <h4>Strategic Architecture</h4>
+                    <p>We build the "Magic Number" models and growth roadmaps that align every marketing dollar with a specific revenue outcome.</p>
+                </div>
+                <div class="method-card reveal">
+                    <div class="method-num">03</div>
+                    <h4>Deployment & Optimization</h4>
+                    <p>Continuous iteration based on real-world performance data. We don't just launch; we evolve your strategy in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 style="font-family: 'LEMON MILK', sans-serif;">Ready to Architect<br>Your Dominance?</h2>
+            <p>Our consulting framework is designed for ambitious brands ready to stop guessing and start growing.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="primary-btn">Book Strategy Session</a>
+                <a href="services.html" class="secondary-btn">Explore All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo"><img src="logo.png" alt="Logo"></div>
+                <p>Strategic consulting meets technical mastery to build the digital infrastructure for your future success.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="introvertedminds_landing.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p>hello@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Sync
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        } else {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.innerHTML = sunIcon;
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.innerHTML = moonIcon;
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+        let cursorTimeout;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            // Add moving class for circle expansion
+            cursor.classList.add('moving');
+            
+            // Remove moving class after a short delay of no movement
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(() => {
+                cursor.classList.remove('moving');
+            }, 100);
+        });
+
+        function animateCursor() {
+            // Smooth lerp for cursor
+            const speed = 0.2;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            
+            // Dot follows instantly or with very high speed
+            dotX = mouseX;
+            dotY = mouseY;
+
+            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        // Click effect
+        document.addEventListener('mousedown', () => {
+            cursor.classList.add('click');
+        });
+
+        document.addEventListener('mouseup', () => {
+            cursor.classList.remove('click');
+        });
+
+        // Hover effect
+        const hoverElements = document.querySelectorAll('a, button, .bento-item, .method-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+                cursorDot.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+                cursorDot.classList.remove('hover');
+            });
+        });
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Intersection Observer for reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .bento-item').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
