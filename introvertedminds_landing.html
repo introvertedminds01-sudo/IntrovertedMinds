@@ -784,44 +784,19 @@
         }
 
         let cursorTimeout;
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        let dotX = 0;
-        let dotY = 0;
 
         document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
 
-            // Add moving class for circle expansion
             cursor.classList.add('moving');
-            
-            // Remove moving class after a short delay of no movement
             clearTimeout(cursorTimeout);
             cursorTimeout = setTimeout(() => {
                 cursor.classList.remove('moving');
             }, 100);
         });
-
-        function animateCursor() {
-            // Smooth lerp for cursor
-            const speed = 0.2;
-            cursorX += (mouseX - cursorX) * speed;
-            cursorY += (mouseY - cursorY) * speed;
-            
-            // Dot follows instantly or with very high speed
-            dotX = mouseX;
-            dotY = mouseY;
-
-            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
-
-            requestAnimationFrame(animateCursor);
-        }
-
-        animateCursor();
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
