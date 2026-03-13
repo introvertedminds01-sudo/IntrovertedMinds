@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+
     
     <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
@@ -30,11 +28,11 @@
                 <li class="dropdown">
                     <a href="services.html">Services <span class="nav-arrow">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="service-growth.html">
+                        <a href="services.html#growth">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
-                        <a href="service-performance.html">
+                        <a href="services.html#performance">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                             Performance Marketing
                         </a>
@@ -60,8 +58,8 @@
                         </a>
                     </div>
                 </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -340,7 +338,7 @@
                 </div>
                 <h3>Growth Strategy</h3>
                 <p>We build the digital infrastructure for your future success. Strategic consulting meets technical mastery to ensure your business is positioned for maximum growth.</p>
-                <a href="service-growth.html" class="learn-more" style="color: var(--primary) !important;">
+                <a href="services.html#growth" class="learn-more" style="color: var(--primary) !important;">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -349,9 +347,9 @@
                 <div class="service-icon-wrapper">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 </div>
-                <h3>Digital Marketing</h3>
+                <h3>Performance Marketing</h3>
                 <p>Data-driven performance marketing designed to generate revenue. We optimize every dollar spent to maximize your ROI across all major advertising platforms.</p>
-                <a href="service-performance.html" class="learn-more">
+                <a href="services.html#performance" class="learn-more">
                     Learn More 
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
@@ -667,9 +665,7 @@
             }
         });
 
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
+
         const heroGrid = document.getElementById('heroGrid');
 
         // Hero Grid Animation
@@ -783,20 +779,7 @@
             }
         }
 
-        let cursorTimeout;
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-
-            cursor.classList.add('moving');
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(() => {
-                cursor.classList.remove('moving');
-            }, 100);
-        });
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');

@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -30,7 +28,7 @@
                         <a href="services.html" class="mobile-only-link">
                             All-in-One
                         </a>
-                        <a href="service-growth.html">
+                        <a href="services.html#growth">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
@@ -60,8 +58,8 @@
                         </a>
                     </div>
                 </li>
+                <li class="active"><a href="partnerships.html">Our Collaboration</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="active"><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -295,36 +293,9 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
-        let cursorTimeout;
-        
-        document.addEventListener('mousemove', (e) => {
-            if (cursor && cursorDot) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-                
-                cursor.classList.add('moving');
-                clearTimeout(cursorTimeout);
-                cursorTimeout = setTimeout(() => {
-                    cursor.classList.remove('moving');
-                }, 100);
-            }
-        });
 
-        document.querySelectorAll('a, button').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor?.classList.add('hover');
-                cursorDot?.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor?.classList.remove('hover');
-                cursorDot?.classList.remove('hover');
-            });
-        });
+
+
 
         // Theme Toggle Logic
         const themeToggle = document.getElementById('themeToggle');

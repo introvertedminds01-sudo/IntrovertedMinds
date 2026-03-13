@@ -226,9 +226,7 @@
     </style>
 </head>
 <body class="dark-mode">
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+
     
     <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
@@ -247,7 +245,7 @@
                 <li class="dropdown active">
                     <a href="services.html">Services <span class="nav-arrow">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="service-growth.html" class="active">
+                        <a href="services.html#growth">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
@@ -277,8 +275,8 @@
                         </a>
                     </div>
                 </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
         </div>
         <div class="nav-right">
@@ -493,70 +491,9 @@
             }
         });
 
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        let dotX = 0;
-        let dotY = 0;
-        let cursorTimeout;
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
 
-            // Add moving class for circle expansion
-            cursor.classList.add('moving');
-            
-            // Remove moving class after a short delay of no movement
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(() => {
-                cursor.classList.remove('moving');
-            }, 100);
-        });
 
-        function animateCursor() {
-            // Smooth lerp for cursor
-            const speed = 0.2;
-            cursorX += (mouseX - cursorX) * speed;
-            cursorY += (mouseY - cursorY) * speed;
-            
-            // Dot follows instantly or with very high speed
-            dotX = mouseX;
-            dotY = mouseY;
-
-            cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
-
-            requestAnimationFrame(animateCursor);
-        }
-
-        animateCursor();
-
-        // Click effect
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
-
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-        });
-
-        // Hover effect
-        const hoverElements = document.querySelectorAll('a, button, .bento-item, .method-card');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-                cursorDot.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-                cursorDot.classList.remove('hover');
-            });
-        });
 
         // Mobile Menu
         const mobileToggle = document.getElementById('mobileToggle');

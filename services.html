@@ -17,9 +17,7 @@
         <div class="blob-wrapper blob-3"><div class="blob"></div></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -35,13 +33,13 @@
                 <li class="dropdown active">
                     <a href="services.html">Services <span class="nav-arrow">▾</span></a>
                     <div class="dropdown-content">
-                        <a href="service-growth.html">
+                        <a href="#growth">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
-                        <a href="service-performance.html">
+                        <a href="#performance">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Digital Marketing
+                            Performance Marketing
                         </a>
                         <a href="services.html#seo">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -65,8 +63,8 @@
                         </a>
                     </div>
                 </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -101,7 +99,7 @@
                 <p>We don't just provide services; we build the digital infrastructure for your future success. Strategic consulting meets technical mastery.</p>
                 <div class="hero-centered-ctas">
                     <a href="contact.html" class="modern-btn primary">Work With Us</a>
-                    <a href="service-growth.html" class="modern-btn secondary">
+                    <a href="#growth" class="modern-btn secondary">
                         Explore Services
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
@@ -113,8 +111,8 @@
     <!-- Services Quick Nav -->
     <div class="services-nav-bar">
         <div class="nav-bar-container">
-            <a href="service-growth.html" class="nav-item">Growth Strategy</a>
-            <a href="service-performance.html" class="nav-item">Digital Marketing</a>
+            <a href="#growth" class="nav-item">Growth Strategy</a>
+            <a href="#performance" class="nav-item">Performance Marketing</a>
             <a href="#seo" class="nav-item">SEO</a>
             <a href="#social" class="nav-item">Social Media</a>
             <a href="#web" class="nav-item">Web Development</a>
@@ -618,26 +616,10 @@
     </div> 
 
     <script>
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
         const blobs = document.querySelectorAll('.blob');
-        let cursorTimeout;
         
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
 
-            // Add moving class for circle expansion
-            cursor.classList.add('moving');
-            
-            // Remove moving class after a short delay of no movement
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(() => {
-                cursor.classList.remove('moving');
-            }, 100);
 
             // Background Parallax
             const mouseX = e.clientX / window.innerWidth;
@@ -651,27 +633,7 @@
             });
         });
 
-        // Click effect
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
 
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-        });
-
-        // Hover effect
-        const hoverElements = document.querySelectorAll('a, button, .visual-card, .service-detail-section');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-                cursorDot.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-                cursorDot.classList.remove('hover');
-            });
-        });
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');

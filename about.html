@@ -17,9 +17,7 @@
         <div class="blob-wrapper blob-3"><div class="blob"></div></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-dot"></div>
+
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -36,13 +34,13 @@
                     <a href="services.html">Services <span class="nav-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px; vertical-align: middle;"><path d="m6 9 6 6 6-6"/></svg></span></a>
                     <div class="dropdown-content">
                         <a href="services.html" class="mobile-only-link">All-in-One</a>
-                        <a href="service-growth.html">
+                        <a href="services.html#growth">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                             Growth Strategy
                         </a>
-                        <a href="service-performance.html">
+                        <a href="services.html#performance">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                            Digital Marketing
+                            Performance Marketing
                         </a>
                         <a href="services.html#seo">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -66,8 +64,8 @@
                         </a>
                     </div>
                 </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="partnerships.html" class="partnership-btn">Our Collaboration</a></li>
             </ul>
             <div class="mobile-menu-footer">
                 <p>Ready to scale your business?</p>
@@ -423,26 +421,10 @@
     </div>
 
     <script>
-        // Custom Cursor
-        const cursor = document.querySelector('.custom-cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
         const blobs = document.querySelectorAll('.blob');
-        let cursorTimeout;
         
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
 
-            // Add moving class for circle expansion
-            cursor.classList.add('moving');
-            
-            // Remove moving class after a short delay of no movement
-            clearTimeout(cursorTimeout);
-            cursorTimeout = setTimeout(() => {
-                cursor.classList.remove('moving');
-            }, 100);
 
             // Background Parallax
             const mouseX = e.clientX / window.innerWidth;
@@ -456,27 +438,7 @@
             });
         });
 
-        // Click effect
-        document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
 
-        document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-        });
-
-        // Hover effect
-        const hoverElements = document.querySelectorAll('a, button, .hero-card, .approach-card, .service-item, .stat-card, .team-member, .process-step, .panel-card, .metric-card');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-                cursorDot.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-                cursorDot.classList.remove('hover');
-            });
-        });
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
