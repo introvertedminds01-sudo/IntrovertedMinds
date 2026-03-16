@@ -1,0 +1,916 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spain Saffron Strategic Expansion (Malaysia) - IntrovertedMinds</title>
+<link rel="preconnect" href="https://fonts.cdnfonts.com">
+<link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    :root {
+        --saffron-red: #8b0000;
+        --saffron-gold: #ffb800;
+        --saffron-primary: #ff6b35;
+        --saffron-bg: #0a0a0a;
+    }
+
+    .saffron-hero {
+        height: clamp(600px, 90vh, 900px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: #000;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    /* Strategic Growth Journey - Tag 8 Inspired Step List */
+    .saffron-step-list {
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    body:not(.dark-mode) .saffron-step-list {
+        border-top-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .saffron-step {
+        padding: 4rem 3rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        transition: background 0.4s ease;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    body:not(.dark-mode) .saffron-step {
+        border-bottom-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .saffron-step:hover {
+        background: rgba(var(--primary-rgb), 0.02);
+    }
+
+    .saffron-step-num {
+        font-family: 'LEMON MILK', sans-serif;
+        font-size: 6rem;
+        color: var(--saffron-primary);
+        opacity: 0.05;
+        position: absolute;
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: all 0.4s ease;
+        z-index: 0;
+    }
+
+    .saffron-step:hover .saffron-step-num {
+        opacity: 0.1;
+        transform: translateY(-50%) translateX(-20px);
+    }
+
+    .saffron-step-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+    }
+
+    .saffron-step-content h3 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    body:not(.dark-mode) .saffron-step-content h3 {
+        color: var(--text-main);
+    }
+
+    .saffron-step-content p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .saffron-step {
+            padding: 3rem 1.5rem;
+        }
+
+        .saffron-step-num {
+            font-size: 4rem;
+            right: 1.5rem;
+        }
+
+        .saffron-step-content h3 {
+            font-size: 1.4rem;
+        }
+
+        .saffron-step-content p {
+            font-size: 1rem;
+        }
+    }
+
+    .saffron-hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+        filter: brightness(0.6) saturate(1.2);
+    }
+
+    .saffron-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+    }
+
+    .saffron-label {
+        font-family: 'LEMON MILK', sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 5px;
+        color: var(--saffron-primary);
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        display: block;
+        text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+    }
+
+    .saffron-title {
+        font-size: clamp(3rem, 10vw, 6rem);
+        line-height: 1;
+        margin-bottom: 2rem;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .saffron-subtitle {
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 800px;
+        margin: 0 auto;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .saffron-section {
+        padding: 120px 0;
+        position: relative;
+    }
+
+    .saffron-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .saffron-grid-bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .saffron-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 32px;
+        padding: 3rem;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .saffron-card:hover {
+        border-color: var(--saffron-primary);
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .saffron-card.col-3 {
+        grid-column: span 3;
+    }
+
+    .saffron-card.col-4 {
+        grid-column: span 4;
+    }
+
+    .saffron-card.col-6 {
+        grid-column: span 6;
+    }
+
+    .saffron-card.col-8 {
+        grid-column: span 8;
+    }
+
+    .saffron-card.col-12 {
+        grid-column: span 12;
+    }
+
+    .saffron-card-num {
+        font-family: 'LEMON MILK', sans-serif;
+        font-size: 0.8rem;
+        color: var(--saffron-primary);
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+
+    .saffron-card-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .saffron-card-desc {
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    .saffron-methodology-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .method-pillar {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        transition: all 0.4s ease;
+    }
+
+    .method-pillar:hover {
+        background: var(--saffron-primary);
+        border-color: var(--saffron-primary);
+        transform: translateY(-5px);
+    }
+
+    .method-pillar:hover h3,
+    .method-pillar:hover p,
+    .method-pillar:hover .method-num {
+        color: #fff;
+        opacity: 1;
+    }
+
+    .method-num {
+        font-family: 'LEMON MILK', sans-serif;
+        font-size: 2.5rem;
+        color: var(--saffron-primary);
+        opacity: 0.3;
+        margin-bottom: 1.5rem;
+        display: block;
+    }
+
+    .method-pillar h3 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+
+    .method-pillar p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    /* --- RESPONSIVENESS --- */
+
+    @media (max-width: 1200px) {
+        .saffron-methodology-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .saffron-section {
+            padding: 80px 0;
+        }
+
+        .saffron-card {
+            padding: 2.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .saffron-hero {
+            height: auto;
+            min-height: 100vh;
+            padding: 140px 1.5rem 80px;
+        }
+
+        .saffron-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .saffron-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+        }
+
+        .hero-lead {
+            font-size: 1.1rem;
+        }
+
+        .saffron-grid-bento {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .saffron-card.col-3,
+        .saffron-card.col-4,
+        .saffron-card.col-6,
+        .saffron-card.col-8,
+        .saffron-card.col-12 {
+            grid-column: span 1 !important;
+            padding: 2rem;
+        }
+
+        .saffron-card-title {
+            font-size: 1.6rem;
+        }
+
+        .saffron-methodology-grid {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .method-pillar {
+            padding: 2.5rem 1.5rem;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .method-num {
+            font-size: 2rem;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+
+        .method-pillar h3 {
+            margin-top: 0.2rem;
+        }
+
+        .t8-outcome-box {
+            padding: 4rem 1.5rem;
+            border-radius: 24px;
+        }
+
+        .t8-outcome-text {
+            font-size: 2.8rem;
+        }
+
+        .t8-outcome-sub {
+            font-size: 1.1rem;
+        }
+    }
+
+    /* Light Mode */
+    body:not(.dark-mode) .saffron-card {
+        background: #fff;
+        border-color: rgba(var(--primary-rgb), 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    body:not(.dark-mode) .saffron-card-title {
+        color: var(--text-main);
+    }
+
+    body:not(.dark-mode) .roadmap-content {
+        background: #fff;
+        border-color: rgba(var(--primary-rgb), 0.1);
+    }
+
+    /* Nav active link color */
+    .nav-links li a.active {
+        color: var(--primary);
+    }
+</style>
+</head>
+
+<body class="dark-mode">
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="services.html#growth">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Growth Strategy
+                        </a>
+                        <a href="services.html#performance">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Performance Marketing
+                        </a>
+                        <a href="services.html#seo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            SEO
+                        </a>
+                        <a href="services.html#social">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Social Media
+                        </a>
+                        <a href="services.html#web">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Web Development
+                        </a>
+                        <a href="services.html#creative">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.5 1.5"></path>
+                                <path d="M7 11l5-5"></path>
+                            </svg>
+                            Creative Production
+                        </a>
+                        <a href="services.html#3d">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            3D Animation
+                        </a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <p>Ready to scale your business?</p>
+                <a href="tel:+919867440690" class="mobile-contact-link">📞 +91 9867440690</a>
+                <div class="mobile-socials">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="width: 20px; height: 20px;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="saffron-hero">
+        <img src="https://images.pexels.com/photos/10487658/pexels-photo-10487658.jpeg" alt="Premium Saffron"
+            class="saffron-hero-bg">
+        <div class="saffron-hero-content">
+
+            <div class="saffron-hero-text">
+                <span class="saffron-label">European Saffron Expansion</span>
+                <h1 class="saffron-title">Spain Saffron<br>Proposal (Malaysia)</h1>
+                <p class="saffron-subtitle">Strategic Market Penetration Blueprint & Execution Framework for Southeast
+                    Asian Growth.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="saffron-section">
+        <div class="saffron-container">
+            <div class="section-header">
+                <span class="section-tag">Engagement Mandate</span>
+                <h2 class="section-title">Strategic Overview</h2>
+                <p class="hero-lead">To position the brand as a premium saffron leader in Malaysia while leveraging the
+                    market as a strategic gateway for long-term expansion across Southeast Asia.</p>
+            </div>
+
+            <div class="saffron-grid-bento">
+                <div class="saffron-card col-8">
+                    <span class="saffron-card-num">01</span>
+                    <h3 class="saffron-card-title">Market Opportunity</h3>
+                    <p class="saffron-card-desc">Malaysia’s expanding retail landscape, strong import ecosystem, and
+                        growing demand for premium food products present a compelling opportunity for high-quality
+                        saffron brands. Our mandate is to translate this opportunity into a clear, executable expansion
+                        framework.</p>
+                </div>
+                <div class="saffron-card col-4">
+                    <span class="saffron-card-num">02</span>
+                    <h3 class="saffron-card-title">Regional Gateway</h3>
+                    <p class="saffron-card-desc">Recognizing Malaysia as a strategic entry point to the broader
+                        Southeast Asian premium food sector.</p>
+                </div>
+                <div class="saffron-card col-4">
+                    <span class="saffron-card-num">03</span>
+                    <h3 class="saffron-card-title">Pricing Architecture</h3>
+                    <p class="saffron-card-desc">Development of competitive yet premium pricing structures tailored to
+                        regional dynamics.</p>
+                </div>
+                <div class="saffron-card col-8">
+                    <span class="saffron-card-num">04</span>
+                    <h3 class="saffron-card-title">Sustainable Presence</h3>
+                    <p class="saffron-card-desc">Laying the foundation for a scalable and sustainable presence,
+                        supported by structured operational frameworks and distribution networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="saffron-section dc-section-alt">
+        <div class="saffron-container">
+            <div class="section-header">
+                <span class="section-tag">Methodology</span>
+                <h2 class="section-title">Market Entry Framework</h2>
+                <p class="hero-lead">Introverted Minds applies a structured consulting methodology designed to support
+                    international brands entering new markets.</p>
+            </div>
+
+            <div class="saffron-methodology-grid">
+                <div class="method-pillar">
+                    <span class="method-num">01</span>
+                    <h3>Intelligence</h3>
+                    <p>Analysis of demand, consumer behavior, and regulatory environments.</p>
+                </div>
+                <div class="method-pillar">
+                    <span class="method-num">02</span>
+                    <h3>Positioning</h3>
+                    <p>Differentiated market analysis and competitive benchmarking.</p>
+                </div>
+                <div class="method-pillar">
+                    <span class="method-num">03</span>
+                    <h3>Architecture</h3>
+                    <p>Scalable distribution networks covering retail and wholesale.</p>
+                </div>
+                <div class="method-pillar">
+                    <span class="method-num">04</span>
+                    <h3>Framework</h3>
+                    <p>Organizational structures and resource planning models.</p>
+                </div>
+                <div class="method-pillar">
+                    <span class="method-num">05</span>
+                    <h3>Financials</h3>
+                    <p>Projections, capital planning, and growth forecasting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="saffron-section">
+        <div class="saffron-container">
+            <div class="section-header">
+                <span class="section-tag">Architecture</span>
+                <h2 class="section-title">Strategic Ecosystem</h2>
+            </div>
+
+            <div class="saffron-grid-bento">
+                <div class="saffron-card col-6">
+                    <span class="saffron-card-num">LOGISTICS</span>
+                    <h3 class="saffron-card-title">Supply Chain Mastery</h3>
+                    <p class="saffron-card-desc">Design of high-efficiency logistics streams for temperature-sensitive
+                        premium saffron, ensuring quality preservation from Spain to Malaysian retail shelves.</p>
+                </div>
+                <div class="saffron-card col-6">
+                    <span class="saffron-card-num">DISTRIBUTION</span>
+                    <h3 class="saffron-card-title">Network Architecture</h3>
+                    <p class="saffron-card-desc">Deep integration with high-end Malaysian grocers, specialty food
+                        importers, and direct-to-consumer digital channels.</p>
+                </div>
+                <div class="saffron-card col-4">
+                    <span class="saffron-card-num">SALES</span>
+                    <h3 class="saffron-card-title">Ecosystem Design</h3>
+                    <p class="saffron-card-desc">Building a robust sales pipeline backed by modern CRM and retail
+                        partner management.</p>
+                </div>
+                <div class="saffron-card col-4">
+                    <span class="saffron-card-num">MARKETING</span>
+                    <h3 class="saffron-card-title">Brand Resonance</h3>
+                    <p class="saffron-card-desc">Elevating the Spanish heritage to meet the aspirations of Malaysia's
+                        growing middle and upper class.</p>
+                </div>
+                <div class="saffron-card col-4">
+                    <span class="saffron-card-num">FINANCE</span>
+                    <h3 class="saffron-card-title">Capital Planning</h3>
+                    <p class="saffron-card-desc">Clear financial roadmaps and investment outlooks for a 3-year growth
+                        cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="saffron-section dc-section-alt">
+        <div class="saffron-container">
+            <div class="section-header">
+                <span class="section-tag">Roadmap</span>
+                <h2 class="section-title">Strategic Growth Journey</h2>
+            </div>
+
+            <div class="saffron-step-list">
+                <div class="saffron-step reveal-journey">
+                    <span class="saffron-step-num">01</span>
+                    <div class="saffron-step-content">
+                        <h3>Foundation & Setup</h3>
+                        <p>Regulatory compliance, import licensing, and initial warehouse logistics setup in Malaysia to
+                            ensure a smooth operations launch.</p>
+                    </div>
+                </div>
+
+                <div class="saffron-step reveal-journey">
+                    <span class="saffron-step-num">02</span>
+                    <div class="saffron-step-content">
+                        <h3>Channel Activation</h3>
+                        <p>Partnering with premium retail chains while launching a high-end digital D2C presence across
+                            Malaysia.</p>
+                    </div>
+                </div>
+
+                <div class="saffron-step reveal-journey">
+                    <span class="saffron-step-num">03</span>
+                    <div class="saffron-step-content">
+                        <h3>Market Scaling</h3>
+                        <p>Expanding distribution across Peninsular Malaysia and initiating strategic luxury HORECA
+                            partnerships.</p>
+                    </div>
+                </div>
+
+                <div class="saffron-step reveal-journey">
+                    <span class="saffron-step-num">04</span>
+                    <div class="saffron-step-content">
+                        <h3>Regional Expansion</h3>
+                        <p>Leveraging the Malaysian hub as a springboard for entry into Singapore, Thailand, and
+                            Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="t8-section" style="padding: 100px 0;">
+        <div class="t8-container">
+            <span class="t8-label">06 / THE VISION</span>
+            <div class="t8-outcome-box">
+                <h2 class="t8-outcome-text">REGIONAL<br>DOMINANCE</h2>
+                <p class="t8-outcome-sub">We don't just facilitate entry; we build the infrastructure for Spain's finest
+                    saffron to become a household name across Malaysia and the broader Southeast Asian region.</p>
+            </div>
+            <div class="cta-btns">
+                <a href="contact.html" class="primary-btn">Start Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="IntrovertedMinds">
+                </div>
+                <p>Designing market entry and growth strategies for brands expanding into international markets.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#growth">Growth Strategy</a>
+                <a href="services.html#performance">Performance Marketing</a>
+                <a href="services.html#seo">SEO</a>
+                <a href="services.html#social">Social Media</a>
+                <a href="services.html#web">Web Development</a>
+                <a href="services.html#creative">Creative Production</a>
+                <a href="services.html#3d">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat with IntrovertedMinds on WhatsApp"
+        target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Theme Persistence Logic
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const isDark = savedTheme === 'dark';
+            if (isDark) {
+                body.classList.add('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = sunIcon;
+            } else {
+                body.classList.remove('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = moonIcon;
+            }
+            updateLogos(isDark);
+        }
+
+        initTheme();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+                updateLogos(isDark);
+            });
+        }
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Animations
+        gsap.from(".saffron-hero-content > *", {
+            y: 100,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+
+        gsap.utils.toArray('.saffron-section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        gsap.from(".method-pillar", {
+            scale: 1,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: ".saffron-methodology-grid",
+                start: "top 80%"
+            }
+        });
+
+        gsap.from(".reveal-journey", {
+            opacity: 0,
+            y: 40,
+            stagger: 0.2,
+            duration: 1.2,
+            ease: "expo.out",
+            scrollTrigger: {
+                trigger: ".saffron-step-list",
+                start: "top 80%"
+            }
+        });
+
+        gsap.from(".t8-outcome-box", {
+            scale: 0.9,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: ".t8-outcome-box",
+                start: "top 85%"
+            }
+        });
+    </script>
+</body>
+
+</html>
