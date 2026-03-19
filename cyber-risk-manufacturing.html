@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Risk in Manufacturing | 2025 Market Research Study | Introverted Minds</title>
+    <meta name="description" content="A comprehensive market research study on the hidden costs of cybersecurity risk in the manufacturing sector. Analyzed by Introverted Minds for Qui-Vive Cybersecurity.">
+    <meta name="keywords" content="cybersecurity, manufacturing risk, industrial cyber, operational technology, IT OT convergence, market research, introvertedminds, quivive">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="The Hidden Cost of Cyber Risk in Manufacturing">
+    <meta property="og:description" content="Revealing the financial exposure of the digital industrial revolution through deep market intelligence.">
+    <meta property="og:image" content="assets/images/quivive-hero-bg.png">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-rgb: 255, 107, 53;
+            --primary: rgb(var(--primary-rgb));
+            --accent: var(--primary);
+            
+            /* Light Theme Defaults */
+            --bg-main: #ffffff;
+            --bg-card: #f8f8fa;
+            --bg-subtle: #fafafa;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --border: rgba(0, 0, 0, 0.08);
+            --hero-gradient: rgba(255, 107, 53, 0.03);
+            --container-width: 1200px;
+            --case-bg: #111111;
+            --case-text: #ffffff;
+        }
+
+        body.dark-mode {
+            --bg-main: #070708;
+            --bg-card: #0e0e10;
+            --bg-subtle: #0a0a0c;
+            --text-main: #ffffff;
+            --text-muted: #88888e;
+            --border: rgba(255, 255, 255, 0.06);
+            --hero-gradient: rgba(255, 107, 53, 0.05);
+            --case-bg: #ffffff;
+            --case-text: #000000;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Nav Correction */
+        .navbar {
+            background: var(--bg-main) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            opacity: 0.98;
+        }
+
+        .manufacturing-hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 220px 2rem 120px; /* Increased from 140px */
+            overflow: hidden;
+            background: 
+                linear-gradient(to bottom, transparent 95%, var(--bg-main)),
+                radial-gradient(circle at center, var(--hero-gradient) 0%, transparent 70%);
+            text-align: center;
+        }
+
+        /* Industrial Grid Background */
+        .manufacturing-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px), 
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 80%);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.5rem 1rem;
+            background: rgba(var(--primary-rgb), 0.08);
+            border: 1px solid rgba(var(--primary-rgb), 0.15);
+            border-radius: 100px;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem; /* Reduced from 1.5rem */
+            backdrop-filter: blur(5px);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1.0;
+            margin-bottom: 1rem; /* Reduced from 1.5rem */
+            letter-spacing: -2px;
+            font-weight: 800;
+            color: var(--text-main);
+            width: 100%;
+        }
+
+        .hero-title span {
+            display: block;
+            background: var(--text-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        body.dark-mode .hero-title span {
+            background: linear-gradient(180deg, #fff 40%, rgba(255,255,255,0.6) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-content > * {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 1.8vw, 1.2rem);
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 550px;
+            margin-bottom: 2rem; /* Reduced from 2.5rem */
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            background: var(--text-main);
+            color: var(--bg-main);
+            /* ... other styles preserved ... */
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-5px);
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Alignment & Sections */
+        .t8-section {
+            padding: 160px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .t8-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            display: block;
+        }
+
+        .minimal-heading {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.05;
+            margin-bottom: 4rem;
+            letter-spacing: -2px;
+            color: var(--text-main);
+        }
+
+        /* Layout Grids */
+        .grid-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: start;
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .bento-card {
+            border-top: 2px solid var(--border);
+            padding-top: 2.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .bento-card:hover { border-top-color: var(--primary); }
+
+        .bento-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .bento-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* Stats Panel */
+        .stats-wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-box {
+            background: var(--bg-card);
+            padding: 5rem 3rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-val {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 4rem;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .stat-lab {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* Comparison Alignment */
+        .comp-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            padding: 5rem 4rem;
+        }
+
+        .comp-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .comp-ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .comp-ul li {
+            color: var(--text-muted);
+            line-height: 1.7;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .comp-ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        /* Impact Panel */
+        .impact-massive {
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .impact-val {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: clamp(8rem, 20vw, 15rem);
+            line-height: 0.75;
+            margin-bottom: 4rem;
+            color: var(--text-main);
+            letter-spacing: -5px;
+        }
+
+        .impact-txt {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Split Dark/Light Panel (Case Study) */
+        .case-split {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 8rem;
+            align-items: center;
+            background: var(--case-bg);
+            color: var(--case-text);
+            padding: 8rem 6rem;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .case-split h4 {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 2.5rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-split p {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: inherit;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-split, .grid-three, .stats-wrap, .case-split {
+                grid-template-columns: 1fr;
+                gap: 5rem;
+            }
+            .t8-container { padding: 0 30px; }
+            .case-split { padding: 4rem 2rem; }
+            .hero-title { font-size: 15vw; }
+        }
+
+        @media (max-width: 768px) {
+            .manufacturing-hero {
+                padding: 140px 1.5rem 60px;
+                min-height: auto;
+            }
+
+            .hero-meta {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 10vw, 3rem);
+                letter-spacing: -1px;
+                margin-bottom: 1rem;
+            }
+
+            .hero-title span { display: inline; }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+                line-height: 1.5;
+            }
+
+            .hero-cta {
+                padding: 1rem 2rem;
+                font-size: 0.85rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .t8-section {
+                padding: 80px 0;
+            }
+
+            .impact-val { font-size: 5rem; }
+            
+            .minimal-heading { font-size: 3rem; margin-bottom: 2rem; }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="services.html#growth">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Growth Strategy
+                        </a>
+                        <a href="services.html#performance">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Performance Marketing
+                        </a>
+                        <a href="services.html#seo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            SEO
+                        </a>
+                        <a href="services.html#social">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Social Media
+                        </a>
+                        <a href="services.html#web">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Web Development
+                        </a>
+                        <a href="services.html#creative">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.5 1.5"></path>
+                                <path d="M7 11l5-5"></path>
+                            </svg>
+                            Creative Production
+                        </a>
+                        <a href="services.html#3d">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                            3D Animation
+                        </a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <p>Ready to scale your business?</p>
+                <a href="tel:+919867440690" class="mobile-contact-link">📞 +91 9867440690</a>
+                <div class="mobile-socials">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="LinkedIn">LI</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="width: 20px; height: 20px;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="manufacturing-hero">
+        <div class="hero-content">
+            <div class="hero-meta">
+                <span>Infrastructure</span>
+                <span>•</span>
+                <span>Cyber Risk</span>
+                <span>•</span>
+                <span>2025 Study</span>
+            </div>
+            <h1 class="hero-title">
+                <span>The Hidden Cost</span>
+                <span>of Industrial Cyber</span>
+            </h1>
+            <p class="hero-subtitle">
+                A market research study conducted for Qui-Vive Cybersecurity revealing the financial exposure of the digital industrial revolution.
+            </p>
+            <a href="#industry-context" class="hero-cta">
+                Explore The Study
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <div class="t8-wrapper">
+        <!-- ========== INDUSTRY CONTEXT ========== -->
+        <section id="industry-context" class="t8-section">
+            <div class="t8-container">
+                <div class="grid-split">
+                    <div>
+                        <span class="section-label">01 / Industry Context</span>
+                        <h2 class="minimal-heading">The Digital Transition</h2>
+                        <p style="font-size: 1.3rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 300;">
+                            The manufacturing sector is undergoing rapid digital transformation, driven by automation, connectivity, and data integration.
+                        </p>
+                        <p style="line-height: 2; color: var(--text-muted);">
+                            While these advancements improve operational efficiency, they introduce new layers of risk—particularly in cybersecurity. The convergence of IT and OT has created unprecedented exposure.
+                        </p>
+                    </div>
+                    <div style="padding-top: 3rem;">
+                        <div style="border-left: 2px solid var(--accent); padding: 4rem; background: var(--bg-card);">
+                            <p style="font-size: 1.8rem; line-height: 1.4; font-weight: 300; font-style: italic; color: var(--text-main);">"Digital transformation has outpaced security readiness across the global industrial base."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== RESEARCH OBJECTIVES ========== -->
+        <section class="t8-section" style="background: rgba(255,255,255,0.01);">
+            <div class="t8-container">
+                <span class="section-label">02 / Research Objective</span>
+                <h2 class="minimal-heading">Strategic Objectives</h2>
+                <div class="grid-three">
+                    <div class="bento-card">
+                        <h3>Deep Exposure</h3>
+                        <p>Evaluate the depth of cybersecurity vulnerabilities within the sector's current architecture.</p>
+                    </div>
+                    <div class="bento-card">
+                        <h3>Financial Logic</h3>
+                        <p>Calculate the true cost of industrial cyber infrastructure failure in terms of P&L.</p>
+                    </div>
+                    <div class="bento-card">
+                        <h3>Positioning</h3>
+                        <p>Identify strategic opportunities for Qui-Vive's next-generation solution suite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== KEY INSIGHTS ========== -->
+        <section class="t8-section">
+            <div class="t8-container">
+                <div class="grid-split">
+                    <div>
+                        <span class="section-label">03 / Key Insights</span>
+                        <h2 class="minimal-heading">The Connectivity Paradox</h2>
+                        <p style="color: var(--text-muted); font-size: 1.2rem; line-height: 1.8;">As manufacturing environments become more integrated, the blast radius of single failures expands exponentially.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 5rem;">
+                        <div class="bento-card">
+                            <h3>Connected Ecosystems</h3>
+                            <p>Integration of connected systems has reached critical mass, increasing the potential impact of single-point failures.</p>
+                        </div>
+                        <div class="bento-card">
+                            <h3>Real-time Reliance</h3>
+                            <p>Reliance on real-time data means any disruption to data integrity halts physical production lines immediately.</p>
+                        </div>
+                        <div class="bento-card">
+                            <h3>Supply Chain Vulnerability</h3>
+                            <p>Digitally connected supply chains create a "domino effect" where small supplier vulnerabilities collapse global schedules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FINDINGS STATS ========== -->
+        <section class="t8-section" style="background: rgba(255,255,255,0.01);">
+            <div class="t8-container">
+                <span class="section-label">04 / Findings</span>
+                <h2 class="minimal-heading">Quantifying the Risk</h2>
+                <div class="stats-wrap">
+                    <div class="stat-box">
+                        <span class="stat-val">$4.47M</span>
+                        <span class="stat-lab">Average Cost per Breach</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">#1</span>
+                        <span class="stat-lab">Most Targeted Industry</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-val">73%</span>
+                        <span class="stat-lab">Increase in Targeting</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FINANCIAL ANALYSIS ========== -->
+        <section class="t8-section">
+            <div class="t8-container">
+                <span class="section-label">05 / Material Impact</span>
+                <h2 class="minimal-heading">The P&L Impact</h2>
+                <div class="grid-split">
+                    <div class="comp-card">
+                        <h3 style="color: #f87171;">With Incident</h3>
+                        <ul class="comp-ul">
+                            <li>Total production downtime causing missed quotas</li>
+                            <li>Explosion in forensic and legal expenses</li>
+                            <li>Regulatory fines and compliance penalties</li>
+                            <li>Long-term brand and customer attrition</li>
+                        </ul>
+                    </div>
+                    <div class="comp-card">
+                        <h3 style="color: #4ade80;">Without Incident</h3>
+                        <ul class="comp-ul">
+                            <li>Stable and predictable cost structure</li>
+                            <li>Maximum operational efficiency (99.9% uptime)</li>
+                            <li>Improved profit margins via digital optimization</li>
+                            <li>Competitive advantage in secure chains</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== IMPACT SUMMARY ========== -->
+        <section class="t8-section">
+            <div class="t8-container">
+                <div class="impact-massive">
+                    <span class="section-label">Impact Summary</span>
+                    <div class="impact-val">32%</div>
+                    <p class="impact-txt">
+                        Approximate reduction in <strong>net profit</strong> due to a single major industrial cyber incident.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CASE STUDY ========== -->
+        <section class="t8-section" style="padding: 0; border: none;">
+            <div class="case-split">
+                <div>
+                    <span class="section-label" style="color: #2563eb;">06 / Case Study</span>
+                    <h4>Kojima <br>Industries</h4>
+                    <p style="opacity: 0.5; font-size: 1rem; margin-top: 2rem; font-weight: 700;">Japan, 2022</p>
+                </div>
+                <div>
+                    <p>A cyberattack on Kojima Industries resulted in the total suspension of operations across multiple manufacturing plants, disrupting approximately <strong>one-third of Toyota’s global production</strong>.</p>
+                    <p style="margin-top: 3rem; color: #444; font-size: 1.2rem; line-height: 1.8;">This event highlights how a single vulnerability in a partner ecosystem can cripple global manufacturing leaders and cause systemic financial damage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== STRATEGIC INSIGHT ========== -->
+        <section class="t8-section">
+            <div class="t8-container" style="text-align: center;">
+                <p style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; color: var(--text-main); max-width: 1000px; margin: 0 auto; font-weight: 300; letter-spacing: -2px;">
+                    "Cybersecurity is no longer a technical safeguard; it is a **foundational requirement** for industrial continuity."
+                </p>
+            </div>
+        </section>
+
+        <!-- ========== OUTCOME ========== -->
+        <section class="t8-section" style="background: rgba(255,255,255,0.01);">
+            <div class="t8-container">
+                <div class="grid-split">
+                    <div>
+                        <span class="section-label">07 / Outcome</span>
+                        <h2 class="minimal-heading">Stronger Market <br> Positioning</h2>
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 3rem;">The collaboration resulted in a clear translation of cyber risk into financial impact.</p>
+                        <div class="bento-card">
+                            <h3>Actionable Value</h3>
+                            <p>Enabled Qui-Vive to engage with C-suite decision-makers by communicating cybersecurity value in direct business and financial terms, rather than technical jargon.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FINAL CTA ========== -->
+        <section class="t8-section" style="border: none;">
+            <div class="t8-container" style="text-align: center;">
+                <h2 class="minimal-heading">Scale Your <br> Research</h2>
+                <div style="display: flex; gap: 4rem; justify-content: center; margin-top: 2rem; align-items: center;">
+                    <a href="partnerships.html" style="color: var(--text-main); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem;">Our Case Studies</a>
+                    <a href="contact.html" class="hero-cta">Work With Us</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="services.html#growth">Growth Strategy</a>
+                <a href="services.html#performance">Performance Marketing</a>
+                <a href="services.html#seo">SEO</a>
+                <a href="services.html#social">Social Media</a>
+                <a href="services.html#web">Web Development</a>
+                <a href="services.html#creative">Creative Production</a>
+                <a href="services.html#3d">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat with IntrovertedMinds on WhatsApp"
+        target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Theme Persistence Logic
+        const body = document.body;
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const isDark = savedTheme === 'dark';
+            if (isDark) {
+                body.classList.add('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = sunIcon;
+            } else {
+                body.classList.remove('dark-mode');
+                if (themeIcon) themeIcon.innerHTML = moonIcon;
+            }
+            updateLogos(isDark);
+        }
+
+        initTheme();
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                if (themeIcon) themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+                updateLogos(isDark);
+            });
+        }
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+        }
+
+        // Hero Animation
+        gsap.to(".hero-content > *", {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power4.out",
+            delay: 0.2
+        });
+
+        // Section Animations
+        gsap.utils.toArray('.bento-card, .stat-box, .comp-card, .case-split').forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+
+</html>
