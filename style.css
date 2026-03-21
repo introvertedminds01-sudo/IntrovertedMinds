@@ -7008,17 +7008,11 @@ body.dark-mode .t8-hero-logo {
     margin-bottom: 2rem;
     display: block;
     position: relative;
-    padding-left: 3rem;
+    padding-left: 0;
 }
 
 .t8-label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 2rem;
-    height: 1px;
-    background-color: var(--primary);
+    display: none;
 }
 
 /* Hero Section */
