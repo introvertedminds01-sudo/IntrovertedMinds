@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8SKLL7Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Strategy & Marketing Consulting | Introverted Minds</title>
+    <meta name="description"
+        content="We build the foundation before execution. Our growth strategy consulting ensures your business is positioned for maximum, sustainable growth.">
+
+    <link rel="icon" type="image/png" href="assets/images/sitelogo.png">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==============================
+           GROWTH STRATEGY PAGE STYLES
+           ============================== */
+
+        /* Hero — Centered Layout */
+        .gs-hero {
+            padding: 220px 0 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+
+        .gs-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .gs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gs-hero .gs-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .gs-hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gs-hero .gs-lead {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .gs-hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Intro Statement */
+        .gs-intro {
+            padding: 100px 0 80px;
+            background: var(--bg-subtle);
+        }
+
+        .gs-intro-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gs-intro-inner h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            line-height: 1.3;
+            margin-bottom: 2rem;
+        }
+
+        .gs-intro-inner p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* Service Cards Grid */
+        .gs-services {
+            padding: 100px 0 120px;
+            background: var(--bg-light);
+        }
+
+        .gs-services-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .gs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .gs-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .gs-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gs-card-number {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.75rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .gs-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .gs-card .gs-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .gs-deliverables {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .gs-deliverables span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .gs-deliverable-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .gs-deliverable-tag {
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            background: rgba(var(--primary-rgb), 0.08);
+            color: var(--text-muted);
+            border: 1px solid rgba(var(--primary-rgb), 0.12);
+        }
+
+        /* Featured Card (Spans full width) */
+        .gs-card.gs-featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* How We Work (Process) */
+        .gs-process {
+            padding: 120px 0;
+            background: var(--bg-subtle);
+        }
+
+        .gs-process-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .gs-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .gs-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12%;
+            width: 76%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), rgba(var(--primary-rgb), 0.1));
+            z-index: 0;
+        }
+
+        .gs-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gs-step-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
+        }
+
+        .gs-step h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .gs-step p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .gs-cta {
+            padding: 120px 0;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .gs-cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gs-cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .gs-cta-box p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gs-grid { grid-template-columns: 1fr; }
+            .gs-card.gs-featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .gs-process-grid { grid-template-columns: 1fr 1fr; row-gap: 3rem; }
+            .gs-process-grid::before { display: none; }
+            .gs-hero { padding: 180px 0 100px; }
+        }
+
+        @media (max-width: 480px) {
+            .gs-process-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown active">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="growth-strategy.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Growth Strategy
+                        </a>
+                        <a href="performance-marketing.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Performance Marketing
+                        </a>
+                        <a href="seo.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            SEO
+                        </a>
+                        <a href="social-media.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Social Media
+                        </a>
+                        <a href="web-development.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Web Development
+                        </a>
+                        <a href="creative-production.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.5 1.5"></path>
+                                <path d="M7 11l5-5"></path>
+                            </svg>
+                            Creative Production
+                        </a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon"></span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================== -->
+    <!--   CENTERED HERO SECTION  -->
+    <!-- ======================== -->
+    <header class="gs-hero">
+        <div class="gs-container">
+            <span class="gs-tag reveal">Growth Strategy & Marketing Consulting</span>
+            <h1 class="reveal">We Build the Foundation<br><span class="text-gradient">Before Execution</span></h1>
+            <p class="gs-lead reveal">Most businesses jump straight into ads and campaigns. We take a step back and
+                build the strategic foundation first — so every rupee you spend actually moves the needle.</p>
+            <div class="gs-hero-buttons reveal">
+                <a href="contact.html" class="primary-btn green-btn">
+                    Book a Strategy Call
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#what-we-do" class="secondary-btn watch-btn">See What's Included</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================== -->
+    <!--    INTRO / WHY SECTION   -->
+    <!-- ======================== -->
+    <section class="gs-intro">
+        <div class="gs-container">
+            <div class="gs-intro-inner reveal">
+                <h2>Why Strategy Comes First</h2>
+                <p>Without a clear strategy, marketing becomes guesswork. You end up spending money on channels that
+                    don't work, targeting audiences that don't care, and building funnels that don't convert. Our
+                    consulting services ensure your business has a clear direction, a defined audience, and a measurable
+                    plan — before a single campaign goes live.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--   8 SERVICE PILLARS      -->
+    <!-- ======================== -->
+    <section class="gs-services" id="what-we-do">
+        <div class="gs-container">
+            <div class="gs-services-header">
+                <span class="section-tag reveal">What We Do</span>
+                <h2 class="section-title reveal">Our Consulting Services</h2>
+                <p class="section-subtitle reveal" style="max-width:650px; margin:0 auto;">Every business is different.
+                    Here's how we tailor our strategy consulting to fit your specific growth stage and goals.</p>
+            </div>
+
+            <div class="gs-grid">
+
+                <!-- 01 — Market Research -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">01</span>
+                    <h3>Market & Competitor Research</h3>
+                    <p class="gs-desc">Before you enter any market, you need to understand it. We research your
+                        industry, study what your competitors are doing, and find the gaps where your brand can
+                        win — without fighting head-to-head with established players.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">Competitor Analysis</div>
+                            <div class="gs-deliverable-tag">Market Gap Report</div>
+                            <div class="gs-deliverable-tag">Industry Trend Mapping</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02 — Business & Marketing Strategy -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">02</span>
+                    <h3>Business & Marketing Strategy</h3>
+                    <p class="gs-desc">We connect your business goals to a clear marketing plan. Whether you want
+                        more leads, more revenue, or brand awareness — we design a strategy that ties every
+                        marketing activity to a measurable outcome.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">Revenue Model Design</div>
+                            <div class="gs-deliverable-tag">Channel Strategy</div>
+                            <div class="gs-deliverable-tag">Budget Allocation Plan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 — Brand Positioning -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">03</span>
+                    <h3>Brand Positioning & Messaging</h3>
+                    <p class="gs-desc">Your brand needs to say the right thing to the right people. We define
+                        what makes your business different and craft messaging that speaks directly to your ideal
+                        customer — so they choose you over the competition.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">Value Proposition</div>
+                            <div class="gs-deliverable-tag">Brand Voice Guide</div>
+                            <div class="gs-deliverable-tag">Messaging Framework</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 — Go-to-Market -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">04</span>
+                    <h3>Go-to-Market Planning</h3>
+                    <p class="gs-desc">Launching a new product or entering a new market? We build detailed launch plans
+                        that cover everything — from which channels to use, to what to say, to when to say it.
+                        No guesswork, just a clear playbook.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">Launch Roadmap</div>
+                            <div class="gs-deliverable-tag">Channel Selection</div>
+                            <div class="gs-deliverable-tag">Content Calendar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 — Funnel Design (FEATURED) -->
+                <div class="gs-card gs-featured reveal">
+                    <div>
+                        <span class="gs-card-number">05</span>
+                        <h3>Customer Journey & Funnel Design</h3>
+                        <p class="gs-desc">We map out the entire path your customer takes — from the moment they
+                            first hear about you, to the moment they buy, to the moment they come back and refer
+                            others. Then we remove every obstacle in that path so more people convert.</p>
+                    </div>
+                    <div>
+                        <div class="gs-deliverables">
+                            <span>Key Deliverables</span>
+                            <div class="gs-deliverable-list">
+                                <div class="gs-deliverable-tag">Full Funnel Blueprint</div>
+                                <div class="gs-deliverable-tag">Touchpoint Mapping</div>
+                                <div class="gs-deliverable-tag">Conversion Optimization</div>
+                                <div class="gs-deliverable-tag">Email/Nurture Sequences</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06 — Audience & Persona -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">06</span>
+                    <h3>Audience & Persona Development</h3>
+                    <p class="gs-desc">Who exactly is your customer? What do they care about? What keeps them up at
+                        night? We go beyond demographics and build detailed profiles of your ideal buyers — so your
+                        marketing speaks their language.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">Buyer Personas</div>
+                            <div class="gs-deliverable-tag">Pain Point Analysis</div>
+                            <div class="gs-deliverable-tag">Decision Journey Map</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07 — Growth Roadmap -->
+                <div class="gs-card reveal">
+                    <span class="gs-card-number">07</span>
+                    <h3>Growth Roadmap Planning</h3>
+                    <p class="gs-desc">A clear, quarter-by-quarter plan that shows exactly what to do, when to do it,
+                        and what results to expect. No more flying blind — you'll have a roadmap with defined
+                        milestones and KPIs to track progress.</p>
+                    <div class="gs-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="gs-deliverable-list">
+                            <div class="gs-deliverable-tag">90-Day Action Plan</div>
+                            <div class="gs-deliverable-tag">KPI Dashboard Setup</div>
+                            <div class="gs-deliverable-tag">Monthly Milestones</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 08 — Market Entry (FEATURED) -->
+                <div class="gs-card gs-featured reveal">
+                    <div>
+                        <span class="gs-card-number">08</span>
+                        <h3>Market Entry & Expansion Consulting</h3>
+                        <p class="gs-desc">Thinking about expanding into new regions or verticals? We help brands
+                            navigate the complexities of new markets — from understanding local regulations and
+                            cultural nuances to building the right partnerships and distribution channels on the ground.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="gs-deliverables">
+                            <span>Key Deliverables</span>
+                            <div class="gs-deliverable-list">
+                                <div class="gs-deliverable-tag">Market Readiness Audit</div>
+                                <div class="gs-deliverable-tag">Localization Strategy</div>
+                                <div class="gs-deliverable-tag">Partnership Framework</div>
+                                <div class="gs-deliverable-tag">Regulatory Guidance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--   HOW WE WORK (PROCESS)  -->
+    <!-- ======================== -->
+    <section class="gs-process">
+        <div class="gs-container">
+            <div class="gs-process-header">
+                <span class="section-tag reveal">How We Work</span>
+                <h2 class="section-title reveal">A Simple, Proven Process</h2>
+                <p class="section-subtitle reveal" style="max-width: 600px; margin: 0 auto;">We follow a structured
+                    approach that gives you clarity at every step — no surprises, no jargon.</p>
+            </div>
+
+            <div class="gs-process-grid">
+                <div class="gs-step reveal">
+                    <div class="gs-step-dot"></div>
+                    <h4>Discover</h4>
+                    <p>We learn everything about your business, your market, and your competition.</p>
+                </div>
+                <div class="gs-step reveal">
+                    <div class="gs-step-dot"></div>
+                    <h4>Strategize</h4>
+                    <p>We build a custom growth plan based on data, not assumptions.</p>
+                </div>
+                <div class="gs-step reveal">
+                    <div class="gs-step-dot"></div>
+                    <h4>Blueprint</h4>
+                    <p>You get a detailed, actionable roadmap with clear timelines and KPIs.</p>
+                </div>
+                <div class="gs-step reveal">
+                    <div class="gs-step-dot"></div>
+                    <h4>Scale</h4>
+                    <p>We help you execute and optimize for continuous, measurable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--      FINAL CTA           -->
+    <!-- ======================== -->
+    <section class="gs-cta">
+        <div class="gs-container">
+            <div class="gs-cta-box reveal">
+                <h2>Ready to Stop Guessing and<br><span class="text-gradient">Start Growing?</span></h2>
+                <p>Book a free strategy consultation and let's build a growth plan that's designed
+                    specifically for your business.</p>
+                <div class="gs-hero-buttons">
+                    <a href="contact.html" class="primary-btn green-btn">Book a Free Strategy Call</a>
+                    <a href="services.html" class="secondary-btn watch-btn">Explore All Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="growth-strategy.html">Growth Strategy</a>
+                <a href="performance-marketing.html">Performance Marketing</a>
+                <a href="seo.html">SEO</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="creative-production.html">Creative Production</a>
+                <a href="3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank"
+        rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script>
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(savedTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateLogos(isDark);
+        });
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8SKLL7Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Marketing & Advertising | Introverted Minds</title>
+    <meta name="description"
+        content="Data-driven performance marketing campaigns designed to generate revenue. We optimize every dollar spent to maximize your ROI across Google, Meta, TikTok & LinkedIn.">
+
+    <link rel="icon" type="image/png" href="assets/images/sitelogo.png">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===================================
+           PERFORMANCE MARKETING PAGE STYLES
+           =================================== */
+
+        /* Hero — Centered Layout */
+        .pm-hero {
+            padding: 220px 0 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-light);
+        }
+
+        .pm-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .pm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pm-hero .pm-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid rgba(var(--primary-rgb), 0.3);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .pm-hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pm-hero .pm-lead {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .pm-hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Stats Bar */
+        .pm-stats {
+            padding: 80px 0;
+            background: var(--bg-subtle);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .pm-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .pm-stat {
+            padding: 1rem;
+        }
+
+        .pm-stat-number {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-stat-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Intro Section */
+        .pm-intro {
+            padding: 100px 0 80px;
+            background: var(--bg-light);
+        }
+
+        .pm-intro-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pm-intro-inner h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            line-height: 1.3;
+            margin-bottom: 2rem;
+        }
+
+        .pm-intro-inner p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        /* Platform Cards */
+        .pm-platforms {
+            padding: 100px 0 60px;
+            background: var(--bg-light);
+        }
+
+        .pm-platforms-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .pm-platform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pm-platform-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pm-platform-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pm-platform-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(var(--primary-rgb), 0.08);
+            color: var(--primary);
+        }
+
+        .pm-platform-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pm-platform-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Service Cards Grid */
+        .pm-services {
+            padding: 60px 0 120px;
+            background: var(--bg-light);
+        }
+
+        .pm-services-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .pm-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .pm-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pm-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2);
+        }
+
+        .pm-card-number {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.75rem;
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .pm-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .pm-card .pm-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .pm-deliverables {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .pm-deliverables span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .pm-deliverable-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .pm-deliverable-tag {
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            background: rgba(var(--primary-rgb), 0.08);
+            color: var(--text-muted);
+            border: 1px solid rgba(var(--primary-rgb), 0.12);
+        }
+
+        .pm-card.pm-featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* How We Work (Process) */
+        .pm-process {
+            padding: 120px 0;
+            background: var(--bg-subtle);
+        }
+
+        .pm-process-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .pm-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .pm-process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 12%;
+            width: 76%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), rgba(var(--primary-rgb), 0.1));
+            z-index: 0;
+        }
+
+        .pm-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pm-step-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin: 0 auto 2rem;
+            box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.4);
+        }
+
+        .pm-step h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pm-step p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .pm-cta {
+            padding: 120px 0;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .pm-cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pm-cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .pm-cta-box p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pm-grid { grid-template-columns: 1fr; }
+            .pm-card.pm-featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .pm-platform-grid { grid-template-columns: 1fr; }
+            .pm-process-grid { grid-template-columns: 1fr 1fr; row-gap: 3rem; }
+            .pm-process-grid::before { display: none; }
+            .pm-hero { padding: 180px 0 100px; }
+            .pm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .pm-process-grid { grid-template-columns: 1fr; }
+            .pm-stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown active">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="growth-strategy.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Growth Strategy
+                        </a>
+                        <a href="performance-marketing.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Performance Marketing
+                        </a>
+                        <a href="seo.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            SEO
+                        </a>
+                        <a href="social-media.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Social Media
+                        </a>
+                        <a href="web-development.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Web Development
+                        </a>
+                        <a href="creative-production.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.5 1.5"></path>
+                                <path d="M7 11l5-5"></path>
+                            </svg>
+                            Creative Production
+                        </a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon"></span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================== -->
+    <!--   CENTERED HERO SECTION  -->
+    <!-- ======================== -->
+    <header class="pm-hero">
+        <div class="pm-container">
+            <span class="pm-tag reveal">Performance Marketing & Advertising</span>
+            <h1 class="reveal">Every Rupee Should<br><span class="text-gradient">Make You Money</span></h1>
+            <p class="pm-lead reveal">We don't just run ads — we build performance engines. Every campaign we launch is
+                designed around one goal: turning your ad spend into measurable, profitable revenue.</p>
+            <div class="pm-hero-buttons reveal">
+                <a href="contact.html" class="primary-btn green-btn">
+                    Get a Free Ad Audit
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#platforms" class="secondary-btn watch-btn">See Our Platforms</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================== -->
+    <!--       STATS BAR          -->
+    <!-- ======================== -->
+    <section class="pm-stats">
+        <div class="pm-container">
+            <div class="pm-stats-grid">
+                <div class="pm-stat reveal">
+                    <span class="pm-stat-number">4.5x</span>
+                    <span class="pm-stat-label">Average ROAS</span>
+                </div>
+                <div class="pm-stat reveal">
+                    <span class="pm-stat-number">50+</span>
+                    <span class="pm-stat-label">Campaigns Managed</span>
+                </div>
+                <div class="pm-stat reveal">
+                    <span class="pm-stat-number">-40%</span>
+                    <span class="pm-stat-label">Lower Cost Per Lead</span>
+                </div>
+                <div class="pm-stat reveal">
+                    <span class="pm-stat-number">3x</span>
+                    <span class="pm-stat-label">Revenue Growth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--    INTRO / WHY SECTION   -->
+    <!-- ======================== -->
+    <section class="pm-intro">
+        <div class="pm-container">
+            <div class="pm-intro-inner reveal">
+                <h2>Why Most Ad Campaigns Fail</h2>
+                <p>The problem isn't the platform — it's the approach. Most businesses throw money at ads without a
+                    clear funnel, without proper tracking, and without understanding who they're actually targeting.
+                    We fix that. We build campaigns from the ground up with the right audience, the right message,
+                    and the right conversion path — so your money works harder and your results actually compound
+                    over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--   PLATFORMS WE MASTER    -->
+    <!-- ======================== -->
+    <section class="pm-platforms" id="platforms">
+        <div class="pm-container">
+            <div class="pm-platforms-header">
+                <span class="section-tag reveal">Where We Advertise</span>
+                <h2 class="section-title reveal">Platforms We Master</h2>
+                <p class="section-subtitle reveal" style="max-width:600px; margin:0 auto;">We don't spread thin across
+                    every platform. We go deep on the ones that actually drive revenue for your business.</p>
+            </div>
+
+            <div class="pm-platform-grid">
+                <div class="pm-platform-card reveal">
+                    <div class="pm-platform-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3>Google & YouTube Ads</h3>
+                    <p>Capture high-intent buyers at the exact moment they're searching for what you sell. Search, Display, Shopping, and YouTube campaigns that convert.</p>
+                </div>
+                <div class="pm-platform-card reveal">
+                    <div class="pm-platform-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </div>
+                    <h3>Meta Ads</h3>
+                    <p>Facebook and Instagram advertising that reaches the right people with scroll-stopping creatives. From awareness to purchase — we manage the entire funnel.</p>
+                </div>
+                <div class="pm-platform-card reveal">
+                    <div class="pm-platform-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3>TikTok & LinkedIn</h3>
+                    <p>TikTok for viral reach and brand discovery. LinkedIn for B2B lead generation and thought leadership campaigns that connect with decision-makers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--   SERVICES IN DETAIL     -->
+    <!-- ======================== -->
+    <section class="pm-services" id="services-detail">
+        <div class="pm-container">
+            <div class="pm-services-header">
+                <span class="section-tag reveal">What We Do</span>
+                <h2 class="section-title reveal">Our Performance Services</h2>
+                <p class="section-subtitle reveal" style="max-width:650px; margin:0 auto;">From building your first
+                    campaign to scaling a profitable ad engine — here's exactly what we deliver.</p>
+            </div>
+
+            <div class="pm-grid">
+
+                <!-- 01 — SEM -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">01</span>
+                    <h3>Search Engine Marketing</h3>
+                    <p class="pm-desc">We put your business in front of people who are actively searching for your
+                        product or service. Google Ads, YouTube Ads, and Shopping campaigns — all optimized for
+                        conversions, not just clicks.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">Keyword Strategy</div>
+                            <div class="pm-deliverable-tag">Ad Copywriting</div>
+                            <div class="pm-deliverable-tag">Bid Management</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02 — Meta -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">02</span>
+                    <h3>Meta Ads (Facebook & Instagram)</h3>
+                    <p class="pm-desc">We create thumb-stopping ads that reach the right audience at the right time.
+                        From cold traffic campaigns to warm retargeting — we build the full funnel so your
+                        Meta campaigns actually deliver ROI.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">Audience Targeting</div>
+                            <div class="pm-deliverable-tag">Creative Strategy</div>
+                            <div class="pm-deliverable-tag">Funnel Build</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03 — TikTok & LinkedIn -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">03</span>
+                    <h3>TikTok & LinkedIn Advertising</h3>
+                    <p class="pm-desc">TikTok isn't just for trends — it's a goldmine for brands that know how to use
+                        it. LinkedIn is where B2B deals start. We run campaigns on both platforms
+                        tailored to how each audience actually behaves.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">Platform-Specific Creatives</div>
+                            <div class="pm-deliverable-tag">Lead Gen Forms</div>
+                            <div class="pm-deliverable-tag">Audience Layering</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 — Conversion Funnels -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">04</span>
+                    <h3>Conversion-Focused Ad Funnels</h3>
+                    <p class="pm-desc">Running ads without a funnel is like pouring water into a bucket with
+                        holes. We build complete conversion funnels — from the first ad click to the final
+                        purchase — so no lead falls through the cracks.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">Landing Pages</div>
+                            <div class="pm-deliverable-tag">Lead Magnets</div>
+                            <div class="pm-deliverable-tag">Email Sequences</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 — Retargeting (FEATURED) -->
+                <div class="pm-card pm-featured reveal">
+                    <div>
+                        <span class="pm-card-number">05</span>
+                        <h3>Retargeting & Remarketing</h3>
+                        <p class="pm-desc">97% of people who visit your website leave without buying. Retargeting
+                            brings them back. We set up smart retargeting campaigns that follow your warmest leads
+                            across platforms — reminding them why they were interested in the first place and nudging
+                            them toward conversion.</p>
+                    </div>
+                    <div>
+                        <div class="pm-deliverables">
+                            <span>Key Deliverables</span>
+                            <div class="pm-deliverable-list">
+                                <div class="pm-deliverable-tag">Pixel & Tracking Setup</div>
+                                <div class="pm-deliverable-tag">Custom Audiences</div>
+                                <div class="pm-deliverable-tag">Dynamic Product Ads</div>
+                                <div class="pm-deliverable-tag">Cross-Platform Retargeting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06 — A/B Testing -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">06</span>
+                    <h3>Campaign Optimization & A/B Testing</h3>
+                    <p class="pm-desc">A good campaign gets better over time. We continuously test different headlines,
+                        images, audiences, and landing pages to find the winning combination — then scale what
+                        works and kill what doesn't.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">Split Testing</div>
+                            <div class="pm-deliverable-tag">Creative Variants</div>
+                            <div class="pm-deliverable-tag">Performance Reports</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 07 — Reporting -->
+                <div class="pm-card reveal">
+                    <span class="pm-card-number">07</span>
+                    <h3>Performance Tracking & Reporting</h3>
+                    <p class="pm-desc">You'll never wonder where your money is going. We set up proper tracking from
+                        day one and deliver clear, honest reports that show exactly what's working, what's not,
+                        and what we're doing about it.</p>
+                    <div class="pm-deliverables">
+                        <span>Key Deliverables</span>
+                        <div class="pm-deliverable-list">
+                            <div class="pm-deliverable-tag">GA4 & Pixel Setup</div>
+                            <div class="pm-deliverable-tag">Custom Dashboards</div>
+                            <div class="pm-deliverable-tag">Monthly Reports</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 08 — ROI Scaling (FEATURED) -->
+                <div class="pm-card pm-featured reveal">
+                    <div>
+                        <span class="pm-card-number">08</span>
+                        <h3>ROI Optimization & Scaling</h3>
+                        <p class="pm-desc">Once we find what works, we scale it. We increase budgets strategically,
+                            open new audiences, and expand to new platforms — all while keeping your cost-per-acquisition
+                            tight and your return on ad spend growing. This is where campaigns go from "working" to
+                            "printing money."</p>
+                    </div>
+                    <div>
+                        <div class="pm-deliverables">
+                            <span>Key Deliverables</span>
+                            <div class="pm-deliverable-list">
+                                <div class="pm-deliverable-tag">Budget Scaling Plan</div>
+                                <div class="pm-deliverable-tag">Lookalike Audiences</div>
+                                <div class="pm-deliverable-tag">Multi-Platform Expansion</div>
+                                <div class="pm-deliverable-tag">ROAS Optimization</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--   HOW WE WORK (PROCESS)  -->
+    <!-- ======================== -->
+    <section class="pm-process">
+        <div class="pm-container">
+            <div class="pm-process-header">
+                <span class="section-tag reveal">How We Work</span>
+                <h2 class="section-title reveal">From Setup to Scale</h2>
+                <p class="section-subtitle reveal" style="max-width: 600px; margin: 0 auto;">Our performance marketing
+                    process is designed to deliver results fast — and keep improving over time.</p>
+            </div>
+
+            <div class="pm-process-grid">
+                <div class="pm-step reveal">
+                    <div class="pm-step-dot"></div>
+                    <h4>Audit</h4>
+                    <p>We analyze your current campaigns, tracking, and funnel to find what's broken.</p>
+                </div>
+                <div class="pm-step reveal">
+                    <div class="pm-step-dot"></div>
+                    <h4>Build</h4>
+                    <p>We set up campaigns, creatives, and conversion paths from scratch.</p>
+                </div>
+                <div class="pm-step reveal">
+                    <div class="pm-step-dot"></div>
+                    <h4>Optimize</h4>
+                    <p>Continuous A/B testing and data-driven adjustments to improve performance.</p>
+                </div>
+                <div class="pm-step reveal">
+                    <div class="pm-step-dot"></div>
+                    <h4>Scale</h4>
+                    <p>We increase budgets on winners and expand to new platforms and audiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== -->
+    <!--      FINAL CTA           -->
+    <!-- ======================== -->
+    <section class="pm-cta">
+        <div class="pm-container">
+            <div class="pm-cta-box reveal">
+                <h2>Stop Wasting Ad Spend.<br><span class="text-gradient">Start Seeing Returns.</span></h2>
+                <p>Get a free audit of your current campaigns and find out exactly where your money is going
+                    — and where it should be going instead.</p>
+                <div class="pm-hero-buttons">
+                    <a href="contact.html" class="primary-btn green-btn">Get Your Free Ad Audit</a>
+                    <a href="services.html" class="secondary-btn watch-btn">Explore All Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="growth-strategy.html">Growth Strategy</a>
+                <a href="performance-marketing.html">Performance Marketing</a>
+                <a href="seo.html">SEO</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="creative-production.html">Creative Production</a>
+                <a href="3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank"
+        rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script>
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(savedTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateLogos(isDark);
+        });
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
