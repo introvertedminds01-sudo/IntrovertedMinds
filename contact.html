@@ -205,6 +205,16 @@
                         required></textarea>
                 </div>
 
+                <!-- Bot Protection -->
+                <div style="display:none;">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="field-group captcha-group">
+                    <label for="captcha">Security Check: <span id="captchaQuestion"></span></label>
+                    <input type="number" id="captcha" name="captcha" placeholder="Enter the result" required>
+                </div>
+
                 <button type="submit" class="minimal-submit"
                     style="background-color: var(--primary); color: white; ">Send Message</button>
                 <div id="formStatus" style="margin-top: 1rem; text-align: center; font-weight: 600;"></div>
@@ -400,8 +410,36 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyKFi2B0mf4Hqqo7aDW23XAQ8t7gaIl444c-R5E4VNLmGfYDflufoAS3WjhwC28Svi1Aw/exec'; // Replace with your deployment URL
 
         if (leadForm) {
+            // Generate CAPTCHA
+            const captchaQuestion = document.getElementById('captchaQuestion');
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const correctAnswer = num1 + num2;
+
+            if (captchaQuestion) {
+                captchaQuestion.textContent = `${num1} + ${num2} = ?`;
+            }
+
             leadForm.addEventListener('submit', e => {
                 e.preventDefault();
+
+                // 1. Honeypot check
+                const gotcha = leadForm.querySelector('input[name="_gotcha"]').value;
+                if (gotcha) {
+                    console.warn('Honeypot filled. Bot detected.');
+                    // Silently fail or show success to deceive the bot
+                    leadForm.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                    return;
+                }
+
+                // 2. CAPTCHA check
+                const userAnswer = parseInt(document.getElementById('captcha').value);
+                if (userAnswer !== correctAnswer) {
+                    formStatus.textContent = 'Incorrect security answer. Please try again.';
+                    formStatus.style.color = '#ff4b2b';
+                    return;
+                }
 
                 // Show loading state
                 formStatus.textContent = 'Sending message...';

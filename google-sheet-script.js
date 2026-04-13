@@ -7,6 +7,15 @@ function doPost(e) {
   
   // Append row to sheet: Timestamp, Name, Email, Company, Phone, Subject, Message
   try {
+    // Honeypot check: If _gotcha is filled, it's a bot.
+    // Return success but don't record the data to prevent sheet clutter.
+    if (data._gotcha && data._gotcha !== "") {
+      return ContentService.createTextOutput(JSON.stringify({
+        "result": "success",
+        "message": "Data recorded successfully"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
     sheet.appendRow([
       timestamp, 
       data.name, 

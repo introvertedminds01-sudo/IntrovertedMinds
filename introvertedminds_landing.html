@@ -910,12 +910,69 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Scale Your Business?</h2>
-            <p>Join hundreds of successful brands and transform your digital presence today.</p>
-            <div class="cta-btns">
-                <a href="contact.html" class="primary-btn">Get Started Now</a>
-                <a href="services.html" class="secondary-btn">View Our Services</a>
+        <div class="cta-minimal-container">
+            <h2 style="font-family: 'LEMON MILK', sans-serif;">Ready to Engineer <br><span
+                    style="color: var(--primary);">Your Dominance?</span></h2>
+            <p>We don't just build brands; we build high-performance growth systems. Start your digital transformation
+                today.</p>
+
+            <form id="ctaLeadForm" class="minimal-lead-form">
+                <div class="minimal-field">
+                    <label for="ctaName">Full Name</label>
+                    <input type="text" style="padding-left: 15px;" id="ctaName" name="name" placeholder="John Doe"
+                        required>
+                </div>
+
+                <div class="minimal-field">
+                    <label for="ctaEmail">Work Email</label>
+                    <input type="email" style="padding-left: 15px;" id="ctaEmail" name="email"
+                        placeholder="john@company.com" required>
+                </div>
+
+                <div class="minimal-field">
+                    <label for="ctaCompany">Company Name</label>
+                    <input type="text" style="padding-left: 15px;" id="ctaCompany" name="company" placeholder="Acme Inc"
+                        required>
+                </div>
+
+                <div class="selection-tags-wrapper">
+                    <span class="selection-tags-label">Primary Interest</span>
+                    <div class="interest-tags" id="interestTags">
+                        <button type="button" class="interest-tag" data-value="Growth Strategy">Growth Strategy</button>
+                        <button type="button" class="interest-tag" data-value="Performance Marketing">Performance
+                            Marketing</button>
+                        <button type="button" class="interest-tag" data-value="Web Development">Web Development</button>
+                        <button type="button" class="interest-tag" data-value="SEO">SEO</button>
+                    </div>
+                    <input type="hidden" id="ctaInterest" name="subject" required>
+                </div>
+
+                <div class="minimal-field">
+                    <label for="ctaMessage">Project Notes (Optional)</label>
+                    <textarea id="ctaMessage" style="padding-left: 15px;" name="message" rows="1"
+                        placeholder="Briefly describe your challenge..."></textarea>
+                </div>
+
+                <!-- Honeypot -->
+                <div style="display:none;">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="minimal-form-footer">
+                    <div class="minimal-captcha">
+                        <label for="ctaCaptcha">Security: <span id="ctaCaptchaQuestion">Loading...</span></label>
+                        <input type="number" id="ctaCaptcha" name="captcha" required>
+                    </div>
+                    <button type="submit" class="minimal-submit-btn">Engine Now</button>
+                    <div id="ctaFormStatus" class="minimal-status"></div>
+                </div>
+            </form>
+
+            <div id="ctaSuccessMessage" style="display: none; text-align: center; padding: 3rem 0;">
+                <div style="font-size: 3.5rem; margin-bottom: 2rem;">🚀</div>
+                <h3 style="color: white; font-family: 'LEMON MILK', sans-serif; font-size: 2rem;">System Initialized
+                </h3>
+                <p style="color: #888;">Our architects will reach out within 24 hours.</p>
             </div>
         </div>
     </section>
@@ -1443,6 +1500,88 @@
             });
         });
 
+        // CTA Lead Form Logic
+        const ctaLeadForm = document.getElementById('ctaLeadForm');
+        const ctaFormStatus = document.getElementById('ctaFormStatus');
+        const ctaScriptURL = 'https://script.google.com/macros/s/AKfycbyKFi2B0mf4Hqqo7aDW23XAQ8t7gaIl444c-R5E4VNLmGfYDflufoAS3WjhwC28Svi1Aw/exec';
+
+        if (ctaLeadForm) {
+            // 1. Selection Tags Logic
+            const interestTags = document.querySelectorAll('.interest-tag');
+            const interestInput = document.getElementById('ctaInterest');
+
+            interestTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    // Toggle active class
+                    interestTags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                    // Update hidden input
+                    interestInput.value = tag.getAttribute('data-value');
+                });
+            });
+
+            // 2. Generate CAPTCHA
+            const ctaCaptchaQuestion = document.getElementById('ctaCaptchaQuestion');
+            const n1 = Math.floor(Math.random() * 10) + 1;
+            const n2 = Math.floor(Math.random() * 10) + 1;
+            const ctaCorrectAnswer = n1 + n2;
+
+            if (ctaCaptchaQuestion) {
+                ctaCaptchaQuestion.textContent = `${n1} + ${n2}`;
+            }
+
+            ctaLeadForm.addEventListener('submit', e => {
+                e.preventDefault();
+
+                // 3. Selection check
+                if (!interestInput.value) {
+                    ctaFormStatus.textContent = 'Please select a primary interest.';
+                    ctaFormStatus.style.color = '#ff4b2b';
+                    return;
+                }
+
+                // 4. Honeypot check
+                const gotcha = ctaLeadForm.querySelector('input[name="_gotcha"]').value;
+                if (gotcha) {
+                    ctaLeadForm.style.display = 'none';
+                    document.getElementById('ctaSuccessMessage').style.display = 'block';
+                    return;
+                }
+
+                // 5. CAPTCHA check
+                const userAnswer = parseInt(document.getElementById('ctaCaptcha').value);
+                if (userAnswer !== ctaCorrectAnswer) {
+                    ctaFormStatus.textContent = 'Incorrect security code.';
+                    ctaFormStatus.style.color = '#ff4b2b';
+                    return;
+                }
+
+                // Show loading
+                ctaFormStatus.textContent = 'System Initializing...';
+                ctaFormStatus.style.color = '#fff';
+                const submitBtn = ctaLeadForm.querySelector('.minimal-submit-btn');
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.5';
+                submitBtn.textContent = 'Processing...';
+
+                fetch(ctaScriptURL, {
+                    method: 'POST',
+                    body: new FormData(ctaLeadForm)
+                })
+                    .then(response => {
+                        ctaLeadForm.style.display = 'none';
+                        document.getElementById('ctaSuccessMessage').style.display = 'block';
+                        ctaFormStatus.textContent = '';
+                    })
+                    .catch(error => {
+                        ctaFormStatus.textContent = 'Something went wrong. Please try again.';
+                        ctaFormStatus.style.color = '#ff4b2b';
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.textContent = 'Engine Now';
+                    });
+            });
+        }
     </script>
 </body>
 
