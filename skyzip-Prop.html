@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Skyzip × Introverted Minds — Digital Perception Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --orange: #E8561A;
+  --orange-dim: rgba(232,86,26,0.15);
+  --orange-glow: rgba(232,86,26,0.4);
+  --orange-bright: #FF6B2B;
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --surface: #141414;
+  --surface2: #1c1c1c;
+  --border: rgba(255,255,255,0.07);
+  --border-orange: rgba(232,86,26,0.25);
+  --text: #f0f0f0;
+  --text2: #a0a0a0;
+  --text3: #606060;
+  --scan-color: rgba(232,86,26,0.06);
+  --grid-color: rgba(255,255,255,0.025);
+  --card-bg: #111111;
+}
+
+[data-theme="day"] {
+  --bg: #f5f3ef;
+  --bg2: #ede9e3;
+  --surface: #ffffff;
+  --surface2: #f0ece6;
+  --border: rgba(0,0,0,0.08);
+  --border-orange: rgba(232,86,26,0.3);
+  --text: #1a1a1a;
+  --text2: #555555;
+  --text3: #999999;
+  --scan-color: rgba(232,86,26,0.04);
+  --grid-color: rgba(0,0,0,0.03);
+  --card-bg: #ffffff;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  transition: background 0.5s, color 0.5s;
+}
+
+/* ── AMBIENT ── */
+.grid-overlay {
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none; z-index: 0;
+}
+.scanline {
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(0deg,transparent,transparent 2px,var(--scan-color) 2px,var(--scan-color) 4px);
+  pointer-events: none; z-index: 0; opacity: 0.4;
+}
+.ambient-orb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; }
+.orb-a { width:500px; height:500px; top:-150px; right:-150px;
+  background: radial-gradient(circle, rgba(232,86,26,0.07) 0%, transparent 65%);
+  animation: orbFloat 20s ease-in-out infinite; }
+.orb-b { width:400px; height:400px; bottom:10%; left:-100px;
+  background: radial-gradient(circle, rgba(232,86,26,0.05) 0%, transparent 65%);
+  animation: orbFloat 28s ease-in-out infinite reverse; }
+@keyframes orbFloat {
+  0%,100%{transform:translate(0,0) scale(1);}
+  33%{transform:translate(-30px,50px) scale(1.05);}
+  66%{transform:translate(50px,-30px) scale(0.95);}
+}
+
+/* ── BOOT ── */
+#boot {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #000;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 24px;
+  transition: opacity 0.8s, visibility 0.8s;
+}
+#boot.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.boot-logo {
+  width: min(200px, 55vw); margin-bottom: 48px;
+  opacity: 0; animation: bootLogoIn 0.8s 0.3s ease forwards;
+}
+@keyframes bootLogoIn {
+  from{opacity:0;transform:translateY(-16px) scale(0.95);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+.boot-terminal {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: #444;
+  width: min(400px, 90vw); text-align: left;
+}
+.boot-line { display:flex; align-items:center; gap:10px; margin-bottom:10px; opacity:0; }
+.boot-line.active { opacity:1; color:var(--orange); }
+.boot-line.done { opacity:1; color:#444; }
+.boot-line.done .boot-dot { background:#2a2a2a; }
+.boot-dot { width:6px; height:6px; border-radius:50%; background:var(--orange); flex-shrink:0; animation:dotPulse 0.8s ease-in-out infinite; }
+@keyframes dotPulse{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.boot-progress { width:min(400px,90vw); height:2px; background:#1a1a1a; border-radius:1px; margin-top:32px; overflow:hidden; }
+.boot-bar { height:100%; width:0; background:linear-gradient(90deg,var(--orange),var(--orange-bright)); border-radius:1px; transition:width 0.3s ease; }
+.boot-sys { font-family:'JetBrains Mono',monospace; font-size:10px; color:#333; margin-top:14px; letter-spacing:0.15em; text-transform:uppercase; text-align:center; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  padding: 0 20px;
+  height: 56px;
+  display: flex; align-items:center; justify-content:space-between;
+  background: rgba(8,8,8,0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.5s;
+}
+[data-theme="day"] nav { background:rgba(245,243,239,0.9); }
+.nav-logo { height:28px; }
+.nav-logo img { height:100%; width:auto; display:block; }
+.nav-right { display:flex; align-items:center; gap:10px; }
+.theme-toggle { position:relative; width:48px; height:24px; cursor:pointer; }
+.theme-toggle input { display:none; }
+.toggle-track { position:absolute; inset:0; background:var(--surface2); border:1px solid var(--border); border-radius:12px; }
+.toggle-thumb { position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:var(--orange); transition:transform 0.3s; display:flex; align-items:center; justify-content:center; font-size:9px; }
+.theme-toggle input:checked ~ .toggle-thumb { transform:translateX(24px); }
+.nav-cta {
+  background: var(--orange); color:#fff;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+  padding: 7px 14px; border:none; border-radius:2px; cursor:pointer;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background:var(--orange-bright); }
+
+/* ── MAIN ── */
+main { position:relative; z-index:1; padding-top:56px; }
+
+/* ── SECTION ── */
+.section {
+  padding: 64px 24px;
+  border-bottom: 1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+@media(min-width:600px) { .section { padding: 80px 40px; } }
+@media(min-width:900px) { .section { padding: 100px 56px; } }
+
+.section-inner { max-width: 900px; margin:0 auto; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.8s cubic-bezier(.16,1,.3,1),transform 0.8s cubic-bezier(.16,1,.3,1); }
+.reveal.in { opacity:1; transform:translateY(0); }
+.reveal-delay-1{transition-delay:0.1s;} .reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;} .reveal-delay-4{transition-delay:0.4s;}
+
+/* ── TYPOGRAPHY ── */
+.sys-label {
+  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.25em;
+  text-transform:uppercase; color:var(--orange);
+  display:inline-flex; align-items:center; gap:10px; margin-bottom:20px;
+}
+.sys-label::before { content:''; display:block; width:20px; height:1px; background:var(--orange); }
+
+.headline-xl {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(32px, 8vw, 56px);
+  font-weight:400; line-height:1.0; letter-spacing:0.03em;
+  color:var(--text); margin-bottom:16px;
+}
+.headline-xl span { color:var(--orange); }
+
+.body-text { font-size:15px; color:var(--text2); line-height:1.8; }
+
+/* ── HERO ── */
+#hero {
+  min-height: calc(100vh - 56px);
+  display:flex; align-items:center;
+  padding: 64px 24px 80px;
+  border-bottom:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+@media(min-width:600px) { #hero { padding: 80px 40px; } }
+@media(min-width:900px) { #hero { padding: 100px 56px; } }
+
+.hero-bg-text {
+  position:absolute; right:-10px; bottom:20px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(100px, 28vw, 220px);
+  font-weight:800; line-height:1; letter-spacing:-0.05em;
+  color:transparent; -webkit-text-stroke:1px rgba(232,86,26,0.06);
+  pointer-events:none; user-select:none; z-index:0;
+}
+
+/* corner labels — hide on small screens */
+.hero-corner {
+  position:absolute;
+  font-family:'JetBrains Mono',monospace; font-size:9px;
+  letter-spacing:0.18em; text-transform:uppercase; color:var(--text3);
+  display:none;
+}
+@media(min-width:700px) { .hero-corner { display:block; } }
+.hero-corner-tl { top:24px; left:24px; }
+.hero-corner-tr { top:24px; right:24px; text-align:right; }
+.hero-corner-bl { bottom:24px; left:24px; }
+.hero-corner-br { bottom:24px; right:24px; text-align:right; }
+@media(min-width:900px) {
+  .hero-corner-tl,.hero-corner-bl { left:56px; }
+  .hero-corner-tr,.hero-corner-br { right:56px; }
+  .hero-corner-tl,.hero-corner-tr { top:40px; }
+  .hero-corner-bl,.hero-corner-br { bottom:40px; }
+}
+
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--orange);
+  background:var(--orange-dim); border:1px solid var(--border-orange);
+  padding:7px 14px; border-radius:2px; margin-bottom:28px;
+}
+.blink { animation:blink 1.2s step-end infinite; }
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+.hero-headline {
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(48px, 13vw, 88px);
+  font-weight:400; line-height:0.95; letter-spacing:0.03em;
+  color:var(--text); margin-bottom:28px;
+}
+.hero-headline .orange { color:var(--orange); }
+.hero-headline .outline { -webkit-text-stroke:1px var(--text3); color:transparent; }
+
+.hero-sub { font-size:15px; color:var(--text2); line-height:1.8; max-width:480px; margin-bottom:40px; }
+
+.hero-buttons { display:flex; gap:12px; flex-wrap:wrap; }
+.btn-primary {
+  background:var(--orange); color:#fff;
+  font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700;
+  letter-spacing:0.12em; text-transform:uppercase;
+  padding:13px 28px; border:none; border-radius:2px;
+  cursor:pointer; text-decoration:none; display:inline-block;
+  transition:background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { background:var(--orange-bright); }
+.btn-ghost {
+  background:transparent; color:var(--text);
+  font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700;
+  letter-spacing:0.12em; text-transform:uppercase;
+  padding:13px 28px; border:1px solid var(--border);
+  border-radius:2px; cursor:pointer; text-decoration:none; display:inline-block;
+  transition:border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color:var(--orange); color:var(--orange); }
+
+/* HERO STATS — 2×2 on mobile, 4×1 on wide */
+.hero-stats {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:0;
+  margin-top:40px;
+  border:1px solid var(--border);
+}
+@media(min-width:700px) { .hero-stats { grid-template-columns: repeat(4,1fr); } }
+
+.stat-item {
+  padding:20px 16px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end;
+  min-height:88px;
+}
+/* Remove double borders cleanly in 4-col layout */
+@media(min-width:700px) {
+  .stat-item:last-child { border-right:none; }
+  .stat-item { border-bottom:none; }
+}
+/* 2×2: remove right border on even items, remove bottom border on last row */
+@media(max-width:699px) {
+  .stat-item:nth-child(2n) { border-right:none; }
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) { border-bottom:none; }
+}
+
+.stat-val {
+  font-family:'Bebas Neue',sans-serif; font-size:clamp(32px,8vw,44px);
+  font-weight:400; color:var(--orange); line-height:1; letter-spacing:0.03em; margin-bottom:6px;
+}
+.stat-label { font-family:'JetBrains Mono',monospace; font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text3); line-height:1.5; }
+
+/* ── SCORE ── */
+#score { background:var(--bg2); }
+
+.score-main {
+  display:grid; grid-template-columns:1fr; gap:48px; margin-top:48px;
+}
+@media(min-width:700px) { .score-main { grid-template-columns:1fr 1fr; gap:64px; } }
+
+.score-number { font-family:'Bebas Neue',sans-serif; font-size:clamp(72px,18vw,108px); font-weight:400; line-height:1; color:var(--orange); }
+.score-denom { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--text3); vertical-align:super; }
+.score-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--text3); margin-bottom:8px; }
+.score-verdict {
+  font-family:'Bebas Neue',sans-serif; font-size:18px; font-weight:700; color:var(--orange);
+  background:var(--orange-dim); border:1px solid var(--border-orange);
+  padding:7px 18px; border-radius:2px; display:inline-block; margin-top:12px;
+}
+
+.score-breakdown { display:flex; flex-direction:column; gap:20px; }
+.score-metric-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.score-metric-name { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text); }
+.score-metric-val { font-family:'Bebas Neue',sans-serif; font-size:14px; font-weight:700; color:var(--orange); }
+.score-bar { height:4px; background:var(--surface2); border-radius:2px; overflow:hidden; border:1px solid var(--border); }
+.score-bar-fill { height:100%; background:linear-gradient(90deg,var(--orange),var(--orange-bright)); border-radius:2px; width:0; transition:width 1.5s cubic-bezier(.16,1,.3,1); }
+
+/* ── REALITY ── */
+.reality-frame { position:relative; border:1px solid var(--border); border-radius:4px; overflow:hidden; margin-top:48px; }
+.reality-screen {
+  width:100%; aspect-ratio:16/7; background:linear-gradient(135deg,#0d1117,#161b22);
+  position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;
+}
+.reality-mocksite {
+  width:85%; aspect-ratio:4/2.5; background:#1a1f2e; border:1px solid #2a3142; border-radius:3px;
+  filter:saturate(0.2) brightness(0.5); display:grid; grid-template-rows:40px 1fr 36px; overflow:hidden;
+}
+.mock-nav-bar { background:#0f1219; border-bottom:1px solid #1e2433; display:flex; align-items:center; gap:8px; padding:0 14px; }
+.mock-nav-dot { width:6px; height:6px; border-radius:50%; background:#2a3142; }
+.mock-nav-logo { margin-left:auto; width:60px; height:10px; background:#2a3142; border-radius:2px; }
+.mock-hero { background:linear-gradient(135deg,#131929,#0d1117); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; padding:14px; }
+.mock-title { width:60%; height:14px; background:#222c3c; border-radius:2px; }
+.mock-sub { width:40%; height:8px; background:#1c2535; border-radius:2px; }
+.mock-btn { width:80px; height:20px; background:#1e3a5f; border-radius:2px; margin-top:4px; }
+.mock-footer { background:#0a0e15; border-top:1px solid #1a2030; }
+
+.float-insight {
+  position:absolute; background:rgba(0,0,0,0.85); border:1px solid rgba(255,80,80,0.3);
+  border-radius:3px; padding:6px 10px;
+  font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.08em;
+  color:#ff6b6b; text-transform:uppercase;
+  display:flex; align-items:center; gap:6px; backdrop-filter:blur(8px);
+  animation:insightFloat 3s ease-in-out infinite; white-space:nowrap;
+}
+.float-insight::before { content:'⚠'; font-size:10px; }
+.fi-1 { top:15%; left:3%; animation-delay:0s; }
+.fi-2 { top:38%; right:3%; animation-delay:0.7s; }
+.fi-3 { bottom:18%; left:12%; animation-delay:1.4s; }
+.fi-4 { top:58%; left:40%; animation-delay:2s; display:none; } /* hide 4th on small */
+@media(min-width:500px) { .fi-4 { display:flex; } }
+@keyframes insightFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+.reality-bar { background:var(--surface); border-top:1px solid var(--border); padding:12px 16px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+.reality-url { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--text3); display:flex; align-items:center; gap:6px; }
+.status-bad { background:rgba(255,80,80,0.1); border:1px solid rgba(255,80,80,0.2); color:#ff6b6b; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; padding:4px 10px; border-radius:2px; }
+
+/* ── FUTURE ── */
+#future { background:var(--bg2); }
+
+.mockup-grid {
+  display:grid; grid-template-columns:1fr; gap:20px; margin-top:48px;
+}
+@media(min-width:600px) { .mockup-grid { grid-template-columns:1fr 1fr; gap:24px; } }
+
+.mockup-card { border:1px solid var(--border); border-radius:4px; overflow:hidden; position:relative; transition:border-color 0.3s, transform 0.4s; cursor:pointer; }
+.mockup-card:hover { border-color:var(--border-orange); transform:translateY(-4px); }
+.mockup-tag { position:absolute; top:12px; left:12px; z-index:5; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--orange); background:rgba(0,0,0,0.7); border:1px solid var(--border-orange); padding:4px 10px; border-radius:2px; }
+.mockup-video { width:100%; aspect-ratio:16/10; display:block; object-fit:cover; background:var(--surface2); }
+.mockup-footer { background:var(--surface); border-top:1px solid var(--border); padding:12px 16px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
+.mockup-title { font-family:'Bebas Neue',sans-serif; font-size:14px; font-weight:700; color:var(--text); }
+.mockup-tags { display:flex; gap:6px; flex-wrap:wrap; }
+.mtag { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.08em; text-transform:uppercase; background:var(--orange-dim); border:1px solid var(--border-orange); color:var(--orange); padding:3px 8px; border-radius:2px; }
+
+.glow-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,var(--orange),transparent); margin:56px 0; opacity:0.4; }
+
+/* ── FEATURE 3-COL ── */
+.feature-grid {
+  display:grid; grid-template-columns:1fr; gap:2px;
+  background:var(--border); border:1px solid var(--border);
+}
+@media(min-width:600px) { .feature-grid { grid-template-columns:1fr 1fr; } }
+@media(min-width:800px) { .feature-grid { grid-template-columns:1fr 1fr 1fr; } }
+.feature-cell { background:var(--card-bg); padding:28px 24px; }
+.feature-icon { color:var(--orange); font-size:24px; margin-bottom:12px; display:block; }
+.feature-title { font-family:'Bebas Neue',sans-serif; font-size:17px; font-weight:700; color:var(--text); margin-bottom:8px; }
+.feature-desc { font-size:13px; color:var(--text2); line-height:1.7; }
+
+/* ── BANNER ── */
+#banner-section { padding:0; border-bottom:1px solid var(--border); }
+.banner-img { width:100%; display:block; filter:brightness(0.8); }
+
+/* ── IMPACT ── */
+#impact { text-align:center; }
+.impact-quote { font-family:'Bebas Neue',sans-serif; font-size:clamp(28px,7vw,60px); font-weight:800; line-height:1.05; letter-spacing:-0.02em; color:var(--text); margin-bottom:24px; }
+.impact-quote span { color:var(--orange); }
+.impact-line { width:60px; height:2px; background:var(--orange); margin:24px auto; }
+.impact-sub { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--text3); }
+
+/* ── VALUE ── */
+#value { background:var(--bg2); }
+
+.value-grid {
+  display:grid; grid-template-columns:1fr; gap:2px;
+  margin-top:48px; background:var(--border); border:1px solid var(--border);
+}
+@media(min-width:600px) { .value-grid { grid-template-columns:1fr 1fr; } }
+
+.value-module { background:var(--card-bg); padding:36px 28px; position:relative; overflow:hidden; transition:background 0.3s; }
+.value-module:hover { background:var(--surface); }
+.value-module::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--orange),transparent); opacity:0; transition:opacity 0.3s; }
+.value-module:hover::before { opacity:1; }
+.vm-number { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; color:var(--orange); margin-bottom:18px; }
+.vm-icon { font-size:28px; margin-bottom:16px; display:block; }
+.vm-title { font-family:'Bebas Neue',sans-serif; font-size:20px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.vm-desc { font-size:14px; color:var(--text2); line-height:1.75; }
+.vm-tag { display:inline-block; margin-top:16px; font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange); border-bottom:1px solid var(--orange); padding-bottom:2px; }
+
+/* ── PRICE ── */
+.price-theatre { max-width:680px; margin:56px auto 0; text-align:center; position:relative; }
+.price-market { font-family:'Bebas Neue',sans-serif; font-size:clamp(36px,9vw,56px); font-weight:800; letter-spacing:-0.03em; color:var(--text3); text-decoration:line-through; opacity:0.5; margin-bottom:6px; }
+.price-market-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text3); margin-bottom:36px; }
+.price-reveal-wrap { position:relative; padding:40px 28px; background:var(--surface); border:1px solid var(--border-orange); border-radius:4px; overflow:hidden; }
+.price-reveal-wrap::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--orange),var(--orange-bright),transparent); }
+.price-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text3); margin-bottom:8px; }
+.price-offer { font-family:'Bebas Neue',sans-serif; font-size:clamp(48px,14vw,72px); font-weight:400; letter-spacing:0.02em; line-height:1; color:var(--text); margin-bottom:14px; }
+.price-offer span { color:var(--orange); }
+.price-note { font-size:14px; color:var(--text2); line-height:1.7; font-style:italic; }
+
+.bonus-strip {
+  margin-top:24px; background:linear-gradient(135deg,rgba(232,86,26,0.08),rgba(232,86,26,0.03));
+  border:1px solid var(--border-orange); border-radius:4px;
+  padding:28px 24px; position:relative; overflow:hidden;
+}
+.bonus-strip::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--orange),transparent); }
+.bonus-badge { background:var(--orange); color:#fff; font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; padding:5px 12px; border-radius:2px; display:inline-block; margin-bottom:14px; }
+.bonus-title { font-family:'Bebas Neue',sans-serif; font-size:22px; font-weight:800; color:var(--text); margin-bottom:6px; }
+.bonus-features { display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+.bonus-feat { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text2); display:flex; align-items:center; gap:6px; }
+.bonus-feat::before { content:'⬡'; color:var(--orange); }
+
+/* ── TIMELINE ── */
+#timeline { background:var(--bg2); }
+
+/* Stack on mobile, 2-col on medium, 4-col on wide */
+.timeline-nodes {
+  display:grid; grid-template-columns:1fr; gap:32px; margin-top:48px; position:relative;
+}
+@media(min-width:500px) { .timeline-nodes { grid-template-columns:1fr 1fr; gap:24px; } }
+@media(min-width:900px) { .timeline-nodes { grid-template-columns:repeat(4,1fr); gap:0; } }
+
+/* horizontal rail — only on wide */
+.timeline-rail-wrap { display:none; }
+@media(min-width:900px) {
+  .timeline-rail-wrap { display:block; position:relative; height:2px; background:var(--surface2); border-radius:1px; margin-bottom:0; }
+  .timeline-rail-fill { position:absolute; top:0; left:0; height:100%; width:0; background:linear-gradient(90deg,var(--orange),var(--orange-bright)); border-radius:1px; transition:width 2s cubic-bezier(.16,1,.3,1); }
+  .timeline-nodes { margin-top:24px; }
+}
+
+.timeline-node { padding:0; }
+.timeline-week { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--orange); margin-bottom:10px; }
+.timeline-phase { font-family:'Bebas Neue',sans-serif; font-size:20px; font-weight:700; color:var(--text); margin-bottom:10px; }
+.timeline-tasks { display:flex; flex-direction:column; gap:6px; }
+.timeline-task { font-size:13px; color:var(--text2); display:flex; align-items:center; gap:8px; }
+.timeline-task::before { content:'→'; color:var(--orange); font-size:11px; }
+
+/* ── CTA ── */
+#cta { text-align:center; padding:80px 24px; position:relative; overflow:hidden; border-bottom:none; }
+@media(min-width:600px) { #cta { padding:100px 40px; } }
+.cta-ambient { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(232,86,26,0.07) 0%,transparent 65%); pointer-events:none; }
+.cta-headline { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,12vw,72px); font-weight:400; line-height:0.95; letter-spacing:0.03em; color:var(--text); margin-bottom:24px; }
+.cta-headline span { color:var(--orange); }
+.cta-sub { font-size:15px; color:var(--text2); max-width:440px; margin:0 auto 44px; line-height:1.8; }
+.cta-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:56px; }
+.cta-closer { font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text3); border-top:1px solid var(--border); padding-top:40px; max-width:520px; margin:0 auto; line-height:2; }
+.cta-closer strong { color:var(--orange); font-weight:700; }
+
+/* ── FOOTER ── */
+footer {
+  border-top:1px solid var(--border); padding:28px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:16px;
+}
+@media(min-width:600px) { footer { padding:28px 40px; } }
+.footer-logo { width:100px; opacity:0.6; }
+.footer-meta { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text3); }
+.footer-right { font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text3); }
+
+/* ── CURSOR (desktop only) ── */
+.cursor { width:18px; height:18px; border:1px solid var(--orange); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; top:-20px; left:-20px; transition:transform 0.15s; }
+.cursor-dot { width:4px; height:4px; border-radius:50%; background:var(--orange); position:fixed; pointer-events:none; z-index:9998; top:-4px; left:-4px; transform:translate(-50%,-50%); }
+@media(hover:none) { .cursor,.cursor-dot { display:none !important; } }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="grid-overlay"></div>
+<div class="scanline"></div>
+<div class="ambient-orb orb-a"></div>
+<div class="ambient-orb orb-b"></div>
+
+<!-- BOOT -->
+<div id="boot">
+  <img src="https://www.introvertedminds.com/assets/images/light-logo.png" class="boot-logo" alt="Introverted Minds"/>
+  <div class="boot-terminal" id="bootTerminal">
+    <div class="boot-line" id="bl1"><div class="boot-dot"></div><span>Initializing Digital Perception Engine...</span></div>
+    <div class="boot-line" id="bl2"><div class="boot-dot"></div><span>Scanning skyzip.com.my...</span></div>
+    <div class="boot-line" id="bl3"><div class="boot-dot"></div><span>Analyzing UX signals...</span></div>
+    <div class="boot-line" id="bl4"><div class="boot-dot"></div><span>Generating perception score...</span></div>
+    <div class="boot-line" id="bl5"><div class="boot-dot"></div><span>⬡ Skyzip — Proposal Ready</span></div>
+  </div>
+  <div class="boot-progress"><div class="boot-bar" id="bootBar"></div></div>
+  <div class="boot-sys">INTROVERTED MINDS · DPE v2.4 · CONFIDENTIAL</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://www.introvertedminds.com/assets/images/light-logo.png" alt="Introverted Minds" id="navLogo"/>
+  </div>
+  <div class="nav-right">
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeToggle" onchange="toggleTheme(this)"/>
+      <div class="toggle-track"></div>
+      <div class="toggle-thumb"><span id="themeIcon">🌙</span></div>
+    </label>
+    <a href="https://www.introvertedminds.com/contact.html" target="_blank" class="nav-cta">Initiate ↗</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-text">SKY</div>
+  <div class="hero-corner hero-corner-tl"><div>DPE · Digital Perception Engine</div><div style="margin-top:3px;color:var(--orange)">● LIVE ANALYSIS</div></div>
+  <div class="hero-corner hero-corner-tr"><div>skyzip.com.my</div><div style="margin-top:3px">Proposal · 2025</div></div>
+  <div class="hero-corner hero-corner-bl">RM 5,000 · 4 Weeks · 1 mo. Free SEO</div>
+  <div class="hero-corner hero-corner-br">Introverted Minds · Creative Agency</div>
+
+  <div style="max-width:900px;margin:0 auto;width:100%;z-index:1;position:relative;">
+    <div class="hero-tag reveal"><span class="blink">■</span> System Active · Proposal Loaded</div>
+    <h1 class="hero-headline reveal reveal-delay-1">
+      Your Website<br>
+      <span class="orange">Isn't</span><br>
+      <span class="outline">Working.</span>
+    </h1>
+    <p class="hero-sub reveal reveal-delay-2">Skyzip deserves a digital presence that earns trust before a single word is read. This is not a redesign — it's a perception upgrade.</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <button class="btn-primary" onclick="document.getElementById('future').scrollIntoView({behavior:'smooth'})">View Concepts ↓</button>
+      <button class="btn-ghost" onclick="document.getElementById('price').scrollIntoView({behavior:'smooth'})">See Pricing</button>
+    </div>
+    <div class="hero-stats reveal reveal-delay-4">
+      <div class="stat-item">
+        <div class="stat-val">3</div>
+        <div class="stat-label">Seconds to make a<br>first impression</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">38%</div>
+        <div class="stat-label">Users leave for<br>poor design</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">400%</div>
+        <div class="stat-label">Avg ROI from<br>UX investment</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">4<span style="font-size:18px;font-weight:400;color:var(--text3)"> WK</span></div>
+        <div class="stat-label">From concept<br>to live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERCEPTION SCORE -->
+<section id="score" class="section">
+  <div class="section-inner">
+    <div class="sys-label reveal">02 — Perception Analysis</div>
+    <div class="headline-xl reveal reveal-delay-1">Digital Perception <span>Score</span></div>
+    <p class="body-text reveal reveal-delay-2">We analyzed skyzip.com.my across four core perception pillars. Here's what the data shows.</p>
+    <div class="score-main">
+      <div class="reveal reveal-delay-1">
+        <div class="score-label">Overall Score</div>
+        <div style="margin-bottom:24px;">
+          <span class="score-number" id="scoreNum">0</span><span class="score-denom">/100</span>
+        </div>
+        <div style="color:var(--text2);font-size:14px;margin-bottom:4px;line-height:1.7;max-width:340px;">Based on design currency, UX flow, trust signals, and conversion architecture.</div>
+        <div class="score-verdict">⚠ High Opportunity Gap</div>
+      </div>
+      <div class="score-breakdown reveal reveal-delay-2">
+        <div class="score-metric">
+          <div class="score-metric-header"><span class="score-metric-name">Credibility</span><span class="score-metric-val">41/100</span></div>
+          <div class="score-bar"><div class="score-bar-fill" data-width="41"></div></div>
+        </div>
+        <div class="score-metric">
+          <div class="score-metric-header"><span class="score-metric-name">UX Quality</span><span class="score-metric-val">35/100</span></div>
+          <div class="score-bar"><div class="score-bar-fill" data-width="35"></div></div>
+        </div>
+        <div class="score-metric">
+          <div class="score-metric-header"><span class="score-metric-name">Trust Signals</span><span class="score-metric-val">28/100</span></div>
+          <div class="score-bar"><div class="score-bar-fill" data-width="28"></div></div>
+        </div>
+        <div class="score-metric">
+          <div class="score-metric-header"><span class="score-metric-name">Conversion Architecture</span><span class="score-metric-val">22/100</span></div>
+          <div class="score-bar"><div class="score-bar-fill" data-width="22"></div></div>
+        </div>
+        <div style="padding:20px;background:var(--surface2);border:1px solid var(--border-orange);border-radius:3px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;">System Verdict</div>
+          <div style="font-size:14px;color:var(--text2);line-height:1.7;">The site is functional but not strategic. Visitors aren't being guided — they're being left to guess. Every unguided moment is a lost conversion.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REALITY -->
+<section id="reality" class="section" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="sys-label reveal">03 — Reality Mirror</div>
+    <div class="headline-xl reveal reveal-delay-1">Current <span>State</span></div>
+    <p class="body-text reveal reveal-delay-2">This is how Skyzip appears to potential customers today. Functional — but not persuasive. Present — but not powerful.</p>
+    <div class="reality-frame reveal reveal-delay-2">
+      <div class="reality-screen">
+        <div class="reality-mocksite">
+          <div class="mock-nav-bar"><div class="mock-nav-dot"></div><div class="mock-nav-dot"></div><div class="mock-nav-dot"></div><div class="mock-nav-logo"></div></div>
+          <div class="mock-hero"><div class="mock-title"></div><div class="mock-sub"></div><div class="mock-btn" style="margin-top:6px;"></div></div>
+          <div class="mock-footer"></div>
+        </div>
+        <div class="float-insight fi-1">Outdated Visual Design</div>
+        <div class="float-insight fi-2">Weak Brand Hierarchy</div>
+        <div class="float-insight fi-3">No Clear CTA Strategy</div>
+        <div class="float-insight fi-4">Low Trust Signals</div>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.15);pointer-events:none;"></div>
+      </div>
+      <div class="reality-bar">
+        <div class="reality-url"><span>🔒</span> skyzip.com.my — current state</div>
+        <div class="status-bad">● Underperforming</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE STATE -->
+<section id="future" class="section">
+  <div class="section-inner">
+    <div class="sys-label reveal">04 — Future State</div>
+    <div class="headline-xl reveal reveal-delay-1"><span>Proposed</span> Direction</div>
+    <p class="body-text reveal reveal-delay-2">Two design concepts engineered for modern perception, trust, and conversion. Both built with purpose — not decoration.</p>
+    <div class="mockup-grid">
+      <div class="mockup-card reveal reveal-delay-2">
+        <div class="mockup-tag">Concept 01</div>
+        <img src="https://www.introvertedminds.com/assets/videos/One-ezgif.com-video-to-gif-converter.gif" class="mockup-video" alt="Concept 01 Preview" style="object-fit:cover;"/>
+        <div class="mockup-footer">
+          <div class="mockup-title">Vision A</div>
+          <div class="mockup-tags"><span class="mtag">Modern</span><span class="mtag">Structured</span></div>
+        </div>
+      </div>
+      <div class="mockup-card reveal reveal-delay-3">
+        <div class="mockup-tag">Concept 02</div>
+        <img src="https://www.introvertedminds.com/assets/videos/Two-ezgif.com-video-to-gif-converter.gif" class="mockup-video" alt="Concept 02 Preview" style="object-fit:cover;"/>
+        <div class="mockup-footer">
+          <div class="mockup-title">Vision B</div>
+          <div class="mockup-tags"><span class="mtag">Conversion</span><span class="mtag">Focused</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="glow-divider reveal"></div>
+    <div class="feature-grid reveal">
+      <div class="feature-cell"><span class="feature-icon">⬡</span><div class="feature-title">Premium Design</div><div class="feature-desc">A visual identity that commands premium positioning in the market.</div></div>
+      <div class="feature-cell"><span class="feature-icon">◈</span><div class="feature-title">Strategic Flow</div><div class="feature-desc">Every section designed to guide the visitor toward one logical next step.</div></div>
+      <div class="feature-cell"><span class="feature-icon">◉</span><div class="feature-title">Mobile First</div><div class="feature-desc">Perfect on every screen. Because 70% of your leads browse on mobile.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div id="banner-section">
+  <img src="https://www.introvertedminds.com/assets/images/light-logo.png" class="banner-img" alt="Introverted Minds"/>
+</div>
+
+<!-- IMPACT -->
+<section id="impact" class="section">
+  <div class="section-inner" style="text-align:center;">
+    <div class="impact-quote reveal">"This is not a redesign.<br>It's a shift in <span>perception</span>."</div>
+    <div class="impact-line reveal"></div>
+    <p style="font-size:15px;color:var(--text2);max-width:520px;margin:0 auto;line-height:1.8;" class="reveal">The difference between a website that exists and a website that converts is not the technology — it's the intention behind every design decision.</p>
+    <div class="impact-sub reveal" style="margin-top:28px;">— Introverted Minds · Strategy | Branding | Growth</div>
+  </div>
+</section>
+
+<!-- VALUE -->
+<section id="value" class="section">
+  <div class="section-inner">
+    <div class="sys-label reveal">05 — What You Get</div>
+    <div class="headline-xl reveal reveal-delay-1">The <span>Full Stack</span></div>
+    <p class="body-text reveal reveal-delay-2">Four integrated modules that work together to transform your digital presence.</p>
+    <div class="value-grid">
+      <div class="value-module reveal"><div class="vm-number">MODULE · 01</div><span class="vm-icon">⚙</span><div class="vm-title">Strategy Engine</div><div class="vm-desc">Before pixels, we map purpose. We analyze your audience, map the user journey, and design the information architecture around conversion — not aesthetics alone.</div><div class="vm-tag">Business-first →</div></div>
+      <div class="value-module reveal reveal-delay-1"><div class="vm-number">MODULE · 02</div><span class="vm-icon">◈</span><div class="vm-title">UX Intelligence</div><div class="vm-desc">Every scroll, click, and pause is intentional. We engineer friction-free experiences that guide visitors from curiosity to conviction — naturally.</div><div class="vm-tag">Behaviour-driven →</div></div>
+      <div class="value-module reveal reveal-delay-2"><div class="vm-number">MODULE · 03</div><span class="vm-icon">◻</span><div class="vm-title">Design System</div><div class="vm-desc">A cohesive visual language built for Skyzip. Premium UI, thoughtful typography, intentional color psychology — designed to elevate brand perception instantly.</div><div class="vm-tag">Premium craft →</div></div>
+      <div class="value-module reveal reveal-delay-3"><div class="vm-number">MODULE · 04</div><span class="vm-icon">◉</span><div class="vm-title">Conversion Layer</div><div class="vm-desc">Strategic CTAs, trust signals, social proof placement, and mobile optimization — every element tuned for action. This is where design becomes revenue.</div><div class="vm-tag">Revenue-ready →</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="section" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="sys-label reveal">06 — Investment</div>
+    <div class="headline-xl reveal reveal-delay-1">The <span>Numbers</span></div>
+    <p class="body-text reveal reveal-delay-2">Transparent. Fair. Positioned as a growth investment — not a cost.</p>
+    <div class="price-theatre reveal">
+      <div class="price-market">RM 8,000 – RM 15,000</div>
+      <div class="price-market-label">Typical market rate for equivalent quality</div>
+      <div class="price-reveal-wrap">
+        <div class="price-label">Your Partner Rate</div>
+        <div class="price-offer"><span>RM</span> 5,000</div>
+        <div class="price-note">Offered as a strategic partner rate for early-stage collaboration. Full premium experience. Delivered in 4 weeks. Built for long-term growth.</div>
+      </div>
+      <div class="bonus-strip">
+        <div class="bonus-badge">Included Free</div>
+        <div class="bonus-title">+ SEO Boost Mode</div>
+        <div style="font-size:13px;color:var(--text3);margin-top:2px;">1 Month Active Optimization</div>
+        <div class="bonus-features">
+          <div class="bonus-feat">On-Page SEO</div>
+          <div class="bonus-feat">Technical Structure</div>
+          <div class="bonus-feat">Search Visibility</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="section">
+  <div class="section-inner">
+    <div class="sys-label reveal">07 — Execution Plan</div>
+    <div class="headline-xl reveal reveal-delay-1"><span>4 Weeks.</span> Live.</div>
+    <p class="body-text reveal reveal-delay-2">A disciplined process that moves fast without sacrificing quality.</p>
+    <div class="timeline-rail-wrap reveal" id="timelineRailWrap">
+      <div class="timeline-rail-fill" id="timelineRail"></div>
+    </div>
+    <div class="timeline-nodes reveal">
+      <div class="timeline-node"><div class="timeline-week">Week 01</div><div class="timeline-phase">Foundation</div><div class="timeline-tasks"><div class="timeline-task">Discovery session</div><div class="timeline-task">Brand audit</div><div class="timeline-task">Sitemap & wireframes</div></div></div>
+      <div class="timeline-node"><div class="timeline-week">Week 02</div><div class="timeline-phase">Build</div><div class="timeline-tasks"><div class="timeline-task">Full UI design</div><div class="timeline-task">Design revisions</div><div class="timeline-task">Dev begins</div></div></div>
+      <div class="timeline-node"><div class="timeline-week">Week 03</div><div class="timeline-phase">Launch</div><div class="timeline-tasks"><div class="timeline-task">Final build & QA</div><div class="timeline-task">Mobile testing</div><div class="timeline-task">Go live ✓</div></div></div>
+      <div class="timeline-node"><div class="timeline-week">Week 04</div><div class="timeline-phase">Optimize</div><div class="timeline-tasks"><div class="timeline-task">SEO Boost Mode</div><div class="timeline-task">Performance tuning</div><div class="timeline-task">Analytics setup</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="section" style="background:var(--bg);">
+  <div class="cta-ambient"></div>
+  <div class="section-inner" style="text-align:center;position:relative;z-index:1;">
+    <div class="sys-label reveal" style="justify-content:center;">08 — Let's Go</div>
+    <h2 class="cta-headline reveal reveal-delay-1">Initiate<br><span>Upgrade.</span></h2>
+    <p class="cta-sub reveal reveal-delay-2">Skyzip is ready to be seen differently. The question is — are you?</p>
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="https://www.introvertedminds.com/contact.html" target="_blank" class="btn-primary">Approve & Initiate ↗</a>
+    </div>
+    <div class="cta-closer reveal reveal-delay-4">
+      <strong>This is not an expense.</strong><br>
+      It's the infrastructure of how Skyzip is perceived — permanently.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="https://www.introvertedminds.com/assets/images/light-logo.png" class="footer-logo" alt="Introverted Minds" id="footerLogo"/>
+  <div class="footer-meta">Introverted Minds · Creative Agency<br>Proposal for Skyzip · 2025</div>
+  <div class="footer-right">introvertedminds.com</div>
+</footer>
+
+</main>
+
+<script>
+// BOOT
+(function(){
+  const lines=[1,2,3,4,5];
+  const delays=[400,900,1500,2100,2700];
+  const bar=document.getElementById('bootBar');
+  lines.forEach((n,i)=>{
+    setTimeout(()=>{
+      const el=document.getElementById('bl'+n);
+      if(el) el.classList.add('active');
+      bar.style.width=((i+1)/lines.length*100)+'%';
+      if(i>0){const prev=document.getElementById('bl'+(n-1));if(prev){prev.classList.remove('active');prev.classList.add('done');}}
+    },delays[i]);
+  });
+  setTimeout(()=>{
+    document.getElementById('boot').classList.add('hidden');
+    document.body.style.overflow='auto';
+    setTimeout(initReveal,200);
+  },3600);
+  document.body.style.overflow='hidden';
+})();
+
+// THEME
+function toggleTheme(cb){
+  const icon=document.getElementById('themeIcon');
+  const logos=['navLogo','footerLogo'];
+  const light='https://www.introvertedminds.com/assets/images/light-logo.png';
+  const dark='https://www.introvertedminds.com/assets/images/dark-logo.png';
+  if(cb.checked){
+    document.documentElement.setAttribute('data-theme','day');
+    icon.textContent='☀';
+    logos.forEach(id=>{const el=document.getElementById(id);if(el)el.src=dark;});
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    icon.textContent='🌙';
+    logos.forEach(id=>{const el=document.getElementById(id);if(el)el.src=light;});
+  }
+}
+
+// REVEAL
+function initReveal(){
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.score-bar-fill').forEach(b=>{ b.style.width=b.dataset.width+'%'; });
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Score counter
+  const scoreObs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        animScore(0,32,2000,document.getElementById('scoreNum'));
+        setTimeout(()=>{document.querySelectorAll('.score-bar-fill').forEach(b=>{b.style.width=b.dataset.width+'%';});},300);
+        scoreObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.2});
+  const sc=document.getElementById('score');
+  if(sc) scoreObs.observe(sc);
+
+  // Timeline rail
+  const tlObs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const r=document.getElementById('timelineRail');
+        if(r) r.style.width='100%';
+        tlObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  const tl=document.getElementById('timelineRailWrap');
+  if(tl) tlObs.observe(tl);
+}
+
+function animScore(from,to,dur,el){
+  if(!el)return;
+  const start=performance.now();
+  function tick(now){
+    const t=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-t,3);
+    el.textContent=Math.round(from+(to-from)*ease);
+    if(t<1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// CURSOR (desktop)
+const cursor=document.getElementById('cursor');
+const dot=document.getElementById('cursorDot');
+if(cursor&&dot){
+  let mx=0,my=0,cx=-20,cy=-20;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  function animC(){
+    cx+=(mx-cx)*0.12; cy+=(my-cy)*0.12;
+    cursor.style.left=(cx-9)+'px'; cursor.style.top=(cy-9)+'px';
+    dot.style.left=mx+'px'; dot.style.top=my+'px'; dot.style.transform='translate(-50%,-50%)';
+    requestAnimationFrame(animC);
+  }
+  animC();
+  document.querySelectorAll('a,button,.mockup-card,.value-module').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2)';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';});
+  });
+}
+</script>
+</body>
+</html>
