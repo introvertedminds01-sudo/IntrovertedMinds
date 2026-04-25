@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8SKLL7Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 5-Second Test: Does Your Brand Pass? | IntrovertedMinds</title>
+    <meta name="description"
+        content="If someone sees your brand for 5 seconds, do they understand it? Most don't pass. Here's why — and how to fix it.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/sitelogo.png">
+
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Custom Bar Chart for this article */
+        .chart-v2 {
+            margin: 48px 0;
+            background: var(--article-dark-box);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--article-border);
+        }
+        .chart-v2-row {
+            margin-bottom: 24px;
+        }
+        .chart-v2-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--article-text);
+        }
+        .chart-v2-track {
+            height: 6px;
+            background: var(--article-border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .chart-v2-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .chart-v2-fill.dim { opacity: 0.4; }
+
+        /* Checklist Style */
+        .checklist-v2 {
+            list-style: none !important;
+            padding: 0 !important;
+        }
+        .checklist-v2 li {
+            border-bottom: 1px solid var(--article-border);
+            padding: 20px 0 !important;
+            display: flex !important;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .checklist-v2 li::before { content: none !important; }
+        .check-icon {
+            color: var(--primary);
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        /* Comparison Table */
+        .compare-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 48px 0;
+        }
+        @media (max-width: 768px) { .compare-v2 { grid-template-columns: 1fr; } }
+        .compare-v2-col {
+            background: var(--article-dark-box);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--article-border);
+        }
+        .compare-v2-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: var(--article-muted);
+        }
+        .compare-v2-col.active .compare-v2-title { color: var(--primary); }
+        .compare-v2-list { list-style: none; padding: 0; }
+        .compare-v2-list li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: var(--article-text);
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .compare-v2-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--article-muted);
+        }
+        .compare-v2-col.active li::before { color: var(--primary); }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="growth-strategy.html">Growth Strategy</a>
+                        <a href="performance-marketing.html">Performance Marketing</a>
+                        <a href="seo.html">SEO</a>
+                        <a href="social-media.html">Social Media</a>
+                        <a href="web-development.html">Web Development</a>
+                        <a href="creative-production.html">Creative Production</a>
+                        <a href="3d-animation.html">3D Animation</a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li class="active"><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon"></span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="article-v2-page">
+        <!-- HERO V2 -->
+        <div class="hero-v2">
+            <div class="hero-v2-meta">
+                <span class="hero-v2-tag">Strategy</span>
+                <span class="hero-v2-date">April 25, 2026</span>
+                <span class="hero-v2-dot"></span>
+                <span class="hero-v2-read">14 min read</span>
+            </div>
+            <h1 class="hero-v2-title">The 5-Second Test <br><em>Does Your Brand Pass?</em></h1>
+            <p class="hero-v2-subtitle">If someone sees your brand for five seconds, do they understand who you are, what you do, and why they should care? Most brands fail this test — and don't even know it.</p>
+            
+            <div class="hero-v2-visual">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="Brand Clarity Illustration">
+            </div>
+        </div>
+
+        <div class="article-v2-wrap">
+            <article class="article-v2-body">
+                <p>Here's a thought experiment: close your eyes. Think of a brand you love. Now ask yourself — how long did it take for that brand to make an impression on you? Not to explain itself. Not to convince you. Just to <em>register.</em></p>
+
+                <p>Five seconds. That's the window. In that span, a human brain decides whether your brand is worth their attention, their trust, or their money. Most businesses spend years building a brand — and lose that decision in an instant.</p>
+
+                <p>The 5-Second Test isn't a marketing gimmick or a trendy UX heuristic. It's a fundamental truth about human perception, cognitive load, and the neuroscience of first impressions. It exposes a gap that almost every brand has — the gap between what <strong>you think you're communicating</strong> and what <strong>your audience actually receives.</strong></p>
+
+                <div class="pullquote-v2">
+                    <p>"Clarity is not about being simple. It is about being ruthlessly intentional — knowing exactly what you are, who you are for, and eliminating everything that dilutes that signal."</p>
+                    <cite>— Introverted Minds, Brand Strategy Framework</cite>
+                </div>
+
+                <h2 id="science">01. The Science: What happens inside the brain in 5 seconds</h2>
+                <p>Before we talk about brands, let's talk about brains. The human visual system is not a neutral recorder. It is a prediction machine — constantly making rapid judgements, filtering signal from noise, and assigning emotional weight to everything it encounters.</p>
+
+                <p>Neuroscientists call the first stage of brand perception <strong>pre-attentive processing</strong> — the fraction of a second before conscious thought engages. In this window, your brain is already classifying the stimulus: safe or threatening, relevant or irrelevant, trustworthy or suspicious. By the time you consciously "see" a brand, your limbic system has already filed its first verdict.</p>
+
+                <div class="insight-box-v2">
+                    <div class="insight-v2-label">Research Note</div>
+                    <p>Studies in visual cognition consistently show that people form lasting aesthetic judgements in as little as <strong>50 milliseconds</strong> — twenty times faster than a blink. The first 5 seconds don't just matter. For most brands, they are the entire conversation.</p>
+                </div>
+
+                <p>What does the brain register in those first moments? It registers three things, in this order:</p>
+                <ul>
+                    <li><strong>Color:</strong> Color speaks before any word does. Processing starts at 13 milliseconds.</li>
+                    <li><strong>Form and Shape:</strong> Identify shapes, symmetry, and compositional hierarchy within 50–100ms.</li>
+                    <li><strong>Emotional Tone:</strong> Arrives by the 200ms mark, before logical minds can interrogate it.</li>
+                </ul>
+
+                <!-- PERCEPTION CHART -->
+                <div class="chart-v2" id="perceptionChart">
+                    <div class="insight-v2-label">Brand Perception Processing Speed</div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Color</span><span>92%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill" data-width="92"></div></div>
+                    </div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Shape & Form</span><span>81%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill" data-width="81"></div></div>
+                    </div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Emotional Tone</span><span>73%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill" data-width="73"></div></div>
+                    </div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Brand Name</span><span>38%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill dim" data-width="38"></div></div>
+                    </div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Core Message</span><span>17%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill dim" data-width="17"></div></div>
+                    </div>
+                    <div class="chart-v2-row">
+                        <div class="chart-v2-label"><span>Tagline / Copy</span><span>6%</span></div>
+                        <div class="chart-v2-track"><div class="chart-v2-fill dim" data-width="6"></div></div>
+                    </div>
+                    <p style="font-size: 11px; color: var(--article-muted); margin-top: 20px;">% of first-impression decisions influenced by each element. Source: Visual cognition synthesis.</p>
+                </div>
+
+                <h2 id="failure">02. The Gap: Why most brands fail the test</h2>
+                <p>The problem is not effort. The problem is a systematic disconnect between how brands are built and how they are perceived. We call this the <strong>Perception Gap</strong> — and it manifests in three distinct ways:</p>
+                
+                <h3>The Complexity Trap</h3>
+                <p>The brand that tries to say everything to everyone ends up saying nothing to no one. Visitors arrive, register confusion, and leave. It is a clarity problem, not a traffic problem.</p>
+
+                <h3>The Insider Assumption</h3>
+                <p>The Curse of Knowledge prevents brand owners from remembering what it felt like not to know something. They build for experts when the audience arrives cold.</p>
+
+                <div class="stat-row-v2">
+                    <div class="stat-cell-v2">
+                        <div class="stat-v2-num">55%</div>
+                        <div class="stat-v2-label">Of visitors leave within the first 15 seconds</div>
+                    </div>
+                    <div class="stat-cell-v2">
+                        <div class="stat-v2-num">0.05s</div>
+                        <div class="stat-v2-label">Time to form an aesthetic judgement</div>
+                    </div>
+                    <div class="stat-cell-v2">
+                        <div class="stat-v2-num">7x</div>
+                        <div class="stat-v2-label">Likelihood to recall a coherent brand</div>
+                    </div>
+                </div>
+
+                <h2 id="diagnosis">03. The Diagnosis: How to run your own test</h2>
+                <div class="framework-v2">
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">01</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">The Stranger Test</div>
+                            <div class="fw-v2-desc">Show your homepage to strangers for 5 seconds. Ask: "What does this company do?" If results aren't clear, you have a signal problem.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">02</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">The Feeling Audit</div>
+                            <div class="fw-v2-desc">Ask: "What kind of company does this feel like?" Consistency is key. If feelings don't match intent, your visual language is lying.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">03</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">The Category Blind Test</div>
+                            <div class="fw-v2-desc">Remove your logo. Can the brand be attributed to anyone else? If you blend in, you're camouflaged.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="success">04. What a brand that passes looks like</h2>
+                <div class="compare-v2">
+                    <div class="compare-v2-col">
+                        <div class="compare-v2-title">Brands That Fail</div>
+                        <ul class="compare-v2-list">
+                            <li>Communicate everything at once.</li>
+                            <li>Use same conventions as competitors.</li>
+                            <li>Lead with features, not transformation.</li>
+                            <li>Confuse busyness with authority.</li>
+                        </ul>
+                    </div>
+                    <div class="compare-v2-col active">
+                        <div class="compare-v2-title">Brands That Pass</div>
+                        <ul class="compare-v2-list">
+                            <li>Make a single, clear, supported claim.</li>
+                            <li>Distinctive visual language (no logo needed).</li>
+                            <li>Lead with the transformation.</li>
+                            <li>Use whitespace as a signal of confidence.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="architecture">05. The Clarity Architecture: How to fix it</h2>
+                <p>We use a three-layer framework to build brands that pass the 5-Second Test consistently:</p>
+                <div class="framework-v2">
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">01</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Signal Definition</div>
+                            <div class="fw-v2-desc">The single sentence a stranger would use to describe you. Locked before creative work begins.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">02</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Visual Language Engineering</div>
+                            <div class="fw-v2-desc">Translation of strategy into sensory experience. Every color and font choice must be justified.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">03</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Coherence Auditing</div>
+                            <div class="fw-v2-desc">Ensuring the signal stays consistent across every touchpoint, from invoices to social posts.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="practical">06. 12 things you can audit right now</h2>
+                <ul class="checklist-v2">
+                    <li><span class="check-icon">✓</span> Hero section communicates positioning before scrolling.</li>
+                    <li><span class="check-icon">✓</span> Dominant color triggers correct emotional register.</li>
+                    <li><span class="check-icon">✓</span> Typography communicates personality before words are read.</li>
+                    <li><span class="check-icon">✓</span> Logo works in b/w and at tiny scales.</li>
+                    <li><span class="check-icon">✓</span> Imagery feels custom, not generic stock.</li>
+                    <li><span class="check-icon">✓</span> Positioning statement is specific enough to exclude.</li>
+                </ul>
+
+                <h2 id="stakes">07. What passing the test costs — and what failing does</h2>
+                <p>A brand that passes the test earns immediate trust — reducing the friction between first encounter and purchase decision. It commands premium pricing and attracts the right clients rather than all clients.</p>
+
+                <p>A brand that fails leaks revenue at every touchpoint. It requires more marketing spend to achieve the same awareness and more sales effort to earn the same trust.</p>
+
+                <div class="pullquote-v2">
+                    <p>"The brands you remember weren't louder. They were more precise. Precision — not volume — is the competitive advantage of the next decade."</p>
+                    <cite>— Introverted Minds</cite>
+                </div>
+
+                <div class="cta-v2-block">
+                    <h3>Does your brand pass? <br>Let's find out <em>together.</em></h3>
+                    <p>We'll run your brand through our full diagnostic identifies the exact gap between intent and reception.</p>
+                    <a href="contact.html" class="cta-v2-btn">Get Your Free Audit →</a>
+                </div>
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar-v2">
+                <div class="sidebar-v2-card">
+                    <div class="sidebar-v2-label">In this article</div>
+                    <a href="#science" class="toc-v2-item">The science of 5 seconds</a>
+                    <a href="#failure" class="toc-v2-item">Why brands fail the test</a>
+                    <a href="#diagnosis" class="toc-v2-item">Run your own test</a>
+                    <a href="#architecture" class="toc-v2-item">Clarity Architecture</a>
+                    <a href="#practical" class="toc-v2-item">12-Point Audit</a>
+                </div>
+                <div class="sidebar-v2-card">
+                    <div class="sidebar-v2-label">Related Analysis</div>
+                    <a href="why-your-brand-isnt-growing.html" class="toc-v2-item">Why Your Brand Isn't Growing</a>
+                    <a href="profitable-funnel-2026.html" class="toc-v2-item">Build a Profitable Funnel in 2026</a>
+                </div>
+                <div class="sidebar-v2-card">
+                    <div class="sidebar-v2-label">About Introverted Minds</div>
+                    <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate.</p>
+                    <a href="about.html" class="sidebar-v2-link">Our Approach →</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/introverted-minds/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/introvertedminds.official?igsh=MTlhOHppeXZvcmptMw==" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="growth-strategy.html">Growth Strategy</a>
+                <a href="performance-marketing.html">Performance Marketing</a>
+                <a href="seo.html">SEO</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="creative-production.html">Creative Production</a>
+                <a href="3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Bar chart animation using Intersection Observer
+        const chartObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.querySelectorAll('.chart-v2-fill').forEach(bar => {
+                        bar.style.width = bar.dataset.width + '%';
+                    });
+                    chartObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const chartElement = document.getElementById('perceptionChart');
+        if (chartElement) chartObserver.observe(chartElement);
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateLogos(isDark);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -387,6 +387,7 @@
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -394,18 +395,45 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .pm-grid { grid-template-columns: 1fr; }
-            .pm-card.pm-featured { grid-column: span 1; grid-template-columns: 1fr; }
-            .pm-platform-grid { grid-template-columns: 1fr; }
-            .pm-process-grid { grid-template-columns: 1fr 1fr; row-gap: 3rem; }
-            .pm-process-grid::before { display: none; }
-            .pm-hero { padding: 180px 0 100px; }
-            .pm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .pm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pm-card.pm-featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+
+            .pm-platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pm-process-grid {
+                grid-template-columns: 1fr 1fr;
+                row-gap: 3rem;
+            }
+
+            .pm-process-grid::before {
+                display: none;
+            }
+
+            .pm-hero {
+                padding: 180px 0 100px;
+            }
+
+            .pm-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
-            .pm-process-grid { grid-template-columns: 1fr; }
-            .pm-stats-grid { grid-template-columns: 1fr; }
+            .pm-process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pm-stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -501,7 +529,7 @@
     <header class="pm-hero">
         <div class="pm-container">
             <span class="pm-tag reveal">Performance Marketing & Advertising</span>
-            <h1 class="reveal">Every Rupee Should<br><span class="text-gradient">Make You Money</span></h1>
+            <h1 class="reveal">Every Dollar Spent<br><span class="text-gradient">Should Make You Money</span></h1>
             <p class="pm-lead reveal">We don't just run ads — we build performance engines. Every campaign we launch is
                 designed around one goal: turning your ad spend into measurable, profitable revenue.</p>
             <div class="pm-hero-buttons reveal">
@@ -575,33 +603,40 @@
             <div class="pm-platform-grid">
                 <div class="pm-platform-card reveal">
                     <div class="pm-platform-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                     </div>
                     <h3>Google & YouTube Ads</h3>
-                    <p>Capture high-intent buyers at the exact moment they're searching for what you sell. Search, Display, Shopping, and YouTube campaigns that convert.</p>
+                    <p>Capture high-intent buyers at the exact moment they're searching for what you sell. Search,
+                        Display, Shopping, and YouTube campaigns that convert.</p>
                 </div>
                 <div class="pm-platform-card reveal">
                     <div class="pm-platform-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                         </svg>
                     </div>
                     <h3>Meta Ads</h3>
-                    <p>Facebook and Instagram advertising that reaches the right people with scroll-stopping creatives. From awareness to purchase — we manage the entire funnel.</p>
+                    <p>Facebook and Instagram advertising that reaches the right people with scroll-stopping creatives.
+                        From awareness to purchase — we manage the entire funnel.</p>
                 </div>
                 <div class="pm-platform-card reveal">
                     <div class="pm-platform-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </div>
                     <h3>TikTok & LinkedIn</h3>
-                    <p>TikTok for viral reach and brand discovery. LinkedIn for B2B lead generation and thought leadership campaigns that connect with decision-makers.</p>
+                    <p>TikTok for viral reach and brand discovery. LinkedIn for B2B lead generation and thought
+                        leadership campaigns that connect with decision-makers.</p>
                 </div>
             </div>
         </div>
@@ -752,7 +787,8 @@
                         <span class="pm-card-number">08</span>
                         <h3>ROI Optimization & Scaling</h3>
                         <p class="pm-desc">Once we find what works, we scale it. We increase budgets strategically,
-                            open new audiences, and expand to new platforms — all while keeping your cost-per-acquisition
+                            open new audiences, and expand to new platforms — all while keeping your
+                            cost-per-acquisition
                             tight and your return on ad spend growing. This is where campaigns go from "working" to
                             "printing money."</p>
                     </div>
@@ -837,7 +873,7 @@
                 <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
                     digital landscape and achieve measurable growth.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/introverted-minds/" aria-label="LinkedIn" target="_blank" rel="noopener">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
@@ -846,18 +882,13 @@
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
                     </a>
-                    <a href="#" aria-label="Instagram">
+
+                    <a href="https://www.instagram.com/introvertedminds.official?igsh=MTlhOHppeXZvcmptMw==" aria-label="Instagram" target="_blank" rel="noopener">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="#" aria-label="Facebook">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                         </svg>
                     </a>
                 </div>
