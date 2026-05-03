@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8SKLL7Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATG Pitch Deck | Antique Travels Georgia | Introverted Minds</title>
+    <meta name="description"
+        content="Strategic Proposal for Antique Travels Georgia. Preserving heritage, redefining luxury travel.">
+
+    <link rel="icon" type="image/png" href="assets/images/sitelogo.png">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===================================
+           ATG PITCH DECK - CLASSIQUE EDITION
+           =================================== */
+
+        :root {
+            --atg-primary: #d4a373;
+            --atg-gold-gradient: linear-gradient(135deg, #d4a373 0%, #a67c52 100%);
+            --atg-dark: #0a0a0a;
+            --serif: 'Lora', serif;
+        }
+
+        .atg-pitch-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+            background: var(--atg-dark);
+        }
+
+        /* Cinematic Background with Vignette */
+        .atg-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.8) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=2400&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            opacity: 0.5;
+            filter: contrast(1.1) brightness(0.8);
+        }
+
+        .atg-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Editorial Badge */
+        .atg-badge {
+            display: inline-block;
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--atg-primary);
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .atg-badge::before,
+        .atg-badge::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: var(--atg-primary);
+            opacity: 0.5;
+        }
+
+        .atg-badge::before {
+            left: -30px;
+        }
+
+        .atg-badge::after {
+            right: -30px;
+        }
+
+        /* Classique Typography */
+        .atg-pitch-hero h1 {
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            line-height: 0.95;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-transform: none;
+        }
+
+        .atg-pitch-hero h1 .text-thin {
+            display: block;
+            font-family: var(--serif);
+            font-weight: 300;
+            font-style: italic;
+            font-size: 0.45em;
+            letter-spacing: 0;
+            color: var(--atg-primary);
+            margin-bottom: 1rem;
+        }
+
+        .atg-lead {
+            font-family: var(--serif);
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 850px;
+            margin: 0 auto 5rem;
+            font-weight: 400;
+        }
+
+        /* Refined Action Grid */
+        .atg-actions-refined {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+        }
+
+        .atg-chapter {
+            padding: 4rem 3rem;
+            text-decoration: none;
+            color: #fff;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .atg-chapter:last-child {
+            border-right: none;
+        }
+
+        .atg-chapter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--atg-gold-gradient);
+            z-index: -1;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0.15;
+        }
+
+        .atg-chapter:hover::before {
+            height: 100%;
+        }
+
+        .atg-chapter:hover {
+            background: rgba(212, 163, 115, 0.05);
+        }
+
+        .atg-num {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.85rem;
+            color: var(--atg-primary);
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .atg-chapter h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .atg-chapter p {
+            font-family: var(--serif);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .atg-arrow {
+            margin-top: auto;
+            color: var(--atg-primary);
+            transition: transform 0.4s ease;
+        }
+
+        .atg-chapter:hover .atg-arrow {
+            transform: translateX(10px);
+        }
+
+        /* Modal Classique */
+        .atg-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .atg-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .atg-modal-content {
+            width: 90%;
+            max-width: 1100px;
+            aspect-ratio: 16/9;
+            background: #000;
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+            transform: translateY(40px);
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .atg-modal.active .atg-modal-content {
+            transform: translateY(0);
+        }
+
+        .atg-modal-close {
+            position: absolute;
+            top: -60px;
+            right: 0;
+            background: none;
+            border: none;
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            padding: 1rem;
+            transition: color 0.3s;
+        }
+
+        .atg-modal-close:hover {
+            color: var(--atg-primary);
+        }
+
+        .atg-modal-content iframe,
+        .atg-modal-content video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Confidentiality Notice */
+        .atg-confidential {
+            padding: 120px 0;
+            background: #050505;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .atg-confidential-box {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 5rem 4rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+        }
+
+        .atg-confidential h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--atg-primary);
+            font-family: 'LEMON MILK', sans-serif;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .atg-confidential h3 {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .atg-confidential p {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .atg-confidential ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+
+        .atg-confidential li {
+            font-family: var(--serif);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.55);
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .atg-confidential li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--atg-primary);
+            font-weight: bold;
+        }
+
+        .atg-copyright-notice {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .atg-actions-refined {
+                grid-template-columns: 1fr;
+            }
+
+            .atg-chapter {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 3.5rem 2rem;
+            }
+
+            .atg-pitch-hero {
+                padding: 160px 0 60px;
+            }
+
+            .atg-pitch-hero h1 {
+                font-size: clamp(3rem, 12vw, 4.5rem);
+            }
+
+            .atg-confidential-box {
+                padding: 3rem 2rem;
+                margin: 0 1rem;
+            }
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="growth-strategy.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            Growth Strategy
+                        </a>
+                        <a href="performance-marketing.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            Performance Marketing
+                        </a>
+                        <a href="seo.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            SEO
+                        </a>
+                        <a href="social-media.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            Social Media
+                        </a>
+                        <a href="web-development.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            Web Development
+                        </a>
+                        <a href="creative-production.html">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                                <path d="M2 2l7.5 1.5"></path>
+                                <path d="M7 11l5-5"></path>
+                            </svg>
+                            Creative Production
+                        </a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon"></span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ======================== -->
+    <!--      ATG PITCH HERO      -->
+    <!-- ======================== -->
+    <section class="atg-pitch-hero">
+        <div class="atg-hero-overlay"></div>
+
+        <div class="atg-container">
+            <div class="atg-badge reveal">Heritage Tourism & Strategy — 2026</div>
+            <h1 class="reveal">
+                <span class="text-thin">Antique Travels Georgia</span>
+                Reimagining the <br>
+                <span class="text-gradient">Georgian Journey.</span>
+            </h1>
+            <p class="atg-lead reveal">A strategic digital ecosystem designed to showcase the soul of Georgia.
+                Elevating heritage travel from a local secret to a globally recognized luxury destination through
+                high-performance architecture.</p>
+
+            <div class="atg-actions-refined reveal">
+                <!-- Chapter 01: Audit -->
+                <a href="ATG_Audit.html" class="atg-chapter">
+                    <span class="atg-num">I. ANALYTICS</span>
+                    <h3>Website Audit</h3>
+                    <p>Analyzing the digital landscape of Georgian travel and identifying growth bottlenecks.</p>
+                    <div class="atg-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Chapter 02: Video -->
+                <div class="atg-chapter" id="openVideo" style="cursor: pointer;">
+                    <span class="atg-num">II. VISION</span>
+                    <h3>Visual Concept</h3>
+                    <p>A cinematic walkthrough of the redesigned website experience.</p>
+                    <div class="atg-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Chapter 03: PDF -->
+                <a href="assets/PDF/Introverted_MInds_Travel_Deck_Georgia.pdf" class="atg-chapter" target="_blank"
+                    rel="noopener" download>
+                    <span class="atg-num">III. STRATEGY</span>
+                    <h3>The Proposal</h3>
+                    <p>Download the detailed roadmap, timelines, and strategic execution plan.</p>
+                    <div class="atg-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confidentiality Notice -->
+    <section class="atg-confidential">
+        <div class="atg-container">
+            <div class="atg-confidential-box reveal">
+                <h2>Confidentiality & Intellectual Property Notice</h2>
+                <h3>Confidential & Proprietary</h3>
+                <p>This document and all strategies, recommendations, frameworks, concepts, systems, methodologies, and
+                    materials presented by Introverted Minds are confidential, proprietary, and intended solely for the
+                    recipient for evaluation purposes only.</p>
+
+                <p>By reviewing this document, the recipient acknowledges and agrees that:</p>
+                <ul>
+                    <li>All intellectual property, strategic concepts, recommendations, frameworks, and proprietary
+                        methodologies remain the exclusive property of Introverted Minds unless otherwise agreed in
+                        writing.</li>
+                    <li>This material may not be copied, reproduced, distributed, shared, implemented, or used in whole
+                        or in part without prior written consent from Introverted Minds.</li>
+                    <li>Receipt of this document does not grant ownership, transfer, licensing rights, or authorization
+                        to execute any presented strategies independently without formal engagement.</li>
+                    <li>Unauthorized use, replication, or distribution of these materials may constitute intellectual
+                        property infringement and may result in legal action.</li>
+                </ul>
+
+                <p>This document is shared strictly for partnership evaluation, strategic discussion, and service
+                    consideration.</p>
+
+                <div class="atg-copyright-notice">
+                    © Introverted Minds. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="atg-modal" id="videoModal">
+        <div class="atg-modal-content">
+            <button class="atg-modal-close" id="closeVideo">Close [ESC]</button>
+            <video id="atgVideo" controls preload="metadata" playsinline>
+                <source src="assets/videos/ATG.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/introverted-minds/" aria-label="LinkedIn" target="_blank"
+                        rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/introvertedminds.official?igsh=MTlhOHppeXZvcmptMw=="
+                        aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="growth-strategy.html">Growth Strategy</a>
+                <a href="performance-marketing.html">Performance Marketing</a>
+                <a href="seo.html">SEO</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="creative-production.html">Creative Production</a>
+                <a href="3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank"
+        rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Modal Logic
+        const openBtn = document.getElementById('openVideo');
+        const modal = document.getElementById('videoModal');
+        const closeBtn = document.getElementById('closeVideo');
+        const video = document.getElementById('atgVideo');
+
+        if (openBtn) {
+            openBtn.addEventListener('click', () => {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (video) {
+                    video.currentTime = 0;
+                    video.play().catch(e => console.log("Auto-play blocked or failed:", e));
+                }
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                if (video) {
+                    video.pause();
+                }
+            });
+        }
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeBtn.click();
+                }
+            });
+        }
+
+        // Escape Key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeBtn.click();
+            }
+        });
+
+        // Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            if (themeIcon) themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            if (themeIcon) themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(savedTheme === 'dark');
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateLogos(isDark);
+            });
+        }
+
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+
+</html>
