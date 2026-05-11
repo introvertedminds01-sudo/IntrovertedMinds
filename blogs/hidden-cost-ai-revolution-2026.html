@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M8SKLL7Z');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Cost of the AI Revolution 2026 | IntrovertedMinds</title>
+    <meta name="description"
+        content="AI spending hits $2.52 trillion in 2026. But behind the productivity narrative, startups and creators are quietly drowning in subscription costs, tool overload, and operational fatigue.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/sitelogo.png">
+
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* Specific Styles for AI Cost Blog Visuals */
+        .stat-strip-v2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-item-v2 {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .stat-num-v2 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: block;
+        }
+        .stat-label-v2 {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+        }
+
+        .chart-card-v2 {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .chart-title-v2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .bar-chart-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .bar-row-v2 {
+            display: grid;
+            grid-template-columns: 140px 1fr 80px;
+            align-items: center;
+            gap: 1rem;
+        }
+        .bar-label-v2 {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            text-align: right;
+        }
+        .bar-track-v2 {
+            background: rgba(255,255,255,0.05);
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bar-fill-v2 {
+            height: 100%;
+            background: var(--primary);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            padding-left: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .bar-fill-v2.dim { background: rgba(252, 88, 17, 0.3); }
+
+        .stack-visual-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .stack-row-v2 {
+            background: rgba(255,255,255,0.03);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        .stack-total-v2 {
+            background: rgba(252, 88, 17, 0.1);
+            border: 1px solid rgba(252, 88, 17, 0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-weight: 700;
+        }
+
+        .compare-grid-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .compare-card-v2 {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        .compare-card-v2 h4 { margin-bottom: 1rem; color: var(--primary); }
+        .compare-card-v2 ul { list-style: none; padding: 0; }
+        .compare-card-v2 ul li { margin-bottom: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.6); display: flex; gap: 0.5rem; }
+        .compare-card-v2 ul li::before { content: "→"; color: var(--primary); }
+
+        .ring-container-v2 {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            .compare-grid-v2 { grid-template-columns: 1fr; }
+            .bar-row-v2 { grid-template-columns: 100px 1fr 60px; }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../introvertedminds_landing.html" class="logo">
+                <img src="../assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="../introvertedminds_landing.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="../services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="../growth-strategy.html">Growth Strategy</a>
+                        <a href="../performance-marketing.html">Performance Marketing</a>
+                        <a href="../seo.html">SEO</a>
+                        <a href="../social-media.html">Social Media</a>
+                        <a href="../web-development.html">Web Development</a>
+                        <a href="../creative-production.html">Creative Production</a>
+                        <a href="../3d-animation.html">3D Animation</a>
+                    </div>
+                </li>
+                <li><a href="../partnerships.html">Our Collaboration</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="width: 20px; height: 20px;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                    </svg>
+                </span>
+            </button>
+            <a href="../contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="article-v2-page">
+        <!-- HERO V2 -->
+        <div class="hero-v2">
+            <div class="hero-v2-meta">
+                <span class="hero-v2-tag">Intelligence</span>
+                <span class="hero-v2-date">May 9, 2026</span>
+                <span class="hero-v2-dot"></span>
+                <span class="hero-v2-read">9 min read</span>
+            </div>
+            <h1 class="hero-v2-title">The Hidden Cost of the <br><em>AI Revolution</em></h1>
+            <p class="hero-v2-subtitle">Why startups and creators are quietly struggling to keep up in 2026 — and what the $2.52 trillion spending data reveals.</p>
+            
+            <!-- HERO VISUAL V2 -->
+            <div class="hero-v2-visual">
+                <img src="../assets/images/hidden-cost-ai-hero.png" alt="The Hidden Cost of the AI Revolution 2026 Visualization">
+            </div>
+        </div>
+
+        <div class="article-v2-wrap">
+            <article class="article-v2-body">
+                <p>Everyone is talking about what AI <em>can do.</em> Nobody is talking about what it <strong>costs to keep up.</strong></p>
+                <p>In 2026, the dominant narrative around artificial intelligence is productivity, acceleration, and transformation. LinkedIn is full of founders showcasing AI stacks, automation workflows, and generation outputs. The feeds celebrate speed. The conferences celebrate scale.</p>
+                <p>But behind that public-facing highlight reel, a much quieter story is unfolding — one that involves mounting subscription costs, tool fatigue, operational confusion, and psychological pressure that is slowly grinding down the very builders AI was supposed to liberate.</p>
+
+                <div class="pullquote-v2">
+                    <p>"This is not an anti-AI article. AI is real. Its impact is undeniable. This is a reality check on what it actually costs to participate in the AI era when you don't have a Series B."</p>
+                    <cite>— Introverted Minds, Intelligence Report</cite>
+                </div>
+
+                <div class="stat-strip-v2">
+                    <div class="stat-item-v2">
+                        <span class="stat-num-v2">$2.52T</span>
+                        <span class="stat-label-v2">Global AI Spending</span>
+                    </div>
+                    <div class="stat-item-v2">
+                        <span class="stat-num-v2">14,000+</span>
+                        <span class="stat-label-v2">Active AI Tools</span>
+                    </div>
+                    <div class="stat-item-v2">
+                        <span class="stat-num-v2">$200+</span>
+                        <span class="stat-label-v2">Avg. Monthly Solo Cost</span>
+                    </div>
+                </div>
+
+                <h2 id="macro-capital">The Machine Is Eating Capital at Scale</h2>
+                <p>According to Gartner's 2026 forecast, worldwide AI spending is projected to reach <strong>$2.52 trillion</strong> — a 44% increase year-over-year. AI infrastructure alone accounts for over $1.36 trillion of that figure.</p>
+
+                <div class="chart-card-v2">
+                    <div class="chart-title-v2">Global AI & IT Spending: 2025 vs 2026 (In Trillions)</div>
+                    <div class="bar-chart-v2">
+                        <div class="bar-row-v2">
+                            <div class="bar-label-v2">AI Spending</div>
+                            <div class="bar-track-v2"><div class="bar-fill-v2" data-width="100">$2.52T</div></div>
+                            <div class="bar-label-v2">+44%</div>
+                        </div>
+                        <div class="bar-row-v2">
+                            <div class="bar-label-v2">AI Infra</div>
+                            <div class="bar-track-v2"><div class="bar-fill-v2" data-width="54" style="background:#5a3a25">$1.36T</div></div>
+                            <div class="bar-label-v2">+41%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="stack-stacking">Subscription Stacking: The Budget Killer</h2>
+                <p>The modern "AI-powered business" in 2026 doesn't run on one tool. It runs on a stack. And that stack silently compounds month after month.</p>
+
+                <div class="chart-card-v2">
+                    <div class="chart-title-v2">Typical Solo Founder AI Stack</div>
+                    <div class="stack-visual-v2">
+                        <div class="stack-row-v2"><span>🧠 Conversational AI</span><span>$20–$30/mo</span></div>
+                        <div class="stack-row-v2"><span>💻 Coding Assistant</span><span>$10–$19/mo</span></div>
+                        <div class="stack-row-v2"><span>🎨 AI Design Gen</span><span>$15–$40/mo</span></div>
+                        <div class="stack-row-v2"><span>🎬 AI Video Tool</span><span>$20–$50/mo</span></div>
+                        <div class="stack-row-v2"><span>⚡ Automation Platform</span><span>$20–$49/mo</span></div>
+                        <div class="stack-total-v2"><span>Estimated Monthly Total</span><span style="color:var(--primary)">$110 – $268</span></div>
+                    </div>
+                </div>
+
+                <h2 id="tool-explosion">14,000 Tools. Zero Clarity.</h2>
+                <p>There are now more than 14,000 active AI tools globally. That number has more than doubled in eighteen months. The result is a founder environment characterized by overlapping subscriptions and tool-switching fatigue.</p>
+
+                <div class="insight-box-v2">
+                    <div class="insight-v2-label">Market Intelligence</div>
+                    <p>Ironically, an industry that promised to eliminate complexity has created one of the <strong>most fragmented software ecosystems</strong> in business history.</p>
+                </div>
+
+                <h2 id="reality-gap">The Startup Reality</h2>
+                <p>There is a gap between what the AI era looks like on social media and what it looks like at 11pm inside a founder's home office. Usage credits run out, hardware struggles, and hours are spent on tutorials instead of building.</p>
+
+                <h2 id="productivity-paradox">The Productivity Paradox</h2>
+                <p><strong>More AI does not automatically mean more productivity.</strong> A 2026 study found that AI increased iteration cycles rather than reducing them. Additional verification work was required to validate outputs.</p>
+
+                <h2 id="capital-divide">The Real Divide Is Capital</h2>
+                <p>The gap between capitalized organizations and independent builders is widening. The market is bifurcating into those who own infrastructure and those who rent subscriptions.</p>
+
+                <div class="compare-grid-v2">
+                    <div class="compare-card-v2">
+                        <h4>Enterprise Advantage</h4>
+                        <ul>
+                            <li>Proprietary AI systems</li>
+                            <li>Negotiated API rates</li>
+                            <li>Dedicated AI teams</li>
+                            <li>Custom-trained models</li>
+                        </ul>
+                    </div>
+                    <div class="compare-card-v2">
+                        <h4>Startup Reality</h4>
+                        <ul>
+                            <li>Consumer-tier tools</li>
+                            <li>Patchwork subscriptions</li>
+                            <li>Public model updates</li>
+                            <li>Ongoing expenses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="principles">5 Principles for Lean Growth</h2>
+                <div class="framework-v2">
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">01</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Audit Your Stack Ruthlessly</div>
+                            <div class="fw-v2-desc">List every AI subscription. If it doesn't have a clear ROI, cut it.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">02</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Stop Chasing the New</div>
+                            <div class="fw-v2-desc">Master five tools instead of sampling 14,000. Depth beats breadth.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">03</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Treat AI as Infrastructure</div>
+                            <div class="fw-v2-desc">Measure it like headcount. It's an operational multiplier, not magic.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">04</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Compete on Adaptability</div>
+                            <div class="fw-v2-desc">You can't out-spend an enterprise budget. You can out-adapt it.</div>
+                        </div>
+                    </div>
+                    <div class="fw-v2-item">
+                        <div class="fw-v2-num">05</div>
+                        <div class="fw-v2-content">
+                            <div class="fw-v2-title">Strategy Before Tools</div>
+                            <div class="fw-v2-desc">Tools execute strategy; they don't create it. Get the framework right first.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-v2-block">
+                    <h3>Want to build a leaner growth system?</h3>
+                    <p>Let's talk about your actual goals and how to achieve them without the tool bloat.</p>
+                    <a href="../contact.html" class="cta-v2-btn">Talk to us →</a>
+                </div>
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar-v2">
+                <div class="sidebar-v2-card">
+                    <div class="sidebar-v2-label">In this article</div>
+                    <a href="#macro-capital" class="toc-v2-item">Capital at Scale</a>
+                    <a href="#stack-stacking" class="toc-v2-item">Subscription Fatigue</a>
+                    <a href="#productivity-paradox" class="toc-v2-item">Productivity Paradox</a>
+                    <a href="#principles" class="toc-v2-item">5 Lean Principles</a>
+                </div>
+                <div class="sidebar-v2-card">
+                    <div class="sidebar-v2-label">About Introverted Minds</div>
+                    <p>We help high-stakes brands build robust growth systems that outlast trends.</p>
+                    <a href="../about.html" class="sidebar-v2-link">Learn about us →</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="../assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/introverted-minds/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/introvertedminds.official?igsh=MTlhOHppeXZvcmptMw==" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="../growth-strategy.html">Growth Strategy</a>
+                <a href="../performance-marketing.html">Performance Marketing</a>
+                <a href="../seo.html">SEO</a>
+                <a href="../social-media.html">Social Media</a>
+                <a href="../web-development.html">Web Development</a>
+                <a href="../creative-production.html">Creative Production</a>
+                <a href="../3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="../about.html">About Us</a>
+                <a href="../contact.html">Contact Us</a>
+                <a href="../services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919867440690" class="whatsapp-float" aria-label="Chat with IntrovertedMinds on WhatsApp"
+        target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? '../assets/images/light-logo.png' : '../assets/images/dark-logo.png';
+            });
+        }
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateLogos(isDark);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Animate bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.bar-fill-v2');
+                    fills.forEach(f => {
+                        f.style.width = f.dataset.width + '%';
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.chart-card-v2').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
