@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Transformation Proposal — iHub Solutions × Introverted Minds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --orange: #fc5811;
+      --orange-dim: rgba(252, 88, 17, 0.10);
+      --orange-mid: rgba(252, 88, 17, 0.35);
+      --bg: #080808;
+      --bg2: #0f0f0f;
+      --bg3: #141414;
+      --card: #111111;
+      --border: #1e1e1e;
+      --border-bright: #2a2a2a;
+      --text: #f0f0f0;
+      --text-muted: #888888;
+      --text-dim: #555555;
+      --white: #ffffff;
+      --red: #e84343;
+      --amber: #f0a500;
+      --green: #2ecc71;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* PROGRESS */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--orange);
+      z-index: 999;
+      width: 0%;
+      transition: width 0.1s ease;
+    }
+
+    /* NAV DOTS */
+    .nav-dots {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-dot.active,
+    .nav-dot:hover {
+      background: var(--orange);
+      transform: scale(1.6);
+    }
+
+    /* COVER */
+    .cover {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 48px 72px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(252, 88, 17, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(252, 88, 17, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cover-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .cover-logo {
+      height: 38px;
+      width: auto;
+    }
+
+    .cover-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-bright);
+      padding: 6px 14px;
+    }
+
+    .cover-main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0 40px;
+    }
+
+    .cover-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--orange);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cover-label::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7.5vw, 92px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cover-title em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .cover-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(17px, 2.4vw, 25px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      max-width: 680px;
+    }
+
+    .cover-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--orange) 0%, transparent 60%);
+      margin-bottom: 40px;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .cover-meta-item label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .cover-meta-item span {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .cover-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .confidential-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 110px 72px;
+      position: relative;
+    }
+
+    section:nth-child(even) {
+      background: var(--bg2);
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 150px;
+      font-weight: 300;
+      color: rgba(252, 88, 17, 0.04);
+      position: absolute;
+      top: -55px;
+      right: -10px;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4.5vw, 54px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 44px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    /* COVER LETTER — DARK THEME (Option B) */
+    .letter-wrap {
+      max-width: 780px;
+    }
+
+    .letter-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-bright);
+    }
+
+    .letter-header-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .letter-header-contacts span {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+    }
+
+    .letter-header-region {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+    }
+
+    .letter-orange-rule {
+      width: 80px;
+      height: 2px;
+      background: var(--orange);
+      margin-bottom: 32px;
+    }
+
+    .letter-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+
+    .letter-to {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .letter-subject {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 32px;
+      letter-spacing: 0.01em;
+      line-height: 1.4;
+    }
+
+    .letter-subject span {
+      color: var(--orange);
+    }
+
+    .letter-body-text {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-muted);
+    }
+
+    .letter-body-text p {
+      margin-bottom: 22px;
+    }
+
+    .letter-body-text strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .letter-sign {
+      margin-top: 44px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .sign-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .sign-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .sign-contact {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      line-height: 1.9;
+      text-align: right;
+    }
+
+    /* SCOPE */
+    .scope-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 44px;
+    }
+
+    .scope-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px 30px;
+      transition: border-color 0.2s;
+    }
+
+    .scope-item:hover {
+      border-color: var(--orange-mid);
+    }
+
+    .scope-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      color: var(--orange);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .scope-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .scope-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.72;
+    }
+
+    .locale-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .locale-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: left;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg3);
+    }
+
+    .locale-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    .locale-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .locale-table tr:hover td {
+      background: var(--card);
+    }
+
+    .locale-table td:first-child {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .locale-flag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      background: var(--orange-dim);
+      padding: 2px 8px;
+    }
+
+    .page-arch {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .page-arch-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 15px 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* TECH */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .tech-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 24px 22px;
+    }
+
+    .tech-layer {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .tech-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .tech-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* METHODOLOGY */
+    .method-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .method-step {
+      padding: 32px 24px;
+      border-right: 1px solid var(--border);
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .method-step:last-child {
+      border-right: none;
+    }
+
+    .method-step:hover {
+      background: var(--card);
+    }
+
+    .method-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: rgba(252, 88, 17, 0.18);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .method-step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .method-step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .method-step-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width 0.4s ease;
+    }
+
+    .method-step:hover .method-step-accent {
+      width: 100%;
+    }
+
+    /* TIMELINE */
+    .timeline-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .timeline-phase {
+      padding: 0 12px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      transition: all 0.3s;
+    }
+
+    .timeline-phase:hover .timeline-dot {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: var(--white);
+    }
+
+    .timeline-phase-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-duration {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .timeline-items {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.85;
+    }
+
+    /* INVESTMENT */
+    .investment-frame {
+      border: 1px solid var(--orange-mid);
+      background: linear-gradient(135deg, var(--card) 0%, rgba(252, 88, 17, 0.03) 100%);
+      padding: 48px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invest-headline {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .invest-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 76px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .invest-amount span {
+      font-size: 38px;
+      color: var(--orange);
+      vertical-align: super;
+    }
+
+    .invest-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 620px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .payment-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .payment-table th {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: left;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .payment-table td {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .payment-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .payment-table td:last-child {
+      text-align: right;
+      color: var(--white);
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+    }
+
+    .payment-table td:first-child {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .payment-trigger {
+      font-size: 11px;
+      color: var(--text-dim);
+      display: block;
+      margin-top: 3px;
+    }
+
+    .payment-total-row td {
+      padding-top: 24px !important;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--white) !important;
+      border-bottom: none !important;
+    }
+
+    .payment-total-row td:last-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--orange) !important;
+    }
+
+    .retainer-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .retainer-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .retainer-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+    .retainer-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 300;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .retainer-amount small {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* WHY / ABOUT */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .why-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 30px 26px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .why-card:hover {
+      border-color: var(--orange-mid);
+      transform: translateY(-3px);
+    }
+
+    .why-icon {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .why-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .about-text strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .service-tag {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 14px 20px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: default;
+    }
+
+    .service-tag::after {
+      content: '→';
+      color: var(--orange);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .service-tag:hover {
+      border-color: var(--orange-mid);
+      color: var(--white);
+      background: var(--orange-dim);
+    }
+
+    .service-tag:hover::after {
+      opacity: 1;
+    }
+
+    .about-services {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    /* AUDIT */
+    .audit-overall {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 32px 40px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .audit-score-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .audit-score-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 64px;
+      font-weight: 300;
+      color: var(--amber);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .audit-score-desc {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .audit-score-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .audit-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 24px 26px;
+    }
+
+    .audit-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .audit-category {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      flex: 1;
+    }
+
+    .audit-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+
+    .status-red {
+      background: rgba(232, 67, 67, 0.1);
+      color: var(--red);
+      border: 1px solid rgba(232, 67, 67, 0.2);
+    }
+
+    .status-amber {
+      background: rgba(240, 165, 0, 0.1);
+      color: var(--amber);
+      border: 1px solid rgba(240, 165, 0, 0.2);
+    }
+
+    .status-green {
+      background: rgba(46, 204, 113, 0.1);
+      color: var(--green);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+    }
+
+    .audit-finding {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .audit-bar {
+      width: 100%;
+      height: 2px;
+      background: var(--border);
+      margin-top: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .audit-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: width 1.2s ease;
+    }
+
+    /* NEXT STEPS */
+    .next-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .next-step:last-child {
+      border-bottom: none;
+    }
+
+    .next-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--orange);
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .next-step-content h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .next-step-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* CONFIDENTIALITY */
+    .conf-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+
+    .conf-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--orange-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .conf-title-wrap h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .conf-title-wrap p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .conf-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 860px;
+      margin-bottom: 28px;
+    }
+
+    .conf-body strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .conf-clauses {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 28px;
+    }
+
+    .conf-clause {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      padding: 18px 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .conf-clause-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--orange);
+      min-width: 24px;
+      margin-top: 2px;
+    }
+
+    .conf-footer-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.1em;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* CONTACT FOOTER */
+    .contact-section {
+      background: var(--bg);
+      padding: 80px 72px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .contact-cta-title em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-item label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--text-dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: var(--orange);
+    }
+
+    .contact-sign-off {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      grid-column: 1/-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .sign-off-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .sign-off-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--orange);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* SHARED */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .fade-in-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .fade-in-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 44px 0;
+    }
+
+    .body-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 780px;
+      margin-bottom: 44px;
+    }
+
+    .sub-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .disclaimer-box {
+      border-left: 3px solid var(--orange);
+      padding: 18px 22px;
+      background: var(--orange-dim);
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .disclaimer-box strong {
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    .mono-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--orange);
+      background: var(--orange-dim);
+      padding: 1px 6px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      border: 1px solid var(--border-bright);
+      padding: 4px 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .highlight-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.6;
+      border-left: 3px solid var(--orange);
+      padding-left: 24px;
+      margin: 36px 0;
+      max-width: 700px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--orange);
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 46px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 20px;
+      }
+
+      .cover {
+        padding: 40px 20px;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .cover-main {
+        padding: 40px 0;
+      }
+
+      .cover-title {
+        font-size: 42px;
+      }
+
+      .cover-meta {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .nav-dots {
+        display: none;
+      }
+
+      .section-number {
+        font-size: 80px;
+        top: -30px;
+        right: 10px;
+      }
+
+      .scope-grid,
+      .tech-grid,
+      .page-arch,
+      .method-steps,
+      .timeline-track,
+      .audit-grid,
+      .about-grid,
+      .why-grid,
+      .stats-row {
+        grid-template-columns: 1fr !important;
+      }
+
+      .timeline-track::before {
+        display: none;
+      }
+
+      .timeline-phase {
+        text-align: left;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+
+      .timeline-dot {
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      .investment-frame {
+        padding: 24px;
+      }
+
+      .invest-amount {
+        font-size: 48px;
+      }
+
+      .invest-amount span {
+        font-size: 24px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-section {
+        padding: 60px 20px;
+      }
+
+      .letter-sign,
+      .contact-sign-off {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .letter-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .audit-overall {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+      }
+
+      .sign-contact,
+      .contact-sign-off div:last-child {
+        text-align: left !important;
+      }
+
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 28px;
+        border: 1px solid var(--border);
+      }
+
+      .locale-table,
+      .payment-table {
+        min-width: 600px;
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+  <nav class="nav-dots" id="navDots">
+    <div class="nav-dot active" onclick="scrollToSection(0)" title="Cover"></div>
+    <div class="nav-dot" onclick="scrollToSection(1)" title="Cover Letter"></div>
+    <div class="nav-dot" onclick="scrollToSection(2)" title="Scope of Work"></div>
+    <div class="nav-dot" onclick="scrollToSection(3)" title="Technical Architecture"></div>
+    <div class="nav-dot" onclick="scrollToSection(4)" title="Methodology"></div>
+    <div class="nav-dot" onclick="scrollToSection(5)" title="Timeline"></div>
+    <div class="nav-dot" onclick="scrollToSection(6)" title="Investment"></div>
+    <div class="nav-dot" onclick="scrollToSection(7)" title="Why Introverted Minds"></div>
+    <div class="nav-dot" onclick="scrollToSection(8)" title="About Us"></div>
+    <div class="nav-dot" onclick="scrollToSection(9)" title="Website Audit"></div>
+    <div class="nav-dot" onclick="scrollToSection(10)" title="Next Steps"></div>
+    <div class="nav-dot" onclick="scrollToSection(11)" title="Confidentiality"></div>
+  </nav>
+
+  <!-- ══ 0. COVER ══ -->
+  <div class="cover" id="sec-0">
+    <div class="cover-top">
+      <img src="https://www.introvertedminds.com/assets/images/light-logo.png" style="height: 50px !important;">
+      <div class="cover-badge">Confidential &nbsp;·&nbsp; May 2026</div>
+    </div>
+    <div class="cover-main">
+      <div class="cover-label">Digital Transformation Proposal</div>
+      <h1 class="cover-title">Re-engineering<br><em>iHub's</em> Digital<br>Presence.</h1>
+      <p class="cover-sub">A multilingual, performance-driven web platform for Asia's leading LogTech provider.</p>
+      <div class="cover-divider"></div>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><label>Prepared For</label><span>iHub Solutions Pte Ltd</span></div>
+        <div class="cover-meta-item"><label>Prepared By</label><span>Introverted Minds</span></div>
+        <div class="cover-meta-item"><label>Project Type</label><span>Web Revamp · Multilingual</span></div>
+        <div class="cover-meta-item"><label>Proposal Date</label><span>May 2026</span></div>
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <div class="confidential-tag">Proprietary &amp; Confidential — Not for Distribution</div>
+    </div>
+  </div>
+
+  <!-- ══ 1. COVER LETTER ══ -->
+  <section id="sec-1">
+    <div class="section-inner">
+      <div class="section-number">01</div>
+      <div class="section-label">Cover Letter</div>
+      <div class="letter-wrap">
+        <div class="letter-header-bar">
+          <div class="letter-header-contacts">
+            <span>✉ answer@introvertedminds.com</span>
+            <span>⊕ www.introvertedminds.com</span>
+          </div>
+          <div class="letter-header-region">SINGAPORE &nbsp;|&nbsp; INDIA &nbsp;|&nbsp; INDONESIA</div>
+        </div>
+        <div class="letter-orange-rule"></div>
+        <div class="letter-date">May 2026</div>
+        <div class="letter-to">To: The iHub Solutions Team &nbsp;|&nbsp; iHub Solutions Pte Ltd &nbsp;|&nbsp; Singapore
+        </div>
+        <div class="letter-subject">Re: <span>Digital Transformation &amp; Website Revamp Proposal</span></div>
+        <div class="letter-body-text">
+          <p>Dear iHub Solutions Team,</p>
+          <p>Thank you for reaching out and for the trust you have placed in us by sharing your requirements. We do not
+            take that lightly. Before writing a single word of this proposal, we spent time genuinely studying iHub —
+            your 25-year journey, your LogTech positioning, your regional presence across Singapore, Malaysia, Hong
+            Kong, and Thailand, and yes, your current website.</p>
+          <p>What we found confirmed something important: <strong>iHub's digital presence is not keeping pace with
+              iHub's actual capability.</strong> You are a company recognised by Enterprise Singapore, visited by
+            Singapore's Minister for Digital Development, and trusted by over 200 clients including multinational
+            corporations. Your website should reflect all of that — and currently, it does not.</p>
+          <p>This proposal addresses that gap directly. It includes a complimentary website audit we conducted on
+            ihubsolutions.com, a detailed scope of work aligned precisely to your stated requirements, our technical
+            architecture, delivery methodology, and our investment framework.</p>
+          <p>Introverted Minds is a <strong>Strategic Infrastructure Partner</strong>. We don't build websites — we
+            build digital systems engineered to serve your business goals at scale. This project is exactly the kind we
+            exist for: complex, regionally significant, and with lasting impact on how iHub is perceived and converted
+            across Southeast Asia.</p>
+          <p>We look forward to a discovery conversation where we can align fully on scope and begin building something
+            worthy of the iHub name.</p>
+          <div class="letter-sign">
+            <div>
+              <div class="sign-name">Narayanan Jr. Prapoo</div>
+              <div class="sign-role">Head of Controlled Chaos &nbsp;·&nbsp; Introverted Minds</div>
+            </div>
+            <div class="sign-contact">
+              +62 858 2055 5800<br>
+              WA: +91 6359 000 571<br>
+              answer@introvertedminds.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2. SCOPE OF WORK ══ -->
+  <section id="sec-2">
+    <div class="section-inner">
+      <div class="section-number">02</div>
+      <div class="section-label">Scope of Work</div>
+      <h2 class="section-title">What we're <em>building.</em></h2>
+      <p class="body-text">Based on your requirements, the scope covers the following key workstreams — each scoped at
+        the depth required to deliver a complete, production-ready platform across all four markets.</p>
+      <div class="scope-grid">
+        <div class="scope-item fade-in">
+          <div class="scope-num">01 — Core Deliverable</div>
+          <div class="scope-name">Multilingual Country Architecture</div>
+          <div class="scope-desc">Subfolder-based internationalisation across 4 markets: Singapore (/sg/), Malaysia
+            (/my/), Hong Kong (/hk/ — Chinese Traditional), Thailand (/th/ — Thai). Each locale includes
+            country-specific routing, localised CTAs, contact flows, and language-specific SEO with hreflang tags and
+            individual XML sitemaps per country.</div>
+        </div>
+        <div class="scope-item fade-in fade-in-delay-1">
+          <div class="scope-num">02 — Core Deliverable</div>
+          <div class="scope-name">Custom UI/UX Design</div>
+          <div class="scope-desc">Full custom interface design for all 12 main pages — no templates, no off-the-shelf
+            themes. Design reflects iHub's LogTech positioning: premium, technology-forward, and trustworthy across
+            diverse cultural contexts. Mobile-first with full responsive design across all viewports.</div>
+        </div>
+        <div class="scope-item fade-in fade-in-delay-2">
+          <div class="scope-num">03 — Core Deliverable</div>
+          <div class="scope-name">React (Next.js) Development</div>
+          <div class="scope-desc">All 12 main pages built in React using Next.js for server-side rendering — critical
+            for SEO performance across all 4 locales. Component-based architecture for scalability and long-term
+            maintainability. Clean, documented codebase with full knowledge transfer upon project completion.</div>
+        </div>
+        <div class="scope-item fade-in fade-in-delay-3">
+          <div class="scope-num">04 — Core Deliverable</div>
+          <div class="scope-name">CMS for Blog &amp; Articles</div>
+          <div class="scope-desc">A content management system enabling iHub's marketing team to publish and manage blog
+            articles, news, and insights without developer involvement. Optimal CMS solution — Webflow, Sanity, or
+            equivalent — confirmed during our discovery call based on your team's preference.</div>
+        </div>
+        <div class="scope-item fade-in">
+          <div class="scope-num">05 — Core Deliverable</div>
+          <div class="scope-name">Country-Specific Forms &amp; CTAs</div>
+          <div class="scope-desc">Dedicated enquiry forms per locale routing to the correct country team. Transaction
+            buttons configured per market with country-specific contact details and messaging. PDPA-compliant data
+            consent handling for the Singapore locale.</div>
+        </div>
+        <div class="scope-item fade-in fade-in-delay-1">
+          <div class="scope-num">06 — Core Deliverable</div>
+          <div class="scope-name">Google Tools &amp; Marketing Integrations</div>
+          <div class="scope-desc">Google Analytics 4 with country/locale segmentation, Google Tag Manager, Google Search
+            Console per locale, conversion tracking across all country-specific forms, and integration with additional
+            marketing tools identified during discovery.</div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading">Country Locale Breakdown</h3>
+      <div class="table-wrapper">
+        <table class="locale-table fade-in">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Language</th>
+              <th>Subfolder</th>
+              <th>Special Requirements</th>
+              <th>Pages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇸🇬 Singapore</td>
+              <td><span class="locale-flag">EN</span></td>
+              <td><span class="mono-tag">/sg/</span></td>
+              <td>PDPA compliance, primary market CTA flows</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>🇲🇾 Malaysia</td>
+              <td><span class="locale-flag">EN</span></td>
+              <td><span class="mono-tag">/my/</span></td>
+              <td>Country-specific contact routing, local office details</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>🇭🇰 Hong Kong</td>
+              <td><span class="locale-flag">ZH-TW</span></td>
+              <td><span class="mono-tag">/hk/</span></td>
+              <td>Chinese Traditional, cultural UX adaptation, replaces 2017 promo page</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>🇹🇭 Thailand</td>
+              <td><span class="locale-flag">TH</span></td>
+              <td><span class="mono-tag">/th/</span></td>
+              <td>Thai script rendering, font selection, character spacing</td>
+              <td>12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:12px;color:var(--text-dim);font-family:'DM Mono',monospace;margin-bottom:40px;">* Total page
+        instances: 12 pages × 4 locales = 48 content instances. Translation source and management to be confirmed during
+        discovery.</p>
+
+      <hr class="divider">
+      <h3 class="sub-heading">Proposed Page Architecture</h3>
+      <div class="page-arch">
+        <div class="page-arch-item">01 — Home</div>
+        <div class="page-arch-item">02 — About / Our Story</div>
+        <div class="page-arch-item">03 — Services Overview</div>
+        <div class="page-arch-item">04 — Smart Warehousing</div>
+        <div class="page-arch-item">05 — E-commerce Fulfilment</div>
+        <div class="page-arch-item">06 — Last Mile &amp; Contract Logistics</div>
+        <div class="page-arch-item">07 — Retail &amp; Wholesale</div>
+        <div class="page-arch-item">08 — Healthcare Fulfilment</div>
+        <div class="page-arch-item">09 — Digitalization &amp; AI/ML</div>
+        <div class="page-arch-item">10 — Blog &amp; Insights (CMS)</div>
+        <div class="page-arch-item">11 — Careers</div>
+        <div class="page-arch-item">12 — Contact &amp; Enquiry</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3. TECHNICAL ARCHITECTURE ══ -->
+  <section id="sec-3">
+    <div class="section-inner">
+      <div class="section-number">03</div>
+      <div class="section-label">Technical Architecture</div>
+      <h2 class="section-title">How we're <em>building it.</em></h2>
+      <p class="body-text">Every technical decision is chosen for performance, scalability, and long-term
+        maintainability — with a direct business justification behind each choice.</p>
+      <div class="tech-grid fade-in">
+        <div class="tech-card">
+          <div class="tech-layer">Frontend Framework</div>
+          <div class="tech-name">Next.js (React)</div>
+          <div class="tech-desc">Upgrading from create-react-app to Next.js delivers server-side rendering — critical
+            for SEO across all 4 locales. Built-in i18n routing handles the subfolder structure natively, preserving
+            your existing React investment while dramatically improving search performance.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-layer">Internationalisation</div>
+          <div class="tech-name">next-i18next</div>
+          <div class="tech-desc">Industry-standard i18n library for Next.js. Handles locale routing, language detection,
+            translation file management, and script-specific rendering for Chinese Traditional and Thai. Custom font
+            loading per locale ensures perfect typographic rendering.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-layer">Content Management</div>
+          <div class="tech-name">Headless CMS</div>
+          <div class="tech-desc">We recommend evaluating Sanity or Webflow CMS during discovery. Both provide
+            non-technical editors a visual interface for blog and article management. Final recommendation based on your
+            team's comfort. API-connected to Next.js for seamless content delivery.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-layer">SEO Infrastructure</div>
+          <div class="tech-name">Multilingual SEO</div>
+          <div class="tech-desc">Hreflang tags across all locales. Individual XML sitemaps per country subfolder
+            submitted to Google Search Console. Locale-specific meta tags and OG data. Structured data (Schema.org) for
+            B2B service and LogTech discovery.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-layer">Analytics &amp; Tracking</div>
+          <div class="tech-name">Google Tag Manager</div>
+          <div class="tech-desc">GA4 with locale segmentation, GTM container setup, Search Console per property,
+            conversion tracking for all country-specific forms, LinkedIn Insight Tag, and any additional integrations
+            confirmed in discovery.</div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-layer">Hosting &amp; Infrastructure</div>
+          <div class="tech-name">Cloud Deployment</div>
+          <div class="tech-desc">Vercel or AWS Amplify — both provide global CDN with strong APAC edge nodes (Singapore,
+            Hong Kong, Mumbai) for fast load times across all target markets. SSL, automatic deployments, and
+            environment management included.</div>
+        </div>
+      </div>
+      <div class="disclaimer-box">
+        <strong>Architecture Note:</strong> The React + CMS hybrid will be finalised during discovery. We will advise on
+        the most practical integration based on your team's capabilities and long-term content goals. No architectural
+        assumptions are locked in — this is a recommendation, not a prescription.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4. METHODOLOGY ══ -->
+  <section id="sec-4">
+    <div class="section-inner">
+      <div class="section-number">04</div>
+      <div class="section-label">Our Methodology</div>
+      <h2 class="section-title">How we <em>work.</em></h2>
+      <div class="method-steps fade-in">
+        <div class="method-step">
+          <div class="method-step-num">01</div>
+          <div class="method-step-title">Discovery &amp; Alignment</div>
+          <div class="method-step-desc">A structured session to validate scope, confirm page requirements, align on
+            translation management, clarify CMS preference, understand brand guidelines, and map all integration
+            touchpoints — before any design decision is made.</div>
+          <div class="method-step-accent"></div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">02</div>
+          <div class="method-step-title">Design &amp; Architecture</div>
+          <div class="method-step-desc">Wireframes, UX flows, and high-fidelity mockups for all 12 pages. Presented for
+            client review and approval before development begins. Locale-specific design variations for HK and TH. Full
+            design system delivered.</div>
+          <div class="method-step-accent"></div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">03</div>
+          <div class="method-step-title">Development &amp; Integration</div>
+          <div class="method-step-desc">Next.js build with i18n routing, CMS setup, all 4 locale implementations,
+            marketing tool integrations, country-specific form configuration, and performance optimisation throughout.
+            Staged releases for ongoing visibility.</div>
+          <div class="method-step-accent"></div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-num">04</div>
+          <div class="method-step-title">QA, Launch &amp; Handover</div>
+          <div class="method-step-desc">Cross-browser and cross-device testing, multilingual QA, form testing per
+            country, SEO verification, performance benchmarking, staging review, go-live, and full project handover with
+            complete documentation.</div>
+          <div class="method-step-accent"></div>
+        </div>
+      </div>
+      <p style="font-size:14px;color:var(--text-muted);line-height:1.8;max-width:720px;">Throughout all phases, iHub
+        will have a dedicated point of contact at Introverted Minds. You will review work-in-progress at every milestone
+        with clear sign-off gates before we advance — no black boxes, no surprises.</p>
+    </div>
+  </section>
+
+  <!-- ══ 5. TIMELINE ══ -->
+  <section id="sec-5">
+    <div class="section-inner">
+      <div class="section-number">05</div>
+      <div class="section-label">Project Timeline</div>
+      <h2 class="section-title">Delivery in <em>10–12 weeks.</em></h2>
+      <p class="body-text">Aligned to your stated 2–3 month timeframe. Milestone dates confirmed upon contract signing.
+        Timeline assumes iHub provides content and translation resources as agreed during discovery.</p>
+      <div class="timeline-track fade-in">
+        <div class="timeline-phase">
+          <div class="timeline-dot">W1–2</div>
+          <div class="timeline-phase-name">Discovery</div>
+          <div class="timeline-duration">Weeks 1–2</div>
+          <div class="timeline-items">Kick-off call<br>Scope validation<br>Content audit<br>CMS decision<br>Asset
+            collection</div>
+        </div>
+        <div class="timeline-phase">
+          <div class="timeline-dot">W3–5</div>
+          <div class="timeline-phase-name">Design</div>
+          <div class="timeline-duration">Weeks 3–5</div>
+          <div class="timeline-items">UX wireframes<br>UI design (12 pages)<br>Locale design review<br>Client
+            approval<br>Design system</div>
+        </div>
+        <div class="timeline-phase">
+          <div class="timeline-dot">W6–9</div>
+          <div class="timeline-phase-name">Development</div>
+          <div class="timeline-duration">Weeks 6–9</div>
+          <div class="timeline-items">Next.js setup<br>i18n routing<br>CMS integration<br>All 4 locales<br>Integrations
+          </div>
+        </div>
+        <div class="timeline-phase">
+          <div class="timeline-dot">W10–12</div>
+          <div class="timeline-phase-name">QA &amp; Launch</div>
+          <div class="timeline-duration">Weeks 10–12</div>
+          <div class="timeline-items">Cross-device QA<br>Multilingual testing<br>SEO verification<br>Staging
+            review<br>Go-live &amp; handover</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6. INVESTMENT ══ -->
+  <section id="sec-6">
+    <div class="section-inner">
+      <div class="section-number">06</div>
+      <div class="section-label">Investment</div>
+      <h2 class="section-title">Transparent <em>pricing.</em></h2>
+      <div class="investment-frame fade-in">
+        <div class="invest-headline">Total Project Investment</div>
+        <div class="invest-amount"><span>SGD </span>16,000</div>
+        <p class="invest-note">Introverted Minds is selectively building its portfolio with strategic clients. This
+          engagement is priced at an introductory rate reflecting our genuine investment in this partnership. We are
+          committed to delivering an outcome that iHub Solutions will be proud of — and that we can stand behind as a
+          reference engagement.</p>
+        <div class="table-wrapper">
+          <table class="payment-table">
+            <thead>
+              <tr>
+                <th>Milestone</th>
+                <th>%</th>
+                <th>Trigger</th>
+                <th>Amount (SGD)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Commencement<span class="payment-trigger">Project activated upon contract signing</span></td>
+                <td style="color:var(--text-muted);font-family:'DM Mono',monospace;">40%</td>
+                <td style="color:var(--text-muted);font-size:13px;">Contract signed</td>
+                <td>6,400</td>
+              </tr>
+              <tr>
+                <td>Mid-Stage<span class="payment-trigger">All designs approved, development commences</span></td>
+                <td style="color:var(--text-muted);font-family:'DM Mono',monospace;">30%</td>
+                <td style="color:var(--text-muted);font-size:13px;">Design sign-off</td>
+                <td>4,800</td>
+              </tr>
+              <tr>
+                <td>Pre-Launch<span class="payment-trigger">Staging site reviewed and signed off by iHub</span></td>
+                <td style="color:var(--text-muted);font-family:'DM Mono',monospace;">20%</td>
+                <td style="color:var(--text-muted);font-size:13px;">Staging sign-off</td>
+                <td>3,200</td>
+              </tr>
+              <tr>
+                <td>Retention<span class="payment-trigger">Final payment 14 days after successful go-live</span></td>
+                <td style="color:var(--text-muted);font-family:'DM Mono',monospace;">10%</td>
+                <td style="color:var(--text-muted);font-size:13px;">14 days post go-live</td>
+                <td>1,600</td>
+              </tr>
+              <tr class="payment-total-row">
+                <td colspan="3">Total Project Investment</td>
+                <td>SGD 16,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="retainer-box fade-in">
+        <div>
+          <div class="retainer-label">Post-Launch Maintenance Retainer</div>
+          <div class="retainer-desc">Monthly maintenance, content updates, performance monitoring, bug resolution,
+            hosting support, and priority response. Minimum 6-month commitment recommended for platform stability
+            post-launch.</div>
+        </div>
+        <div class="retainer-amount">SGD 500 <small>/month</small></div>
+      </div>
+      <div class="disclaimer-box fade-in">
+        <strong>Important Note:</strong> This investment is based on the initial scope gathered through preliminary
+        discussion and is presented prior to a formal discovery session. Final pricing will be confirmed once we have
+        complete clarity on all requirements, technical dependencies, translation scope, and content responsibilities.
+        <strong>Should iHub Solutions have an internal budget framework for this project, we welcome a transparent
+          conversation to ensure our proposal works for both parties.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 7. WHY IM ══ -->
+  <section id="sec-7">
+    <div class="section-inner">
+      <div class="section-number">07</div>
+      <div class="section-label">Why Introverted Minds</div>
+      <h2 class="section-title">Why we're the <em>right partner.</em></h2>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">🌏</div>
+          <div class="why-title">We Understand Your Markets</div>
+          <div class="why-desc">We operate across Singapore, India, and Indonesia. We understand the business culture,
+            digital behaviour, and audience expectations across Southeast Asia. This isn't generic web development —
+            it's regionally-informed digital strategy executed with precision.</div>
+        </div>
+        <div class="why-card fade-in fade-in-delay-1">
+          <div class="why-icon">🏗️</div>
+          <div class="why-title">We've Studied Your Business</div>
+          <div class="why-desc">Most agencies send a generic proposal with your name on it. We audited your website,
+            researched your 25-year history, understood your LogTech positioning, and mapped your regional gaps before
+            writing a single word. This proposal is about iHub specifically.</div>
+        </div>
+        <div class="why-card fade-in fade-in-delay-2">
+          <div class="why-icon">⚙️</div>
+          <div class="why-title">Full-Stack Creative + Engineering</div>
+          <div class="why-desc">Strategy, UX, UI, frontend engineering, CMS, SEO, and analytics — all under one roof. No
+            fragmented vendor relationships, no miscommunication between teams. One point of contact from brief to
+            launch.</div>
+        </div>
+        <div class="why-card fade-in fade-in-delay-3">
+          <div class="why-icon">🔒</div>
+          <div class="why-title">Milestone-Based Accountability</div>
+          <div class="why-desc">Our 40/30/20/10 payment structure means you only pay as we deliver. Every payment is
+            tied to a verifiable deliverable you sign off on before we proceed. Your investment is protected at every
+            stage.</div>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">📈</div>
+          <div class="why-title">We Think Beyond the Website</div>
+          <div class="why-desc">A website is not the end goal — leads, trust, and regional market presence are. We
+            design every page with conversion, SEO, and user intent in mind. The platform we build will be a business
+            development asset, not a digital brochure.</div>
+        </div>
+        <div class="why-card fade-in fade-in-delay-1">
+          <div class="why-icon">🤝</div>
+          <div class="why-title">Strategic Partnership Mindset</div>
+          <div class="why-desc">We are not a build-and-disappear agency. The post-launch retainer exists because we want
+            to be part of iHub's growth — iterating, optimising, and scaling the platform alongside your business. We
+            succeed when you succeed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 8. ABOUT IM ══ -->
+  <section id="sec-8">
+    <div class="section-inner">
+      <div class="section-number">08</div>
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">We are <em>Introverted Minds.</em></h2>
+      <div class="about-grid">
+        <div>
+          <p class="about-text"><strong>Introverted Minds</strong> is a Strategic Infrastructure Partner built for
+            ambitious brands navigating growth in Southeast Asia and beyond. We operate at the intersection of deep
+            market intelligence, bold creative direction, and performance-focused digital execution.</p>
+          <p class="about-text">Our team operates across <strong>Singapore, India, and Indonesia</strong> — giving us a
+            regional vantage point that most agencies simply don't have. We understand the cultural nuances, digital
+            maturity, and business expectations across each market we serve. That fluency is precisely why we are
+            positioned to handle a multilingual, multi-country platform like this one.</p>
+          <p class="about-text">We are selective about the engagements we take on. When we commit, we commit fully —
+            with strategy, creativity, and engineering working as one unified team from brief to launch and beyond.</p>
+          <div class="tag-list">
+            <span class="tag">Singapore Registered</span>
+            <span class="tag">SEA Market Focus</span>
+            <span class="tag">Strategy-First</span>
+            <span class="tag">Multilingual Capability</span>
+          </div>
+        </div>
+        <div class="about-services">
+          <div class="service-tag">Growth Strategy &amp; Consulting</div>
+          <div class="service-tag">Performance Marketing</div>
+          <div class="service-tag">SEO &amp; Search Visibility</div>
+          <div class="service-tag">Social Media &amp; Content</div>
+          <div class="service-tag">Web Development &amp; Platforms</div>
+          <div class="service-tag">Brand, Creative &amp; Media Production</div>
+          <div class="service-tag">3D Animation &amp; Modeling</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 9. WEBSITE AUDIT ══ -->
+  <section id="sec-9">
+    <div class="section-inner">
+      <div class="section-number">09</div>
+      <div class="section-label">Complimentary Website Audit</div>
+      <h2 class="section-title">ihubsolutions.com — <em>The honest picture.</em></h2>
+      <p class="body-text">As part of our commitment to this partnership, we conducted a complimentary audit of
+        ihubsolutions.com prior to this proposal. We examined your site's architecture, content structure, multilingual
+        readiness, conversion design, and technical foundation. Here is what we found.</p>
+      <div class="audit-overall fade-in">
+        <div>
+          <div class="audit-score-label">Overall Website Health Score</div>
+          <div class="audit-score-val">47<span style="font-size:26px;color:var(--text-dim)">/100</span></div>
+        </div>
+        <div>
+          <div class="audit-score-desc">Needs Significant Improvement</div>
+          <div class="audit-score-sub">The site's technical foundation (React) is solid and the content quality is
+            genuine. However, multiple critical structural, UX, and multilingual gaps are actively limiting iHub's
+            ability to convert international visitors — and presenting a brand image that lags behind iHub's real
+            stature.</div>
+        </div>
+      </div>
+      <div class="audit-grid">
+        <div class="audit-card fade-in">
+          <div class="audit-card-top">
+            <div class="audit-category">Multilingual Architecture</div>
+            <div class="audit-status status-red">Critical</div>
+          </div>
+          <div class="audit-finding">The site is entirely Singapore-centric with zero multilingual infrastructure. Every
+            contact form states: "Please note that this form submits your interest for services in Singapore only." Your
+            Malaysia, Hong Kong, and Thailand offices have no functional web presence — directly costing you regional
+            leads every day.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:15%;background:var(--red)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-1">
+          <div class="audit-card-top">
+            <div class="audit-category">Hong Kong Market Page</div>
+            <div class="audit-status status-red">Critical</div>
+          </div>
+          <div class="audit-finding">Your HK presence lives at <span class="mono-tag">/promo/hk-warehouse/</span> — a
+            2017 promotional page never completed. The footer contains unedited placeholder text: "This is the bottom
+            slider area. You can edit this text." Any HK prospect discovering this page would immediately lose
+            confidence in iHub as a professional logistics partner.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:10%;background:var(--red)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-2">
+          <div class="audit-card-top">
+            <div class="audit-category">URL Architecture</div>
+            <div class="audit-status status-red">Critical</div>
+          </div>
+          <div class="audit-finding">The Contact page sits at <span class="mono-tag">/promo/contact-us/</span> — a
+            non-standard URL implying a temporary campaign page, not a core company page. This affects SEO credibility,
+            user trust, and future link-building efforts.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:20%;background:var(--red)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-3">
+          <div class="audit-card-top">
+            <div class="audit-category">Brand &amp; Visual Design</div>
+            <div class="audit-status status-amber">Needs Attention</div>
+          </div>
+          <div class="audit-finding">The current design does not reflect the calibre of a company visited by Singapore
+            ministers and awarded the Singapore Quality Class with Innovation. The visual language is conservative and
+            dated relative to iHub's positioning as a LogTech innovator deploying AI, ML, IoT, and proprietary digital
+            systems.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:40%;background:var(--amber)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in">
+          <div class="audit-card-top">
+            <div class="audit-category">Content &amp; SEO Engine</div>
+            <div class="audit-status status-amber">Needs Attention</div>
+          </div>
+          <div class="audit-finding">There is no blog or content section on the current site. For a company with 25
+            years of operational knowledge across 15 industry verticals, the absence of a content strategy means iHub is
+            essentially invisible in organic search for high-intent logistics queries across all 4 markets.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:35%;background:var(--amber)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-1">
+          <div class="audit-card-top">
+            <div class="audit-category">Conversion Design</div>
+            <div class="audit-status status-amber">Needs Attention</div>
+          </div>
+          <div class="audit-finding">No country-specific conversion paths, no differentiated CTAs per service, no lead
+            qualification flow. A healthcare prospect and an AI/ML prospect receive the same generic "Contact Us" path.
+            For a B2B company serving 200+ clients across different verticals and geographies, this is a lost conversion
+            at every single touchpoint.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:38%;background:var(--amber)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-2">
+          <div class="audit-card-top">
+            <div class="audit-category">React Frontend Foundation</div>
+            <div class="audit-status status-green">Solid</div>
+          </div>
+          <div class="audit-finding">The site is built on React (create-react-app) — a strong technical choice we will
+            build upon. The existing React foundation means the revamp can leverage current infrastructure while
+            upgrading to Next.js for SSR, better SEO, and native multilingual routing.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:72%;background:var(--green)"></div>
+          </div>
+        </div>
+        <div class="audit-card fade-in fade-in-delay-3">
+          <div class="audit-card-top">
+            <div class="audit-category">Content Quality</div>
+            <div class="audit-status status-green">Strong</div>
+          </div>
+          <div class="audit-finding">The copy across service pages is well-written, specific, and reflects genuine
+            operational depth. The brand personality — confident and refreshingly human — is a real differentiator. This
+            tone will be preserved and elevated in the redesign, not genericised.</div>
+          <div class="audit-bar">
+            <div class="audit-bar-fill" style="width:78%;background:var(--green)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="disclaimer-box">
+        <strong>Audit Note:</strong> This audit was conducted using publicly available information, site crawl data, and
+        UX analysis. A comprehensive technical audit covering Core Web Vitals, full backlink profile, and complete SEO
+        health assessment will be conducted during the project discovery phase at no additional cost.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 10. NEXT STEPS ══ -->
+  <section id="sec-10">
+    <div class="section-inner">
+      <div class="section-number">10</div>
+      <div class="section-label">Next Steps</div>
+      <h2 class="section-title">How we <em>begin.</em></h2>
+      <div style="margin-bottom:48px;">
+        <div class="next-step fade-in">
+          <div class="next-step-num">01</div>
+          <div class="next-step-content">
+            <h4>Review This Proposal</h4>
+            <p>Take the time you need to review the scope, architecture, and investment framework with your team. We are
+              available to answer any questions via email or a brief call — no pressure, no follow-up bombardment.</p>
+          </div>
+        </div>
+        <div class="next-step fade-in fade-in-delay-1">
+          <div class="next-step-num">02</div>
+          <div class="next-step-content">
+            <h4>Schedule a Discovery Call</h4>
+            <p>A 45–60 minute structured call to align on full scope, confirm translation management, clarify CMS
+              preference, discuss budget framework, and confirm project timelines. Free, obligation-free, and essential
+              before any contract is signed.</p>
+          </div>
+        </div>
+        <div class="next-step fade-in fade-in-delay-2">
+          <div class="next-step-num">03</div>
+          <div class="next-step-content">
+            <h4>Finalise Scope &amp; Contract</h4>
+            <p>Following discovery, we issue a final scoped proposal with confirmed deliverables, a detailed project
+              timeline with milestone dates, and a formal contract. The 40% commencement payment activates the project
+              immediately upon signing.</p>
+          </div>
+        </div>
+        <div class="next-step fade-in fade-in-delay-3">
+          <div class="next-step-num">04</div>
+          <div class="next-step-content">
+            <h4>We Get to Work</h4>
+            <p>Within 48 hours of contract signing and commencement payment, your dedicated project team is assembled,
+              your workspace is set up, and your discovery brief is prepared. We move fast — without sacrificing
+              precision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 11. CONFIDENTIALITY ══ -->
+  <section id="sec-11">
+    <div class="section-inner">
+      <div class="section-number">11</div>
+      <div class="conf-header">
+        <div class="conf-icon">⚖</div>
+        <div class="conf-title-wrap">
+          <h2>Confidentiality &amp; Intellectual Property Notice</h2>
+          <p>Confidential &amp; Proprietary — Introverted Minds</p>
+        </div>
+      </div>
+      <p class="conf-body">This proposal — including all strategies, recommendations, frameworks, concepts, systems,
+        methodologies, technical architectures, audit findings, and materials presented herein — constitutes
+        confidential, proprietary work product of <strong>Introverted Minds</strong>. It is shared exclusively with iHub
+        Solutions Pte Ltd for the purpose of partnership evaluation and service consideration only.</p>
+      <div class="conf-clauses">
+        <div class="conf-clause">
+          <div class="conf-clause-num">01</div>
+          <div>All intellectual property, strategic concepts, audit findings, technical recommendations, frameworks, and
+            proprietary methodologies contained in this document remain the exclusive property of Introverted Minds
+            unless otherwise agreed in a separate written agreement signed by both parties.</div>
+        </div>
+        <div class="conf-clause">
+          <div class="conf-clause-num">02</div>
+          <div>This document and its contents — including the website audit, technical architecture, scope framework,
+            pricing structure, and strategic recommendations — may not be copied, reproduced, distributed, shared,
+            implemented, or otherwise used in whole or in part without prior written consent from Introverted Minds.
+          </div>
+        </div>
+        <div class="conf-clause">
+          <div class="conf-clause-num">03</div>
+          <div>Receipt and review of this proposal does not grant ownership, transfer of rights, licensing, or any
+            authorisation to independently execute any of the presented strategies, architectures, or frameworks without
+            formal engagement and a signed agreement with Introverted Minds.</div>
+        </div>
+        <div class="conf-clause">
+          <div class="conf-clause-num">04</div>
+          <div>Unauthorised use, replication, disclosure, or distribution of the materials contained in this document —
+            including implementation of the recommended technical architecture, content strategy, or multilingual
+            framework by any third party — may constitute intellectual property infringement and may result in legal
+            action.</div>
+        </div>
+        <div class="conf-clause">
+          <div class="conf-clause-num">05</div>
+          <div>This document is shared strictly for partnership evaluation, strategic discussion, and service
+            consideration between iHub Solutions Pte Ltd and Introverted Minds. It does not constitute a binding
+            contract, service agreement, or guarantee of deliverables unless formalised in writing by both parties.
+          </div>
+        </div>
+      </div>
+      <div class="conf-footer-note">© 2026 Introverted Minds. All Rights Reserved. &nbsp;·&nbsp;
+        www.introvertedminds.com &nbsp;·&nbsp; answer@introvertedminds.com</div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT FOOTER ══ -->
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-cta-title">Let's build something<br><em>iHub deserves.</em></h2>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.75;margin-top:14px;">We are ready when you are.
+          Reach out through any channel below to schedule your discovery call or ask any questions about this proposal.
+        </p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-item"><label>Direct Line</label><a href="tel:+6285820555800">+62 858 2055 5800</a></div>
+        <div class="contact-item"><label>WhatsApp</label><a href="https://wa.me/916359000571">+91 6359 000 571</a></div>
+        <div class="contact-item"><label>Email</label><a
+            href="mailto:answer@introvertedminds.com">answer@introvertedminds.com</a></div>
+        <div class="contact-item"><label>Website</label><a href="https://www.introvertedminds.com"
+            target="_blank">www.introvertedminds.com</a></div>
+        <div class="contact-item"><label>Locations</label><span>Singapore &nbsp;·&nbsp; India &nbsp;·&nbsp;
+            Indonesia</span></div>
+      </div>
+      <div class="contact-sign-off">
+        <div>
+          <div class="sign-off-name">Narayanan Jr. Prapoo</div>
+          <div class="sign-off-role">Head of Controlled Chaos &nbsp;·&nbsp; Introverted Minds</div>
+        </div>
+        <div style="text-align:right;">
+          <img src="https://www.introvertedminds.com/assets/images/light-logo.png" alt="Introverted Minds"
+            style="height:28px;width:auto;">
+          <div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--text-dim);margin-top:8px;">© 2026
+            Introverted Minds. All Rights Reserved.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const s = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('progressBar').style.width = s + '%';
+      updateDots();
+    });
+    const secs = [];
+    for (let i = 0; i <= 11; i++) { const e = document.getElementById('sec-' + i); if (e) secs.push(e); }
+    const dots = document.querySelectorAll('.nav-dot');
+    function updateDots() {
+      const mid = window.scrollY + window.innerHeight / 2;
+      secs.forEach((s, i) => { if (dots[i]) dots[i].classList.toggle('active', mid >= s.offsetTop && mid < s.offsetTop + s.offsetHeight); });
+    }
+    function scrollToSection(i) { if (secs[i]) secs[i].scrollIntoView({ behavior: 'smooth' }); }
+    const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    const bobs = new IntersectionObserver(e => e.forEach(x => {
+      if (x.isIntersecting) { const f = x.target.querySelector('.audit-bar-fill'); if (f) { const w = f.style.width; f.style.width = '0'; setTimeout(() => { f.style.width = w; }, 120); } }
+    }), { threshold: 0.4 });
+    document.querySelectorAll('.audit-card').forEach(el => bobs.observe(el));
+  </script>
+</body>
+
+</html>
