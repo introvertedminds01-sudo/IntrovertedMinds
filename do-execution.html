@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M8SKLL7Z');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO EXECUTION | Concept Brand by Introverted Minds</title>
+    <meta name="description" content="Showcasing DO EXECUTION, a concept project demonstrating strategy-led brand identity, cinematic storytelling, and intentional design.">
+    <link rel="icon" type="image/png" href="assets/images/sitelogo.png">
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
+    <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-pure: #ffffff;
+            --bg-subtle: #f9f9f9;
+            --amber-bright: #ffaa00;
+            --text-main: #222222;
+            --text-dim: #666666;
+            --border: rgba(0, 0, 0, 0.1);
+            --title-color: #000000;
+        }
+
+        body.dark-mode {
+            --bg-pure: #000000;
+            --bg-subtle: #0a0a0a;
+            --text-main: #e0e0e0;
+            --text-dim: #777777;
+            --border: rgba(255, 255, 255, 0.05);
+            --title-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-pure);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--amber-bright);
+        }
+
+        /* Hero Section (Maintained from previous simple request) */
+        .exec-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            filter: grayscale(1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
+            max-width: 900px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            color: var(--title-color);
+            text-transform: uppercase;
+            margin: 0 auto 1rem;
+            text-align: center;
+        }
+
+        .hero-content h1 span {
+            color: var(--amber-bright);
+        }
+
+        .hero-lead {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.6;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #777;
+            font-family: 'LEMON MILK', sans-serif;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--amber-bright), transparent);
+            animation: scrollLine 2s infinite ease-in-out;
+            transform-origin: top;
+        }
+
+        @keyframes scrollLine {
+            0% { transform: scaleY(0); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0); transform-origin: bottom; }
+        }
+
+        /* Structured Layout */
+        .exec-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .grid-row {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .row-title {
+            position: sticky;
+            top: 100px;
+            height: max-content;
+        }
+
+        .row-title span {
+            font-family: 'LEMON MILK', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--amber-bright);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .row-title h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--title-color);
+            letter-spacing: -0.01em;
+        }
+
+        .row-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+
+        .row-content p.large {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--title-color);
+            font-weight: 400;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .content-card h3 {
+            font-size: 1.3rem;
+            color: var(--title-color);
+            margin-bottom: 1rem;
+        }
+
+        .content-card p {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* Media Gallery */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .media-item:hover img, .media-item:hover video {
+            opacity: 0.8;
+        }
+
+        .media-item.horizontal {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .grid-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 60px 0;
+            }
+            .row-title {
+                position: relative;
+                top: 0;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .media-item.horizontal {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8SKLL7Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="introvertedminds_landing.html" class="logo">
+                <img src="assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="introvertedminds_landing.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services <span class="nav-arrow">▾</span></a>
+                    <div class="dropdown-content">
+                        <a href="growth-strategy.html">Growth Strategy</a>
+                        <a href="performance-marketing.html">Performance Marketing</a>
+                        <a href="seo.html">SEO</a>
+                        <a href="social-media.html">Social Media</a>
+                        <a href="web-development.html">Web Development</a>
+                        <a href="creative-production.html">Creative Production</a>
+                        <a href="3d-animation.html">3D Animation</a>
+                    </div>
+                </li>
+                <li><a href="partnerships.html">Our Collaboration</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span id="themeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="width: 20px; height: 20px;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                    </svg>
+                </span>
+            </button>
+            <a href="contact.html" class="cta-btn desktop-only">Get Started</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="exec-hero">
+        <div class="hero-video-container">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="assets/Do%20execution/Bottle%20Video%20Vertical%20.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal">DO <span>EXECUTION</span></h1>
+            <p class="hero-lead reveal">Where strategy dictates aesthetics. A masterclass in intentional brand building.</p>
+        </div>
+        
+        <div class="scroll-indicator reveal">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <div class="exec-container">
+        
+        <!-- Row 1: Purpose -->
+        <div class="grid-row">
+            <div class="row-title reveal">
+                <span>01</span>
+                <h2>The Purpose</h2>
+            </div>
+            <div class="row-content reveal">
+                <p class="large">"Most brands are built for attention. This is built for execution."</p>
+                <p>Most branding today focuses only on aesthetics and trends. EXECUTION was created to demonstrate a more intentional approach — where strategy, storytelling, and identity work together to build a complete brand experience.</p>
+            </div>
+        </div>
+
+        <!-- Row 2: The Core Idea -->
+        <div class="grid-row">
+            <div class="row-title reveal">
+                <span>02</span>
+                <h2>The Concept</h2>
+            </div>
+            <div class="row-content reveal">
+                <p class="large">"This is not a fragrance for attraction."</p>
+                <p>EXECUTION is inspired by espresso as a mindset — focused, concentrated, and intentional. The brand represents discipline, clarity, and action without hesitation.</p>
+                
+                <!-- Video in Concept -->
+                <div style="margin: 2rem 0; border: 1px solid var(--border); overflow: hidden; aspect-ratio: 16/9;">
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="assets/Do execution/Edit video.mp4" type="video/mp4">
+                    </video>
+                </div>
+                
+                <div class="cards-grid">
+                    <div class="content-card">
+                        <h3>Strategy Led</h3>
+                        <p>Every element was designed with purpose and precision, proving how Introverted Minds builds brands through thinking, not just visuals.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>The Aesthetic</h3>
+                        <p>Matte black surfaces, warm amber highlights, smoke, and cinematic shadows define the visual language of focus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3: Visual Identity -->
+        <div class="grid-row">
+            <div class="row-title reveal">
+                <span>03</span>
+                <h2>The Showcase</h2>
+            </div>
+            <div class="row-content reveal">
+                <p>A curated look at the brand system, from physical mockups to digital execution.</p>
+                
+                <div class="media-grid">
+                    <!-- Images -->
+                    <div class="media-item">
+                        <img src="assets/Do execution/Logo on bottle.png" alt="Product">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/a guy holding the bottle.png" alt="Lifestyle">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/execution d.png" alt="Design System">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/Logo 2.png" alt="Logo">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/a guy holding the bottle (2).png" alt="Lifestyle View 2">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/a guy drwaing with penchile the logo.png" alt="Process Sketch">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4: Social Campaign -->
+        <div class="grid-row">
+            <div class="row-title reveal">
+                <span>04</span>
+                <h2>Campaign</h2>
+            </div>
+            <div class="row-content reveal">
+                <p>The visual storytelling execution across social platforms, presented as a carousel series.</p>
+                
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="assets/Do execution/Social media post 1.png" alt="Post 1">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/social media post 2.png" alt="Post 2">
+                    </div>
+                    <div class="media-item">
+                        <img src="assets/Do execution/social media post 3.png" alt="Post 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5: Content Pillars -->
+        <div class="grid-row">
+            <div class="row-title reveal">
+                <span>05</span>
+                <h2>Pillars</h2>
+            </div>
+            <div class="row-content reveal">
+                <p>Future content angles generated from the core ethos of DO EXECUTION.</p>
+                
+                <div class="cards-grid">
+                    <div class="content-card">
+                        <h3>01 / The Anatomy of Focus</h3>
+                        <p>Breaking down the science of hyper-concentration and how it reflects in minimal design.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>02 / Beyond Aesthetics</h3>
+                        <p>A deep dive into why strategy must precede design, or it's just decoration.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>03 / Dark Mode Ethos</h3>
+                        <p>Why we use black and amber: zero distraction, high contrast, pure intent.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>04 / No Hesitation</h3>
+                        <p>Content focused on speed and clarity in decision making for modern founders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <img src="assets/images/light-logo.png" alt="IntrovertedMinds Logo">
+                </div>
+                <p>We combine data-driven strategies with creative excellence to help ambitious brands dominate the
+                    digital landscape and achieve measurable growth.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/introverted-minds/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/introvertedminds.official?igsh=MTlhOHppeXZvcmptMw==" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="growth-strategy.html">Growth Strategy</a>
+                <a href="performance-marketing.html">Performance Marketing</a>
+                <a href="seo.html">SEO</a>
+                <a href="social-media.html">Social Media</a>
+                <a href="web-development.html">Web Development</a>
+                <a href="creative-production.html">Creative Production</a>
+                <a href="3d-animation.html">3D Animation</a>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="services.html">All Services</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>answers@introvertedminds.com</p>
+                <p>+91 9867440690</p>
+                <p>(INDIA | SINGAPORE | INDONESIA)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IntrovertedMinds. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        const sunIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateLogos(isDark) {
+            const logos = document.querySelectorAll('.logo img, .nav-brand img');
+            logos.forEach(img => {
+                img.src = isDark ? 'assets/images/light-logo.png' : 'assets/images/dark-logo.png';
+            });
+        }
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = sunIcon;
+        } else {
+            body.classList.remove('dark-mode');
+            themeIcon.innerHTML = moonIcon;
+        }
+        updateLogos(currentTheme === 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            themeIcon.innerHTML = isDark ? sunIcon : moonIcon;
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateLogos(isDark);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
